@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Szczegóły produktu</title>
+    <title>Szczegóły zamowień</title>
 </head>
 
 <body>
@@ -26,31 +26,39 @@
     </nav>
 
     <main>
-        <h2>Szczegóły produktu</h2>
-        <form action="WyświetlSzczegółyProduktu">
+        <h2>Szczegóły zamówień</h2>
+        <form action="WyświetlSzczegółyZamówienia">
             <div>
-                <label for="Nazwa">Nazwa:</label>
-                <input type="text" name="Nazwa" id="Nazwa" value="Play Station 5" disabled />
+                <label for="Imie">Imie:</label>
+                <input type="text" name="Imie" id="Imie" value="Jan" disabled />
             </div>
             <div>
-                <label for="TypProduktu">Typ produktu:</label>
-                <input type="text" name="TypProduktu" id="TypProduktu" value="Konsola" disabled />
+                <label for="Nazwisko">Nazwisko:</label>
+                <input type="text" name="Nazwisko" id="Nazwisko" value="Kowalski" disabled />
             </div>
             <div>
-                <label for="Gwarancja">Gwarancja(lata):</label>
-                <input type="number" name="Gwarancja" id="Gwarancja" value="2" disabled />
+                <label for="Kwota">Kwota(zł):</label>
+                <input type="number" name="Kwota" id="Kwota" value="2299" disabled />
             </div>
             <div>
-                <label for="Cena">Cena(zł):</label>
-                <input type="number" name="Cena" id="Cena" value="2299" disabled />
+                <label for="Email">Adres email:</label>
+                <input type="email" name="Email" id="Email" value="janKowalski@gmail.com" disabled />
             </div>
             <div>
-                <label for="Kolor">Kolor:</label>
-                <input type="text" name="Kolor" id="Kolor" value="Bialo czarny" disabled />
+                <label for="NumerTel">Numer telefonu:</label>
+                <input type="tel" name="NumerTel" id="NumerTel" value="666999666" disabled />
+            </div>
+            <div>
+                <label for="DataPrzyjecia">Data przyjęcia:</label>
+                <input type="date" name="DataPrzyjecia" id="DataPrzyjecia" value="2020-10-23" disabled />
+            </div>
+            <div>
+                <label for="DataRealizacji">Data realizacji:</label>
+                <input type="date" name="DataRealizacji" id="DataRealizacji" value="2020-10-25" disabled />
             </div>
 
             <div>
-                <a href="FormularzNowegoProduktu.html">Edytuj</a>
+                <a href="FormularzNowegoZamówienia.html">Edytuj</a>
             </div>
 
         </form>
@@ -75,7 +83,7 @@
         </table>
 
         <div>
-            <a href="ListaProduktow.html">Powrót</a>
+            <a href="ListaZamówień.html">Powrót</a>
         </div>
 
     </main>
