@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Szczegóły produktu</title>
+</head>
+
+<body>
+
+
+    <header>
+        <h1>TomoTechShop</h1>
+        <img src="../Images/LogoTomoTechShop.PNG" alt="Images shows logo TomoTechShop">
+
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="../index.html">Strona główna</a></li>
+            <li><a href="Pages/ListaProduktow.html">Produkty</a></li>
+            <li><a href="">Pozycja zamowień</a></li>
+            <li><a href="">Zamówienia</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <h2>Szczegóły produktu</h2>
+        <form action="WyświetlSzczegółyProduktu">
+            <div>
+                <label for="Nazwa">Nazwa:<sup>*</sup></label>
+                <input type="text" name="Nazwa" id="Nazwa" value="Play Station 5" disabled />
+            </div>
+            <div>
+                <label for="TypProduktu">Typ produktu:<sup>*</sup></label>
+                <input type="text" name="TypProduktu" id="TypProduktu" value="Konsola" disabled />
+            </div>
+            <div>
+                <label for="Gwarancja">Gwarancja(lata):<sup>*</sup></label>
+                <input type="number" name="Gwarancja" id="Gwarancja" value="2" disabled />
+            </div>
+            <div>
+                <label for="Cena">Cena(zł):<sup>*</sup></label>
+                <input type="number" name="Cena" id="Cena" value="2299" disabled />
+            </div>
+            <div>
+                <label for="Kolor">Kolor:</label>
+                <input type="text" name="Kolor" id="Kolor" value="Bialo czarny" disabled />
+            </div>
+
+            <div>
+                <a href="FormularzNowegoProduktu.html">Edytuj</a>
+            </div>
+
+        </form>
+
+        <h2>Szczegóły pozycji zamówień</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Produkt</th>
+                    <th>Rabat</th>
+                    <th>Ilosc</th>
+                </tr>
+            </thead>
+            <tr>
+                <td>PlayStation5</td>
+                <td>5%</td>
+                <td>1</td>
+            </tr>
+            <tbody>
+
+            </tbody>
+        </table>
+
+        <div>
+            <a href="ListaProduktow.html">Powrót</a>
+        </div>
+
+    </main>
+
+    <footer>
+        Tomasz Palczewski, s18969
+    </footer>
+
+
+</body>
+
+</html>

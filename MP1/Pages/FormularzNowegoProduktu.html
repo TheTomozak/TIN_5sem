@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dodaj nowy produkt</title>
+</head>
+
+<body>
+
+    <header>
+        <h1>TomoTechShop</h1>
+        <img src="../Images/LogoTomoTechShop.PNG" alt="Images shows logo TomoTechShop">
+
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Strona główna</a></li>
+            <li><a href="Pages/ListaProduktow.html">Produkty</a></li>
+            <li><a href="">Pozycja zamowień</a></li>
+            <li><a href="">Zamówienia</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <h2>Nowy produkt</h2>
+        <form action="DodajNowyProdukt">
+            <div>
+                <label for="Nazwa">Nazwa:<sup>*</sup></label>
+                <input type="text" name="Nazwa" id="Nazwa" />
+            </div>
+            <div>
+                <label for="TypProduktu">Typ produktu:<sup>*</sup></label>
+                <input type="text" name="TypProduktu" id="TypProduktu" />
+            </div>
+            <div>
+                <label for="Gwarancja">Gwarancja:<sup>*</sup></label>
+                <input type="text" name="Gwarancja" id="Gwarancja" />
+            </div>
+            <div>
+                <label for="Cena">Cena(zł):<sup>*</sup></label>
+                <input type="number" name="Cena" id="Cena" />
+            </div>
+            <div>
+                <label for="Kolor">Kolor:</label>
+                <input type="text" name="Kolor" id="Kolor" />
+            </div>
+
+            <div>
+                <input type="submit" value="Dodaj" />
+                <a href="ListaProduktow.html">Anuluj</a>    
+            </div>  
+
+        </form>
+    </main>
+
+    <footer>
+        Tomasz Palczewski, s18969
+    </footer>
+
+
+</body>
+
+</html>
