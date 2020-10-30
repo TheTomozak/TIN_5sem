@@ -30,11 +30,15 @@
         <form action="DodajNowąPozycjęZamówień">
             <div>
                 <label for="Zamówienie">Kupiec:<sup>*</sup></label>
-                <input type="text" name="Zamówienie" id="Zamówienie" />
+                <select name="Zamówienie" id="Zamówienie">
+                    <option value="IdKlient">Jan Kowalski</option>
+                </select>
             </div>
             <div>
                 <label for="Produkt">Nazwa produktu:<sup>*</sup></label>
-                <input type="text" name="Produkt" id="Produkt" />
+                <select name="Produkt" id="Produkt">
+                    <option value="IdProdukt">Play Station 5</option>
+                </select>
             </div>
             <div>
                 <label for="Rabat">Rabat(%):</label>
