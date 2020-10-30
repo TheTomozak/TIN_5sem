@@ -65,6 +65,8 @@ header img {
 
 nav {
     background-color: #bdc3c7;
+    position: sticky;
+    top: 0;
 }
 
 nav ul {
