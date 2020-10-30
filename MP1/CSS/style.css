@@ -11,6 +11,7 @@ html {
     background-color: #ecf0f1;
 }
 
+
 body {
     min-width: 600px;
 }
@@ -46,6 +47,15 @@ header h1 {
 
 h2 {
     font-size: 1.8rem;
+}
+
+
+.MainPage h2, p, span{
+    font-family: 'Open Sans', sans-serif;
+}
+
+.MainPage span{
+    text-decoration: underline;
 }
 
 header img {
@@ -107,7 +117,7 @@ main h2 {
 
 .table-list {
     border-collapse: collapse;
-    color:#2c3e50;
+    color: #2c3e50;
     width: 100%;
 }
 
@@ -145,6 +155,8 @@ main h2 {
 .list-actions-button-delete {
     display: inline-block;
     padding: 0.25rem 0.5rem;
+    transition: background-color .3s;
+
 }
 
 .list-actions-button-details,
@@ -156,6 +168,7 @@ main h2 {
     text-decoration: none;
     text-align: center;
     font-size: 0.8rem;
+
 }
 
 .list-actions-button-details,
@@ -166,8 +179,11 @@ main h2 {
 
 
 .list-actions-button-details {
-    background-color: #2980b9;    
+    background-color: #2980b9;
+
+
 }
+
 .list-actions-button-details:hover {
     background-color: #3498db;
 }
@@ -175,14 +191,18 @@ main h2 {
 
 .list-actions-button-edit {
     background-color: #f39c12;
+
+
 }
 
 .list-actions-button-edit:hover {
     background-color: #f1c40f;
+
 }
 
 .list-actions-button-delete {
     background-color: #c0392b;
+
 }
 
 .list-actions-button-delete:hover {
@@ -204,12 +224,14 @@ main h2 {
 .button-add {
     padding: 0.5rem 2rem;
     margin: 1rem;
-    
+
 }
 
 
 .button-add {
     background-color: #27ae60;
+    transition: background-color .3s;
+
 }
 
 .button-add:hover {
