@@ -30,32 +30,32 @@
 
     <main>
         <h2>Nowy produkt</h2>
-        <form action="DodajNowyProdukt">
-            <div>
+        <form class="form" action="DodajNowyProdukt">
+            <div class="form-group">
                 <label for="Nazwa">Nazwa:<sup>*</sup></label>
                 <input type="text" name="Nazwa" id="Nazwa" />
             </div>
-            <div>
+            <div class="form-group">
                 <label for="TypProduktu">Typ produktu:<sup>*</sup></label>
                 <input type="text" name="TypProduktu" id="TypProduktu" />
             </div>
-            <div>
+            <div class="form-group">
                 <label for="Gwarancja">Gwarancja:<sup>*</sup></label>
                 <input type="text" name="Gwarancja" id="Gwarancja" />
             </div>
-            <div>
+            <div class="form-group">
                 <label for="Cena">Cena(zł):<sup>*</sup></label>
                 <input type="number" name="Cena" id="Cena" />
             </div>
-            <div>
+            <div class="form-group">
                 <label for="Kolor">Kolor:</label>
                 <input type="text" name="Kolor" id="Kolor" />
             </div>
 
-            <div>
-                <input type="submit" value="Dodaj" />
-                <a href="ListaProduktow.html">Anuluj</a>    
-            </div>  
+            <div class="form-buttons">
+                <input class="form-button-submit" type="submit" value="Dodaj" />
+                <a href="ListaProduktow.html" class="form-button-cancel">Anuluj</a>
+            </div> 
 
         </form>
     </main>
