@@ -30,38 +30,33 @@
 
     <main>
         <h2>Szczegóły pozycji zamówień</h2>
-        <form action="WyświetlSzczegółyPozycjiZamówień">
-            <div>
+        <form class="form" action="WyświetlSzczegółyPozycjiZamówień">
+            <div class="form-group">
                 <label for="Zamówienie">Kupiec:</label>
                 <select name="Zamówienie" id="Zamówienie" disabled>
                     <option value="IdKlient">Jan Kowalski</option>
                 </select>
             </div>
-            <div>
+            <div class="form-group">
                 <label for="Produkt">Nazwa produktu:</label>
                 <select name="Produkt" id="Produkt" disabled>
                     <option value="IdProdukt">Play Station 5</option>
                 </select>
             </div>
-            <div>
+            <div class="form-group">
                 <label for="Rabat">Rabat(%):</label>
                 <input type="number" name="Rabat" id="Rabat" value="3" disabled />
             </div>
-            <div>
+            <div class="form-group">
                 <label for="Ilość">Ilość:</label>
                 <input type="number" name="Ilość" id="Ilość" value="1" disabled />
             </div>
 
 
 
-            <div>
-                <a href="FormularzNowejPozycjiZamówień.html">Edytuj</a>
-            </div>
-
-        </form>
-
-        <div>
-            <a href="ListaPozycjiZamówień.html">Powrót</a>
+        <div class="form-buttons">
+            <a href="FormularzNowejPozycjiZamówień.html" class="form-button-edit">Edytuj</a>
+            <a href="ListaPozycjiZamówień.html" class="form-button-cancel">Anuluj</a>
         </div>
 
     </main>
