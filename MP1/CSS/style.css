@@ -35,10 +35,12 @@ footer {
     background-color: #34495e;
     color: white;
     padding: 1rem;
+    background-image: url('https://media.giphy.com/media/WoD6JZnwap6s8/giphy.gif');
 }
 
 header {
     overflow: auto;
+    
 }
 
 header h1 {
@@ -76,8 +78,10 @@ a:active{
 header img {
     float: right;
     height: 200px;
-    border-radius: 5px;
+    border-radius: 50%;
+
 }
+
 
 nav {
     background-color: #bdc3c7;
