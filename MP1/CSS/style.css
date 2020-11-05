@@ -1,9 +1,8 @@
 * {
 
     box-sizing: border-box;
-    font-family: 'Comfortaa', cursive, sans-serif;
-    font-size: 20px;
-
+    font-family: 'Itim', cursive;
+    font-size: 22px;
 }
 
 
@@ -27,6 +26,8 @@ main,
 footer,
 nav {
     margin: 1rem;
+    border-radius: 15px
+
 }
 
 header,
@@ -43,6 +44,10 @@ header {
 header h1 {
     float: left;
     font-size: 3rem;
+    padding: 25px;
+    font-family: 'Comfortaa', cursive, sans-serif;
+
+
 }
 
 h2 {
@@ -60,13 +65,15 @@ h2 {
 
 header img {
     float: right;
-    height: 150px;
+    height: 200px;
+    border-radius: 5px;
 }
 
 nav {
     background-color: #bdc3c7;
     position: sticky;
     top: 0;
+
 }
 
 nav ul {
@@ -85,16 +92,20 @@ nav ul li a {
     padding: 1rem 2rem;
     text-decoration: none;
     transition: background-color .5s;
+    border-radius: 15px;
 }
 
 nav ul li a:hover {
     background-color: #d35400;
     color: #ecf0f1;
+    
+
 }
 
 nav ul li a.active {
     background-color: #95a5a6;
     color: #ecf0f1;
+    border-radius: 15px;
 }
 
 main {
@@ -283,7 +294,7 @@ textarea {
     margin-bottom: 1rem;
 }
 
-abbr[title='required'] {
+sup {
     color: #c0392b;
 }
 
