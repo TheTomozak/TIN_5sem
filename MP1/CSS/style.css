@@ -55,6 +55,16 @@ h2 {
 }
 
 
+a{
+    cursor:url(../Images/pointer.png), pointer;
+    transition: cursor .3s;
+}
+
+a:active{
+    cursor:url(../Images/pointer-click.png), pointer;
+}
+
+
 .MainPage h2, p, span{
     font-family: 'Open Sans', sans-serif;
 }
@@ -96,11 +106,12 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    background-color: #d35400;
+    background-color: #4293b9;
     color: #ecf0f1;
     
 
 }
+
 
 nav ul li a.active {
     background-color: #95a5a6;
