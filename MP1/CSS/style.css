@@ -510,8 +510,8 @@ body {
     }
 
     header img {
-        display: block;
-        margin: 0 auto;
+        width: 0;
+        height: 0;
     }
 
 }
