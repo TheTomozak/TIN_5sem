@@ -33,30 +33,25 @@
     <main>
         <h2>Nowa pozycja zamówienia</h2>
         <form class="form" action="DodajNowąPozycjęZamówień">
-            <div class="form-group">
                 <label for="Zamówienie">Kupiec:<sup>*</sup></label>
                 <select name="Zamówienie" id="Zamówienie">
+                    <option value="">Wyiberz klienta</option>
                     <option value="IdKlient1">Jan Kowalski</option>
                     <option value="IdKlient2">Adam Nowak</option>
                     <option value="IdKlient3">Grzegorz Brzęczyszczykiewicz</option>
                 </select>
-            </div>
-            <div class="form-group">
+
                 <label for="Produkt">Nazwa produktu:<sup>*</sup></label>
                 <select name="Produkt" id="Produkt">
                     <option value="IdProdukt1">Play Station 5</option>
                     <option value="IdProdukt2">Nintendo Switch</option>
                     <option value="IdProdukt3">Corsair K55 RGB</option>
                 </select>
-            </div>
-            <div class="form-group">
+           
                 <label for="Rabat">Rabat(%):</label>
                 <input type="number" name="Rabat" id="Rabat" />
-            </div>
-            <div class="form-group">
                 <label for="Ilość">Ilość:<sup>*</sup></label>
                 <input type="number" name="Ilość" id="Ilość" />
-            </div>
 
 
             <div class="form-buttons">

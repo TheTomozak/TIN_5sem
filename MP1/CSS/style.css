@@ -12,7 +12,7 @@ html {
 
 
 body {
-    min-width: 600px;
+    min-width: 900px;
 }
 
 header,
@@ -27,28 +27,29 @@ footer,
 nav {
     margin: 1rem;
     border-radius: 15px
-
 }
 
 header,
 footer {
-    background-color: #34495e;
+    /* background-color: #34495e; */
     color: white;
     padding: 1rem;
     background-image: url('https://media.giphy.com/media/WoD6JZnwap6s8/giphy.gif');
 }
 
 header {
-    overflow: auto;
-    
+    display: flex;
+    justify-content: space-between;
+    min-width: 840px;
+
 }
 
 header h1 {
-    float: left;
+
     font-size: 3rem;
     padding: 25px;
     font-family: 'Comfortaa', cursive, sans-serif;
-
+    
 
 }
 
@@ -57,26 +58,28 @@ h2 {
 }
 
 
-a{
-    cursor:url(../Images/pointer.png), pointer;
+a {
+    cursor: url(../Images/pointer.png), pointer;
     transition: cursor .3s;
 }
 
-a:active{
-    cursor:url(../Images/pointer-click.png), pointer;
+a:active {
+    cursor: url(../Images/pointer-click.png), pointer;
 }
 
 
-.MainPage h2, p, span{
+.MainPage h2,
+p,
+span {
     font-family: 'Open Sans', sans-serif;
 }
 
-.MainPage span{
+.MainPage span {
     text-decoration: underline;
 }
 
 header img {
-    float: right;
+
     height: 200px;
     border-radius: 50%;
 
@@ -92,13 +95,11 @@ nav {
 
 nav ul {
     padding: 0;
-    overflow: hidden;
+    display: flex;
     list-style-type: none;
 }
 
-nav ul li {
-    float: left;
-}
+
 
 nav ul li a {
     display: inline-block;
@@ -112,7 +113,7 @@ nav ul li a {
 nav ul li a:hover {
     background-color: #4293b9;
     color: #ecf0f1;
-    
+
 
 }
 
@@ -147,6 +148,7 @@ main h2 {
     border-collapse: collapse;
     color: #2c3e50;
     width: 100%;
+
 }
 
 .table-list,
@@ -267,34 +269,35 @@ main h2 {
 }
 
 
-button, 
-input, 
-select, 
-textarea { 
-    font-family: inherit; 
-    font-size: 100%; 
-    box-sizing: border-box; 
-    padding: 0; margin: 0; 
-} 
+button,
+input,
+select,
+textarea {
+    font-family: inherit;
+    font-size: 100%;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
 
-textarea { 
-    overflow: auto; 
+textarea {
+    overflow: auto;
 }
 
 .form {
-    margin-left: 2rem;
-    width: 300px;
-    
+    display: grid;
+    grid-template-columns: 150px 300px;
+    row-gap: 1rem;
 }
 
-.form select, 
+.form select,
 .form input[type="text"],
 .form input[type="number"],
 .form input[type="date"],
-.form input[type="email"], 
+.form input[type="email"],
 .form input[type="tel"] {
     border: 1px solid #7f8c8d;
-    color:#2c3e50;
+    color: #2c3e50;
     border-radius: 5px;
     padding: 0.5rem;
     width: 100%;
@@ -313,8 +316,10 @@ sup {
     color: #c0392b;
 }
 
-.form-buttons{
+.form-buttons {
     margin-top: 2rem;
+    grid-column-start: 1;
+    grid-column-end: -1;
 }
 
 .list-actions-button-details,
@@ -345,14 +350,12 @@ sup {
 }
 
 .button-add,
-.form-button-submit
-{
+.form-button-submit {
     background-color: #27ae60;
 }
 
 .button-add:hover,
-.form-button-submit:hover
-{
+.form-button-submit:hover {
     background-color: #2ecc71;
 }
 
@@ -363,13 +366,13 @@ sup {
 }
 
 .form-button-edit,
-.form-button-edit-detail{
+.form-button-edit-detail {
     background-color: #f39c12;
 }
 
 .form-button-edit:hover,
 .list-actions-button-edit:hover,
-.form-button-edit-detail:hover{
+.form-button-edit-detail:hover {
     background-color: #f1c40f;
 }
 
@@ -388,12 +391,14 @@ sup {
 }
 
 .form-button-cancel,
-.form-button-edit {
+.form-button-edit,
+.form-button-cancel-detail,
+.form-button-edit-detail {
     box-sizing: border-box;
     display: block;
 }
 
-.form-button-cancel-detail,
+/* .form-button-cancel-detail,
 .form-button-edit-detail {
     box-sizing: border-box;
     display: inline;
@@ -401,11 +406,79 @@ sup {
 
 .form-button-cancel-detail {
     margin: 2rem;
-}
+} */
 
 
 
 .form-button-submit,
 .form-button-edit {
     margin-bottom: 0.5rem;
+}
+
+
+@media all and (max-width:850px) {
+    header {
+        flex-direction: column;
+    }
+
+    header h1 {
+        text-align: center;
+    }
+
+    header img {
+        align-self: center;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+    }
+
+    nav ul li {
+        flex-basis: 50%;
+        text-align: center;
+    }
+
+    nav ul li a {
+        display: block;
+    }
+
+
+}
+
+@media all and (max-width: 500px) {
+
+    body,
+    nav,
+    nav ul,
+    header,
+    main,
+    footer {
+        margin: 0;
+    }
+
+    nav ul li {
+        flex-basis: 100%;
+    }
+
+}
+
+body {
+    min-width: 360px;
+}
+
+
+@media all and (max-width: 720px) {
+    .form {
+        grid-template-columns: 1fr;
+        row-gap: unset;
+        margin-left: unset;
+    }
+
+    .form input[type="text"],
+    .form input[type="number"],
+    .form input[type="date"],
+    .form input[type="email"],
+    .form input[type="tel"] .form select {
+        margin-bottom: 1rem;
+    }
 }
