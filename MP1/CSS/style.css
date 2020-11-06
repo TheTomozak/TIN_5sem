@@ -40,16 +40,15 @@ footer {
 header {
     display: flex;
     justify-content: space-between;
-    min-width: 840px;
 
 }
 
 header h1 {
 
-    font-size: 3rem;
+    font-size: 2.8rem;
     padding: 25px;
     font-family: 'Comfortaa', cursive, sans-serif;
-    
+
 
 }
 
@@ -410,11 +409,33 @@ sup {
 
 
 
+.tableList-details th,
+.table-list th{
+    
+    border: 1px solid black;
+    border-collapse: collapse;
+   
+}
+
+
+.tableList-details td,
+.table-list td{
+    
+    border: 1px solid rgb(155, 155, 155);
+    border-collapse: collapse;
+   
+}
+
+
+
 .form-button-submit,
 .form-button-edit {
     margin-bottom: 0.5rem;
 }
 
+body {
+    min-width: 360px;
+}
 
 @media all and (max-width:850px) {
     header {
@@ -442,32 +463,6 @@ sup {
         display: block;
     }
 
-
-}
-
-@media all and (max-width: 500px) {
-
-    body,
-    nav,
-    nav ul,
-    header,
-    main,
-    footer {
-        margin: 0;
-    }
-
-    nav ul li {
-        flex-basis: 100%;
-    }
-
-}
-
-body {
-    min-width: 360px;
-}
-
-
-@media all and (max-width: 720px) {
     .form {
         grid-template-columns: 1fr;
         row-gap: unset;
@@ -481,4 +476,46 @@ body {
     .form input[type="tel"] .form select {
         margin-bottom: 1rem;
     }
+
+}
+
+@media all and (max-width: 600px) {
+
+    body,
+    nav,
+    nav ul,
+    header,
+    main,
+    footer {
+        margin: 0;
+    }
+
+    nav ul li {
+        flex-basis: 100%;
+    }
+    nav {
+        position: relative;
+    }
+
+
+    
+    header h1{
+        
+        margin: auto;
+        font-size: 2.5rem;
+
+
+        
+        
+    }
+
+    header img {
+        display: block;
+        margin: 0 auto;
+    }
+
+}
+
+body {
+    min-width: 360px;
 }
