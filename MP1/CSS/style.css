@@ -8,6 +8,7 @@
 
 html {
     background-color: #ecf0f1;
+    scroll-behavior: smooth;
 }
 
 
@@ -397,33 +398,23 @@ sup {
     display: block;
 }
 
-/* .form-button-cancel-detail,
-.form-button-edit-detail {
-    box-sizing: border-box;
-    display: inline;
-}
-
-.form-button-cancel-detail {
-    margin: 2rem;
-} */
-
 
 
 .tableList-details th,
-.table-list th{
-    
+.table-list th {
+
     border: 1px solid black;
     border-collapse: collapse;
-   
+
 }
 
 
 .tableList-details td,
-.table-list td{
-    
+.table-list td {
+
     border: 1px solid rgb(155, 155, 155);
     border-collapse: collapse;
-   
+
 }
 
 
@@ -436,6 +427,24 @@ sup {
 body {
     min-width: 360px;
 }
+
+.BackToTop {
+    background-color: #bdc3c7;
+    margin: 1rem;
+    border-radius: 15px;
+    color: black;
+    padding: 0.2rem;
+    text-align: center;
+    text-decoration: none;
+  
+}
+
+.BackToTopHref:link {
+    text-decoration: none;
+  }
+
+
+
 
 @media all and (max-width:850px) {
     header {
@@ -493,20 +502,21 @@ body {
     nav ul li {
         flex-basis: 100%;
     }
+
     nav {
         position: relative;
     }
 
 
-    
-    header h1{
-        
+
+    header h1 {
+
         margin: auto;
         font-size: 2.5rem;
 
 
-        
-        
+
+
     }
 
     header img {
