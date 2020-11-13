@@ -10,6 +10,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
 
+    <script type="application/javascript" src="JS/validationCommon.js"></script>
+    <script type="application/javascript" src="../../JS/walidacjaZamowienia.js"></script>
+
+
 </head>
 
 <body>
@@ -31,29 +35,38 @@
 
     <main>
         <h2>Nowe zamówienie</h2>
-        <form class="form" action="DodajNoweZamówienie">
+        <form class="form" action="DodajNoweZamówienie" onsubmit="return validateForm();" novalidate onsubmit="return validateForm();">
             <label for="Imie">Imie:<sup>*</sup></label>
-            <input type="text" name="Imie" id="Imie" />
+            <input type="text" name="Imie" id="Imie" placeholder="2-40 znaków" /> 
+            <span id="errorImie" class="errors-text">DASDDADS</span>
 
             <label for="Nazwisko">Nazwisko:<sup>*</sup></label>
-            <input type="text" name="Nazwisko" id="Nazwisko" />
+            <input type="text" name="Nazwisko" id="Nazwisko" placeholder="2-60 znaków"/>
+            <span id="errorNazwisko" class="errors-text"></span>
 
             <label for="Kwota">Kwota(zł):<sup>*</sup></label>
-            <input type="number" name="Kwota" id="Kwota" />
+            <input type="number" name="Kwota" id="Kwota" placeholder="np. 666" />
+            <span id="errorKwota" class="errors-text"></span>
 
             <label for="Email">Adres email:<sup>*</sup></label>
-            <input type="email" name="Email" id="Email" />
+            <input type="email" name="Email" id="Email" placeholder="np. nazwa@domeena.pl" />
+            <span id="errorEmail" class="errors-text"></span>
 
             <label for="NumerTel">Numer telefonu:</label>
-            <input type="tel" name="NumerTel" id="NumerTel" />
+            <input type="tel" name="NumerTel" id="NumerTel" placeholder="np. 666777888" />
+            <span id="errorNumerNumerTel" class="errors-text"></span>
 
             <label for="DataPrzyjecia">Data przyjęcia:<sup>*</sup></label>
             <input type="date" name="DataPrzyjecia" id="DataPrzyjecia" />
+            <span id="errorDataPrzyjecia" class="errors-text"></span>
 
             <label for="DataRealizacji">Data realizacji:<sup>*</sup></label>
             <input type="date" name="DataRealizacji" id="DataRealizacji" />
+            <span id="errorDataRealizacji" class="errors-text"></span>
+
 
             <div class="form-buttons">
+                <p id="errorsSummary" class="errors-text"></p>
                 <input class="form-button-submit" type="submit" value="Dodaj" />
                 <a href="ListaZamówień.html" class="form-button-cancel">Anuluj</a>
             </div>

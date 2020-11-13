@@ -286,8 +286,12 @@ textarea {
 
 .form {
     display: grid;
-    grid-template-columns: 150px 300px;
+    grid-template-columns: 200px 400px 200px;
     row-gap: 1rem;
+}
+
+.form span {
+    margin: 10px;
 }
 
 .form select,
@@ -307,6 +311,7 @@ textarea {
     display: block;
     margin-bottom: 0.5em;
 }
+
 
 .form-group {
     margin-bottom: 1rem;
