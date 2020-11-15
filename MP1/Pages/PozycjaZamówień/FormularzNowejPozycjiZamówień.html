@@ -11,7 +11,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
 
-    <script type="application/javascript" src="JS/validationCommon.js"></script>
+    <script type="application/javascript" src="../../JS/validationCommon.js"></script>
+    <script type="application/javascript" src="../../JS/walidacjaPozycjiZamowien.js"></script>
 
 
 </head>
@@ -35,14 +36,15 @@
 
     <main>
         <h2>Nowa pozycja zamówienia</h2>
-        <form class="form" action="DodajNowąPozycjęZamówień">
+        <form class="form" action="DodajNowąPozycjęZamówień" novalidate onsubmit="return validateForm()">
                 <label for="Zamówienie">Kupiec:<sup>*</sup></label>
-                <select name="Zamówienie" id="Zamówienie">
+                <select name="Zamówienie" id="Zamowienie">
                     <option value="">--- Wybierz klienta ---</option>
                     <option value="IdKlient1">Jan Kowalski</option>
                     <option value="IdKlient2">Adam Nowak</option>
                     <option value="IdKlient3">Grzegorz Brzęczyszczykiewicz</option>
                 </select>
+                <span id="errorZamowienie" class="errors-text"></span>
 
                 <label for="Produkt">Nazwa produktu:<sup>*</sup></label>
                 <select name="Produkt" id="Produkt">
@@ -51,14 +53,18 @@
                     <option value="IdProdukt2">Nintendo Switch</option>
                     <option value="IdProdukt3">Corsair K55 RGB</option>
                 </select>
-           
+                <span id="errorProdukt" class="errors-text"></span>
+
                 <label for="Rabat">Rabat(%):</label>
                 <input type="number" name="Rabat" id="Rabat" />
-                <label for="Ilość">Ilość:<sup>*</sup></label>
-                <input type="number" name="Ilość" id="Ilość" />
+                <span id="errorRabat" class="errors-text"></span>
 
+                <label for="Ilość">Ilość:<sup>*</sup></label>
+                <input type="number" name="Ilość" id="Ilosc" />
+                <span id="errorIlosc" class="errors-text"></span>
 
             <div class="form-buttons">
+                <p id="errorsSummary" class="errors-text"></p>
                 <input class="form-button-submit" type="submit" value="Dodaj" />
                 <a href="ListaPozycjiZamówień.html" class="form-button-cancel">Anuluj</a>
             </div>

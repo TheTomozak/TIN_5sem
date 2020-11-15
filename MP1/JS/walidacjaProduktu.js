@@ -51,7 +51,7 @@ function validateForm() {
         errorCena.innerText = "Pole jest wymagane";
     } else if (!hasNumber(cena.value)) {
         valid = false;
-        nazwa.classList.add("error-input");
+        cena.classList.add("error-input");
         errorCena.innerText = "Cena musi być liczbą";
     }
     //////////////////////////////////////////////////////////////////////
