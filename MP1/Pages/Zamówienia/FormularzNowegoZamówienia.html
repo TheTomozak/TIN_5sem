@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
 
-    <script type="application/javascript" src="JS/validationCommon.js"></script>
+    <script type="application/javascript" src="../../JS/validationCommon.js"></script>
     <script type="application/javascript" src="../../JS/walidacjaZamowienia.js"></script>
 
 
@@ -35,10 +35,11 @@
 
     <main>
         <h2>Nowe zamówienie</h2>
-        <form class="form" action="DodajNoweZamówienie" onsubmit="return validateForm();" novalidate onsubmit="return validateForm();">
+
+        <form class="form" action="DodajNoweZamówienie" novalidate onsubmit="return validateForm()">
             <label for="Imie">Imie:<sup>*</sup></label>
             <input type="text" name="Imie" id="Imie" placeholder="2-40 znaków" /> 
-            <span id="errorImie" class="errors-text">DASDDADS</span>
+            <span id="errorImie" class="errors-text"></span>
 
             <label for="Nazwisko">Nazwisko:<sup>*</sup></label>
             <input type="text" name="Nazwisko" id="Nazwisko" placeholder="2-60 znaków"/>
@@ -53,7 +54,7 @@
             <span id="errorEmail" class="errors-text"></span>
 
             <label for="NumerTel">Numer telefonu:</label>
-            <input type="tel" name="NumerTel" id="NumerTel" placeholder="np. 666777888" />
+            <input class="NumerTelNotRequaired" type="tel" name="NumerTel" id="NumerTel" placeholder="np. 666777888" />
             <span id="errorNumerNumerTel" class="errors-text"></span>
 
             <label for="DataPrzyjecia">Data przyjęcia:<sup>*</sup></label>

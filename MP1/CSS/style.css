@@ -286,7 +286,7 @@ textarea {
 
 .form {
     display: grid;
-    grid-template-columns: 200px 400px 200px;
+    grid-template-columns: 150px 300px 1fr;
     row-gap: 1rem;
 }
 
@@ -323,8 +323,9 @@ sup {
 
 .form-buttons {
     margin-top: 2rem;
-    grid-column-start: 1;
-    grid-column-end: -1;
+    /* grid-column-end: -1; */
+    grid-column: 1 / span 2;
+
 }
 
 .list-actions-button-details,
@@ -441,12 +442,12 @@ body {
     padding: 0.2rem;
     text-align: center;
     text-decoration: none;
-  
+
 }
 
 .BackToTopHref:link {
     text-decoration: none;
-  }
+}
 
 
 
@@ -483,12 +484,13 @@ body {
         margin-left: unset;
     }
 
-    .form input[type="text"],
-    .form input[type="number"],
-    .form input[type="date"],
-    .form input[type="email"],
-    .form input[type="tel"] .form select {
+    .form .errors-text {
         margin-bottom: 1rem;
+    }
+    
+    
+    .form-buttons {
+        grid-column: 1 / span 1; 
     }
 
 }
@@ -533,4 +535,23 @@ body {
 
 body {
     min-width: 360px;
+}
+
+
+
+.errors-text {
+    font-size: 0.85em;
+    line-height: 2.25rem;
+    color: red;
+}
+
+
+.form input.error-input,
+.form select.error-input {
+    border: 3px solid #e74c3c;
+    
+}
+
+.form input.NumerTelNotRequaired{
+    border: 1px solid #7f8c8d;
 }
