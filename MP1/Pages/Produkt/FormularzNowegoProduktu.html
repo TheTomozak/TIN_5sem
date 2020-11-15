@@ -10,8 +10,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
 
-    <script type="application/javascript" src="JS/validationCommon.js"></script>
-
+    <script type="application/javascript" src="../../JS/validationCommon.js"></script>
+    <script type="application/javascript" src="../../JS/walidacjaProduktu.js"></script>
 
 </head>
 
@@ -28,32 +28,38 @@
             <li><a href="../Produkt/ListaProduktow.html">Produkty</a></li>
             <li><a href="../Zamówienia/ListaZamówień.html">Zamówienia</a></li>
             <li><a href="../PozycjaZamówień/ListaPozycjiZamówień.html">Pozycja zamówień</a></li>
-            
+
         </ul>
     </nav>
 
     <main>
         <h2>Nowy produkt</h2>
-        <form class="form" action="DodajNowyProdukt">
-                <label for="Nazwa">Nazwa:<sup>*</sup></label>
-                <input type="text" name="Nazwa" id="Nazwa" />
+        <form class="form" action="DodajNowyProdukt" novalidate onsubmit="return validateForm()">
+            <label for="Nazwa">Nazwa:<sup>*</sup></label>
+            <input type="text" name="Nazwa" id="Nazwa" placeholder="2-60 znaków" />
+            <span id="errorNazwa" class="errors-text"></span>
 
-                <label for="TypProduktu">Typ produktu:<sup>*</sup></label>
-                <input type="text" name="TypProduktu" id="TypProduktu" />
+            <label for="TypProduktu">Typ produktu:<sup>*</sup></label>
+            <input type="text" name="TypProduktu" id="TypProduktu" placeholder="2-40 znaków" />
+            <span id="errorTypProduktu" class="errors-text"></span>
 
-                <label for="Gwarancja">Gwarancja:<sup>*</sup></label>
-                <input type="text" name="Gwarancja" id="Gwarancja" />
+            <label for="Gwarancja">Gwarancja do:<sup>*</sup></label>
+            <input type="date" name="Gwarancja" id="Gwarancja" />
+            <span id="errorGwarancja" class="errors-text"></span>
 
-                <label for="Cena">Cena(zł):<sup>*</sup></label>
-                <input type="number" name="Cena" id="Cena" />
+            <label for="Cena">Cena(zł):<sup>*</sup></label>
+            <input type="number" name="Cena" id="Cena" placeholder="np. 65" />
+            <span id="errorCena" class="errors-text"></span>
 
-                <label for="Kolor">Kolor:</label>
-                <input type="text" name="Kolor" id="Kolor" />
+            <label for="Kolor">Kolor:</label>
+            <input type="text" name="Kolor" id="Kolor" placeholder="np. czerwony" />
+            <span id="errorKolor" class="errors-text"></span>
 
             <div class="form-buttons">
+                <p id="errorsSummary" class="errors-text"></p>
                 <input class="form-button-submit" type="submit" value="Dodaj" />
                 <a href="ListaProduktow.html" class="form-button-cancel">Anuluj</a>
-            </div> 
+            </div>
 
         </form>
     </main>
