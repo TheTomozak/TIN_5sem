@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista zamowień</title>
+    <link rel="stylesheet" href="../../CSS/style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
+
+
+</head>
+
+<body>
+
+    <header>
+        <h1>TomoTechShop</h1>
+        <img src="../../Images/LogoBlack.PNG" alt="Images shows logo TomoTechShop">
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="../../index.html">Strona główna</a></li>
+            <li><a href="../Produkt/ListaProduktow.html">Produkty</a></li>
+            <li><a href="../Zamówienia/ListaZamówień.html" class="active">Zamówienia</a></li>
+            <li><a href="../PozycjaZamówień/ListaPozycjiZamówień.html">Pozycja zamówień</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <h2>Lista zamówień</h2>
+        <div class="lista" >
+        <table class="table-list">
+            <thead>
+                <tr>
+                    <th scope="col">Imie</th>
+                    <th scope="col">Nazwisko</th>
+                    <th scope="col">Kwota</th>
+                    <th scope="col">Akcje</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td data-label="Imie">Jan</td>
+                    <td data-label="Nazwisko">Kowalski</td>
+                    <td data-label="Kwota">2299 zł</td>
+                    <td data-label="Akcje">
+                        <ul class="list-actions">
+                            <li>
+                                <a class="list-actions-button-details" href="SzczegółyZamówień.html">Szczegóły</a>
+                            </li>
+                            <li>
+                                <a class="list-actions-button-edit" href="">Edytuj</a>
+                            </li>
+                            <li>
+                                <a class="list-actions-button-delete" href="">Usuń</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td scope="row" data-label="Imie">Adam</td>
+                    <td data-label="Nazwisko">Nowak</td>
+                    <td data-label="Kwota">1499 zł</td>
+                    <td data-label="Akcje">
+                        <ul class="list-actions">
+                            <li>
+                                <a class="list-actions-button-details" href="">Szczegóły</a>
+                            </li>
+                            <li>
+                                <a class="list-actions-button-edit" href="">Edytuj</a>
+                            </li>
+                            <li>
+                                <a class="list-actions-button-delete" href="">Usuń</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td scope="row" data-label="Imie">Grzegorz</td>
+                    <td data-label="Nazwisko">Brzęczyszczykiewicz</td>
+                    <td data-label="Kwota">199  zł</td>
+                    <td data-label="Akcje">
+                        <ul class="list-actions">
+                            <li>
+                                <a class="list-actions-button-details" href="">Szczegóły</a>
+                            </li>
+                            <li>
+                                <a class="list-actions-button-edit" href="">Edytuj</a>
+                            </li>
+                            <li>
+                                <a class="list-actions-button-delete" href="">Usuń</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                
+
+            </tbody>
+        </table>
+        </div>
+    </main>
+
+    <p><a class="button-add" href="FormularzNowegoZamówienia.html">Dodaj nową pozycję zamówień</a></p>
+
+
+    <a class="BackToTopHref" href="#top">
+        <div class="BackToTop">
+            Powróć na samą góre strony
+        </div>
+    </a>
+
+    <footer>
+        Tomasz Palczewski, s18969
+    </footer>
+
+
+</body>
+
+</html>

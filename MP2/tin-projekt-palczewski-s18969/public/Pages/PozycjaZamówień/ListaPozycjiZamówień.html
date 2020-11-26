@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista pozycji zamówień</title>
+    <link rel="stylesheet" href="../../CSS/style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
+
+
+</head>
+
+<body>
+
+    <header>
+        <h1>TomoTechShop</h1>
+        <img src="../../Images/LogoBlack.PNG" alt="Images shows logo TomoTechShop">
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="../../index.html">Strona główna</a></li>
+            <li><a href="../Produkt/ListaProduktow.html">Produkty</a></li>
+            <li><a href="../Zamówienia/ListaZamówień.html">Zamówienia</a></li>
+            <li><a href="../PozycjaZamówień/ListaPozycjiZamówień.html" class="active" >Pozycja zamówień</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <h2>Lista pozycji zamówień</h2>
+        <div class="lista" >
+        <table class="table-list">
+            <thead>
+                <tr>
+                    <th scope="col">Imie</th>
+                    <th scope="col">Nazwisko</th>
+                    <th scope="col">Ilość</th>
+                    <th scope="col">Nazwa produktu</th>
+                    <th scope="col">Akcje</th>
+
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td data-label="Imie">Jan</td>
+                    <td data-label="Nazwisko">Kowalski</td>
+                    <td data-label="Ilość">1</td>
+                    <td data-label="Nazwa produktu">Play Station 5</td>
+                    <td data-label="Akcje">
+                        <ul class="list-actions">
+                            <li>
+                                <a class="list-actions-button-details" href="SzczegółyPozycjiZamówień.html">Szczegóły</a>
+                            </li>
+                            <li>
+                                <a class="list-actions-button-edit" href="">Edytuj</a>
+                            </li>
+                            <li>
+                                <a class="list-actions-button-delete" href="">Usuń</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td scope="row" data-label="Imie">Adam</td>
+                    <td data-label="Nazwisko">Nowak</td>
+                    <td data-label="Ilość">1</td>
+                    <td data-label="Typ produktu">Nintendo Switch	</td>
+                    <td data-label="Akcje">
+                        <ul class="list-actions">
+                            <li>
+                                <a class="list-actions-button-details" href="">Szczegóły</a>
+                            </li>
+                            <li>
+                                <a class="list-actions-button-edit" href="">Edytuj</a>
+                            </li>
+                            <li>
+                                <a class="list-actions-button-delete" href="">Usuń</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td scope="row" data-label="Imie">Grzegorz</td>
+                    <td data-label="Nazwisko">Brzęczyszczykiewicz</td>
+                    <td data-label="Ilość">1</td>
+                    <td data-label="Typ produktu">Corsair K55 RGB</td>
+                    <td data-label="Akcje">
+                        <ul class="list-actions">
+                            <li>
+                                <a class="list-actions-button-details" href="">Szczegóły</a>
+                            </li>
+                            <li>
+                                <a class="list-actions-button-edit" href="">Edytuj</a>
+                            </li>
+                            <li>
+                                <a class="list-actions-button-delete" href="">Usuń</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+            </tbody>
+        </table>
+        </div>
+    </main>
+
+    <p><a class="button-add" href="FormularzNowejPozycjiZamówień.html">Dodaj nową pozycję zamówień</a></p>
+
+    <a class="BackToTopHref" href="#top">
+        <div class="BackToTop">
+            Powróć na samą góre strony
+        </div>
+    </a>
+
+    <footer>
+        Tomasz Palczewski, s18969
+    </footer>
+
+
+</body>
+
+</html>
