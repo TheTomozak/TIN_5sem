@@ -1,33 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lista produktów</title>
-    <link rel="stylesheet" href="../../CSS/style.css">
-
-    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
-
-
-</head>
-
-<body>
-
-    <header>
-        <h1>TomoTechShop</h1>
-        <img src="../../Images/LogoBlack.PNG" alt="Images shows logo TomoTechShop">
-    </header>
-
-    <nav>
-        <ul>
-            <li><a href="../../index.html">Strona główna</a></li>
-            <li><a href="../Produkt/ListaProduktow.html" class="active">Produkty</a></li>
-            <li><a href="../Zamówienia/ListaZamówień.html">Zamówienia</a></li>
-            <li><a href="../PozycjaZamówień/ListaPozycjiZamówień.html">Pozycja zamówień</a></li>
-        </ul>
-    </nav>
+<%- include('../../fragments/headerForNoIndexPage.ejs') %>
 
     <main>
         <h2>Lista produktów</h2>
@@ -50,7 +21,7 @@
                         <td data-label="Akcje">
                             <ul class="list-actions">
                                 <li>
-                                    <a class="list-actions-button-details" href="SzczegółyProduktu.html">Szczegóły</a>
+                                    <a class="list-actions-button-details" href="/Produkty/details/:empId">Szczegóły</a>
                                 </li>
                                 <li>
                                     <a class="list-actions-button-edit" href="">Edytuj</a>
@@ -105,19 +76,6 @@
         </div>
     </main>
 
-    <p><a class="button-add" href="FormularzNowegoProduktu.html">Dodaj nową pozycję zamówień</a></p>
+    <p><a class="button-add" href="/Produkty/add">Dodaj nową pozycję zamówień</a></p>
 
-    <a class="BackToTopHref" href="#top">
-        <div class="BackToTop">
-            Powróć na samą góre strony
-        </div>
-    </a>
-
-    <footer>
-        Tomasz Palczewski, s18969
-    </footer>
-
-
-</body>
-
-</html>
+    <%- include('../../fragments/footer.ejs') %>
