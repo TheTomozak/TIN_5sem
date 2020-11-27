@@ -1,11 +1,12 @@
 exports.showZamowieniaList = (req, res, next) => {
-    res.render('/tin-projekt-palczewski-s18969/views/Pages/Zamówienia/ListaZamówień.ejs', {});
+    res.render('Pages/Zamówienia/ListaZamówień.ejs', {});
 }
 
+
 exports.showAddZamowieniaForm = (req, res, next) => {
-    res.render('/tin-projekt-palczewski-s18969/views/Pages/Zamówienia/FormularzNowegoZamówienia.ejs', {});
+    res.render('Pages/Zamówienia/FormularzNowegoZamówienia.ejs', {});
 }
 
 exports.showZamowieniaDetails  = (req, res, next) => {
-    res.render('/tin-projekt-palczewski-s18969/views/Pages/Zamówienia/SzczegółyZamówień.ejs', {});
+    res.render('Pages/Zamówienia/SzczegółyZamówień.ejs', {});
 }

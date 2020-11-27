@@ -1,37 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dodaj nowe zamówienia</title>
-    <link rel="stylesheet" href="../../CSS/style.css">
-
-    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
-
-    <script type="application/javascript" src="../../JS/validationCommon.js"></script>
-    <script type="application/javascript" src="../../JS/walidacjaZamowienia.js"></script>
-
-
-</head>
-
-<body>
-
-    <header>
-        <h1>TomoTechShop</h1>
-        <img src="../../Images/LogoBlack.PNG" alt="Images shows logo TomoTechShop">
-    </header>
-
-    <nav>
-        <ul>
-            <li><a href="../../index.html">Strona główna</a></li>
-            <li><a href="../Produkt/ListaProduktow.html">Produkty</a></li>
-            <li><a href="../Zamówienia/ListaZamówień.html">Zamówienia</a></li>
-            <li><a href="../PozycjaZamówień/ListaPozycjiZamówień.html">Pozycja zamówień</a></li>
-
-        </ul>
-    </nav>
+<%- include('../../fragments/headerForNoIndexPage.ejs') %>
 
     <main>
         <h2>Nowe zamówienie</h2>
@@ -69,23 +36,10 @@
             <div class="form-buttons">
                 <p id="errorsSummary" class="errors-text"></p>
                 <input class="form-button-submit" type="submit" value="Dodaj" />
-                <a href="ListaZamówień.html" class="form-button-cancel">Anuluj</a>
+                <a href="/Zamowienia/" class="form-button-cancel">Anuluj</a>
             </div>
 
         </form>
     </main>
 
-    <a class="BackToTopHref" href="#top">
-        <div class="BackToTop">
-            Powróć na samą góre strony
-        </div>
-    </a>
-
-    <footer>
-        Tomasz Palczewski, s18969
-    </footer>
-
-
-</body>
-
-</html>
+    <%- include('../../fragments/footer.ejs') %>

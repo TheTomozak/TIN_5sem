@@ -1,34 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Szczegóły zamowień</title>
-    <link rel="stylesheet" href="../../CSS/style.css">
-
-    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
-
-
-</head>
-
-<body>
-
-
-    <header>
-        <h1>TomoTechShop</h1>
-        <img src="../../Images/LogoBlack.PNG" alt="Images shows logo TomoTechShop">
-    </header>
-
-    <nav>
-        <ul>
-            <li><a href="../../index.html">Strona główna</a></li>
-            <li><a href="../Produkt/ListaProduktow.html">Produkty</a></li>
-            <li><a href="../Zamówienia/ListaZamówień.html">Zamówienia</a></li>
-            <li><a href="../PozycjaZamówień/ListaPozycjiZamówień.html">Pozycja zamówień</a></li>
-        </ul>
-    </nav>
+<%- include('../../fragments/headerForNoIndexPage.ejs') %>
 
     <main>
         <h2>Szczegóły zamówień</h2>
@@ -62,7 +32,7 @@
             <input type="date" name="DataRealizacji" id="DataRealizacji" value="2020-10-25" disabled />
 
             <div class="form-buttons">
-                <a href="FormularzNowegoZamówienia.html" class="form-button-edit-detail">Edytuj</a>
+                <a href="/Zamowienia/add" class="form-button-edit-detail">Edytuj</a>
             </div>
 
         </form>
@@ -96,22 +66,9 @@
         </table>
 
         <div class="form-buttons">
-            <a class="form-button-cancel-detail" href="ListaZamówień.html">Powrót</a>
+            <a class="form-button-cancel-detail" href="/Zamowienia/">Powrót</a>
         </div>
 
     </main>
 
-    <a class="BackToTopHref" href="#top">
-        <div class="BackToTop">
-            Powróć na samą góre strony
-        </div>
-    </a>
-
-    <footer>
-        Tomasz Palczewski, s18969
-    </footer>
-
-
-</body>
-
-</html>
+    <%- include('../../fragments/footer.ejs') %>

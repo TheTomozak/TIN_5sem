@@ -1,36 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TomoTechShop-s18969</title>
-    <link rel="stylesheet" href="CSS/style.css">
-
-    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
-
-    <script type="application/javascript" src="JS/validationCommon.js"></script>
-
-
-
-</head>
-
-<body>
-    <header>
-        <h1>TomoTechShop</h1>
-        <img src="Images/LogoBlack.PNG" alt="Images shows logo TomoTechShop">
-    </header>
-
-    <nav>
-        <ul>
-            <li><a href="index.html" class="active">Strona główna</a></li>
-            <li><a href="Pages/Produkt/ListaProduktow.html">Produkty</a></li>
-            <li><a href="Pages/Zamówienia/ListaZamówień.html">Zamówienia</a></li>
-            <li><a href="Pages/PozycjaZamówień/ListaPozycjiZamówień.html">Pozycja zamówień</a></li>
-        </ul>
-    </nav>
+<%- include('./fragments/header.ejs') %>
 
     <main class="MainPage">
         <h2>Strona główna</h2>
@@ -61,19 +29,6 @@
             użytkowego sprzętu do wyposażenia domu i biura oraz produkty związane z realizacją pasji i uatrakcyjniające
             wolny czas.</p>
     </main>
+    <%- include('./fragments/footer.ejs') %>
 
-    <a class="BackToTopHref" href="#top">
-        <div class="BackToTop">
-            Powróć na samą góre strony
-        </div>
-    </a>
-
-    <footer>
-        Tomasz Palczewski, s18969
-    </footer>
-
-
-
-</body>
-
-</html>
+    
