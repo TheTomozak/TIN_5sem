@@ -25,9 +25,9 @@
 
     <nav>
         <ul>
-            <li><a href="/" class="active">Strona główna</a></li>
-            <li><a href="/Produkty">Produkty</a></li>
-            <li><a href="/Zamowienia">Zamówienia</a></li>
-            <li><a href="/PozycjaZamowien">Pozycja zamówień</a></li>
+            <li><a href="/" class="<%= navLocation == 'main' ? 'active' : ''%>">Strona główna</a></li>
+            <li><a href="/Produkty" class="<%= navLocation == 'Produkt' ? 'active' : ''%>">Produkty</a></li>
+            <li><a href="/Zamowienia" class="<%= navLocation == 'Zamowienie' ? 'active' : ''%>">Zamówienia</a></li>
+            <li><a href="/PozycjaZamowien" class="<%= navLocation == 'PozycjaZamowien' ? 'active' : ''%>">Pozycja zamówień</a></li>
         </ul>
     </nav>
