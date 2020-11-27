@@ -8,6 +8,7 @@ var indexRouter = require('./routes/index');
 
 const zamowieniaRouter = require('./routes/zamowieniaRoute');
 const produktyControler = require('./routes/produktyRoute');
+const pozycjaZamowienControler = require('./routes/pozycjaZamowienRoute');
 
 var app = express();
 
@@ -24,6 +25,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/Zamowienia', zamowieniaRouter);
 app.use('/Produkty', produktyControler);
+app.use('/PozycjaZamowien', pozycjaZamowienControler);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

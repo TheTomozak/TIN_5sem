@@ -1,34 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Szczegóły pozycji zamówień</title>
-    <link rel="stylesheet" href="../../CSS/style.css">
-
-    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
-
-
-</head>
-
-<body>
-
-
-    <header>
-        <h1>TomoTechShop</h1>
-        <img src="../../Images/LogoBlack.PNG" alt="Images shows logo TomoTechShop">
-    </header>
-
-    <nav>
-        <ul>
-            <li><a href="../../index.html">Strona główna</a></li>
-            <li><a href="../Produkt/ListaProduktow.html">Produkty</a></li>
-            <li><a href="../Zamówienia/ListaZamówień.html">Zamówienia</a></li>
-            <li><a href="../PozycjaZamówień/ListaPozycjiZamówień.html">Pozycja zamówień</a></li>
-        </ul>
-    </nav>
+<%- include('../../fragments/headerForNoIndexPage.ejs') %>
 
     <main>
         <h2>Szczegóły pozycji zamówień</h2>
@@ -55,23 +25,9 @@
 
 
         <div class="form-buttons">
-            <a href="FormularzNowejPozycjiZamówień.html" class="form-button-edit">Edytuj</a>
-            <a href="ListaPozycjiZamówień.html" class="form-button-cancel">Anuluj</a>
+            <a href="/PozycjaZamowien/add" class="form-button-edit">Edytuj</a>
+            <a href="/PozycjaZamowien" class="form-button-cancel">Anuluj</a>
         </div>
 
     </main>
-
-    <a class="BackToTopHref" href="#top">
-        <div class="BackToTop">
-            Powróć na samą góre strony
-        </div>
-    </a>
-
-    <footer>
-        Tomasz Palczewski, s18969
-    </footer>
-
-
-</body>
-
-</html>
+    <%- include('../../fragments/footer.ejs') %>
