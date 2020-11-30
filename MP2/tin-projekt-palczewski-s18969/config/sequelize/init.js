@@ -6,10 +6,10 @@ const ZamowienieProdukt = require('../../model/sequelize/ZamowienieProdukt');
 
 module.exports = () => {
     Produkt.hasMany(ZamowienieProdukt, { as: 'zamowieniaProdukty', foreignKey: { name: 'Produkt_IdProdukt', allowNull: false }, constraints: true, onDelete: 'CASCADE' });
-    ZamowienieProdukt.belongsTo(Produkt, { as: 'produkty', foreignKey: { name: 'IdProdukt', allowNull: false } });
+    ZamowienieProdukt.belongsTo(Produkt, { as: 'produkty', foreignKey: { name: 'IdProdukt', allowNull: true } });
 
     Zamowienie.hasMany(ZamowienieProdukt, { as: 'zamowieniaProdukty', foreignKey: { name: 'Zamowienie_IdZamowienie', allowNull: false }, constraints: true, onDelete: 'CASCADE' });
-    ZamowienieProdukt.belongsTo(Zamowienie, { as: 'zamowienia', foreignKey: { name: 'IdZamowienie', allowNull: false } });
+    ZamowienieProdukt.belongsTo(Zamowienie, { as: 'zamowienia', foreignKey: { name: 'IdZamowienie', allowNull: true } });
 
 
     let allProdukty, allZamowienia;
@@ -43,11 +43,11 @@ module.exports = () => {
         .then(zamowienia => {
             if (!zamowienia || zamowienia.length == 0) {
                 return Zamowienie.bulkCreate([
-                    { DataPrzyjecia: '2019-13-07', DataRealizacji: '2019-26-07', Kwota: '2299', Imie: 'Jan', Nazwisko: 'Kowalski', Email: 'janKowalski@gmail.com', NumerTelefonu: '666999666' },
-                    { DataPrzyjecia: '2019-01-03', DataRealizacji: '2019-04-04', Kwota: '1499', Imie: 'Karolina', Nazwisko: 'Suwak', Email: 'karolinaSuwak@gmail.com', NumerTelefonu: '696969699' },
-                    { DataPrzyjecia: '2020-23-09', DataRealizacji: '2020-27-09', Kwota: '398', Imie: 'Łukasz', Nazwisko: 'Wietnamski', Email: 'lukaszWietnamski@gmail.com', NumerTelefonu: '123456789' },
-                    { DataPrzyjecia: '2020-23-10', DataRealizacji: '2020-28-10', Kwota: '159', Imie: 'Mikołaj', Nazwisko: 'Kopernik', Email: 'mikolajKopernik@gmail.com', NumerTelefonu: '268102473' },
-                    { DataPrzyjecia: '2020-01-11', DataRealizacji: '2020-20-11', Kwota: '5199', Imie: 'Wojtek', Nazwisko: 'Morelka', Email: 'wojtekMorelka@gmail.com', NumerTelefonu: '726289018' }
+                    { DataPrzyjecia: '2019-07-13', DataRealizacji: '2019-07-26', Kwota: '2299', Imie: 'Jan', Nazwisko: 'Kowalski', Email: 'janKowalski@gmail.com', NumerTelefonu: '666999666' },
+                    { DataPrzyjecia: '2019-03-01', DataRealizacji: '2019-04-04', Kwota: '1499', Imie: 'Karolina', Nazwisko: 'Suwak', Email: 'karolinaSuwak@gmail.com', NumerTelefonu: '696969699' },
+                    { DataPrzyjecia: '2020-09-23', DataRealizacji: '2020-09-27', Kwota: '398', Imie: 'Łukasz', Nazwisko: 'Wietnamski', Email: 'lukaszWietnamski@gmail.com', NumerTelefonu: '123456789' },
+                    { DataPrzyjecia: '2020-10-23', DataRealizacji: '2020-10-28', Kwota: '159', Imie: 'Mikołaj', Nazwisko: 'Kopernik', Email: 'mikolajKopernik@gmail.com', NumerTelefonu: '268102473' },
+                    { DataPrzyjecia: '2020-11-01', DataRealizacji: '2020-11-20', Kwota: '5199', Imie: 'Wojtek', Nazwisko: 'Morelka', Email: 'wojtekMorelka@gmail.com', NumerTelefonu: '726289018' }
                 ])
                     .then(() => {
                         return Zamowienie.findAll();
