@@ -10,6 +10,12 @@ const zamowieniaRouter = require('./routes/zamowieniaRoute');
 const produktyControler = require('./routes/produktyRoute');
 const pozycjaZamowienControler = require('./routes/pozycjaZamowienRoute');
 
+const sequelizeInit = require('./config/sequelize/init');
+sequelizeInit()
+    .catch(err => {
+        console.log(err);
+    });
+
 var app = express();
 
 // view engine setup
