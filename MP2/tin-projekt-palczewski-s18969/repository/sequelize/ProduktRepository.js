@@ -28,7 +28,7 @@ exports.createProdukt = (newProdukt) => {
         Nazwa: newProdukt.Nazwa,
         TypProduktu: newProdukt.TypProduktu,
         Gwarancja: newProdukt.Gwarancja,
-        Cena: newProdukt.Gwarancja,
+        Cena: newProdukt.Cena,
         Kolor: newProdukt.Kolor
     });
 };

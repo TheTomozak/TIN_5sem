@@ -6,7 +6,7 @@ exports.getZamowieniaProdukty = (req, res, next) => {
             res.status(200).json(prod);
         })
         .catch(err => {
-           console.log(err);
+            console.log(err);
         });
 };
 
@@ -14,9 +14,9 @@ exports.getZamowieniaProduktyById = (req, res, next) => {
     const zamowieniaProduktyID = req.params.zamowieniaProduktyID;
     ZamowieniaProduktyRepository.getZamowienieProduktById(zamowieniaProduktyID)
         .then(prod => {
-            if(!prod) {
+            if (!prod) {
                 res.status(404).json({
-                    message: 'ZamowienieProdukt z id: '+zamowieniaProduktyID+' nie zostało znalezione'
+                    message: 'ZamowienieProdukt z id: ' + zamowieniaProduktyID + ' nie zostało znalezione'
                 })
             } else {
                 res.status(200).json(prod);
@@ -27,7 +27,7 @@ exports.getZamowieniaProduktyById = (req, res, next) => {
 exports.createZamowieniaProdukty = (req, res, next) => {
     ZamowieniaProduktyRepository.createZamowienieProdukt(req.body)
         .then(newObj => {
-           res.status(201).json(newObj);
+            res.status(201).json(newObj);
         })
         .catch(err => {
             if (!err.statusCode) {
@@ -41,7 +41,7 @@ exports.updateZamowieniaProdukty = (req, res, next) => {
     const zamowieniaProduktyID = req.params.zamowieniaProduktyID;
     ZamowieniaProduktyRepository.updateZamowienieProdukt(zamowieniaProduktyID, req.body)
         .then(result => {
-           res.status(200).json({message: 'ZamowienieProdukt zaktualizowane!', prod: result});
+            res.status(200).json({ message: 'ZamowienieProdukt zaktualizowane!', prod: result });
         })
         .catch(err => {
             if (!err.statusCode) {
@@ -56,7 +56,11 @@ exports.deleteZamowieniaProdukty = (req, res, next) => {
     const zamowieniaProduktyID = req.params.zamowieniaProduktyID;
     ZamowieniaProduktyRepository.deleteZamowienieProdukt(zamowieniaProduktyID)
         .then(result => {
-            res.status(200).json({message: 'Usunięto ZamowienieProdukt o id '+zamowieniaProduktyID , prod: result});
+            if (result == 0) {
+                res.status(404).json({ message: 'ZamowieniaProduktu o id ' + zamowieniaProduktyID + ' nie ma w bazie danych', prod: result });
+            } else {
+                res.status(200).json({ message: 'Usunięto ZamowienieProdukt o id ' + zamowieniaProduktyID, prod: result });
+            }
         })
         .catch(err => {
             if (!err.statusCode) {

@@ -56,7 +56,11 @@ exports.deleteZamowienie = (req, res, next) => {
     const zamowienieId = req.params.zamowienieId;
     ZamowieniaRepository.deleteZamowienie(zamowienieId)
         .then(result => {
-            res.status(200).json({message: 'Usunięto Zamowienie o id '+zamowienieId , prod: result});
+            if (result == 0) {
+                res.status(404).json({ message: 'Zamowienia o id ' + zamowienieId + ' nie ma w bazie danych', prod: result });
+            } else {
+                res.status(200).json({ message: 'Usunięto zamówienie o id ' + zamowienieId, prod: result });
+            }
         })
         .catch(err => {
             if (!err.statusCode) {

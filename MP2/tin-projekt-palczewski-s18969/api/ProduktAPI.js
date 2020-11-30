@@ -6,7 +6,7 @@ exports.getProdukty = (req, res, next) => {
             res.status(200).json(prod);
         })
         .catch(err => {
-           console.log(err);
+            console.log(err);
         });
 };
 
@@ -14,9 +14,9 @@ exports.getProduktById = (req, res, next) => {
     const produktID = req.params.produktID;
     ProduktRepository.getProduktById(produktID)
         .then(prod => {
-            if(!prod) {
+            if (!prod) {
                 res.status(404).json({
-                    message: 'Produkt z id: '+produktID+' nie został znaleziony'
+                    message: 'Produkt z id: ' + produktID + ' nie został znaleziony'
                 })
             } else {
                 res.status(200).json(prod);
@@ -27,7 +27,7 @@ exports.getProduktById = (req, res, next) => {
 exports.createProdukt = (req, res, next) => {
     ProduktRepository.createProdukt(req.body)
         .then(newObj => {
-           res.status(201).json(newObj);
+            res.status(201).json(newObj);
         })
         .catch(err => {
             if (!err.statusCode) {
@@ -41,7 +41,7 @@ exports.updateProdukt = (req, res, next) => {
     const produktID = req.params.produktID;
     ProduktRepository.updateProdukt(produktID, req.body)
         .then(result => {
-           res.status(200).json({message: 'Produkt zaktualizowany!', prod: result});
+            res.status(200).json({ message: 'Produkt zaktualizowany!', prod: result });
         })
         .catch(err => {
             if (!err.statusCode) {
@@ -56,7 +56,11 @@ exports.deleteProdukt = (req, res, next) => {
     const produktID = req.params.produktID;
     ProduktRepository.deleteProdukt(produktID)
         .then(result => {
-            res.status(200).json({message: 'Usunięto produkt o id '+produktID , prod: result});
+            if (result == 0) {
+                res.status(404).json({ message: 'Produktu o id ' + produktID + ' nie ma w bazie danych', prod: result });
+            } else {
+                res.status(200).json({ message: 'Usunięto produkt o id ' + produktID, prod: result });
+            }
         })
         .catch(err => {
             if (!err.statusCode) {
