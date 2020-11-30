@@ -15,8 +15,10 @@ sequelizeInit()
     .catch(err => {
         console.log(err);
     });
-
 var app = express();
+
+const produktApiRouter = require('./routes/api/ProduktApiRoute');
+app.use('/api/produkt', produktApiRouter);
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

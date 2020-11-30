@@ -4,7 +4,8 @@ const sequelize = new Sequelize('TomoTechShop', 'root', 'root', {
     dialect: 'mysql',
     host: 'localhost',
     define: {
-        freezeTableName: true
+        freezeTableName: true,
+        timestamps: false
       }
 });
 
