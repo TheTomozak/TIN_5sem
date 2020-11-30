@@ -5,7 +5,7 @@ const Produkt = require("../../model/sequelize/Produkt");
 const Zamowienie = require("../../model/sequelize/Zamowienie");
 const ZamowienieProdukt = require("../../model/sequelize/ZamowienieProdukt");
 
-exports.getZamowienie = () => {
+exports.getZamowienia = () => {
     return Zamowienie.findAll();
 };
 
@@ -35,7 +35,7 @@ exports.createZamowienie = (newZamowienie) => {
     });
 };
 
-exports.updateProdukt = (idZamowienie, zamowienieData) => {
+exports.updateZamowienie = (idZamowienie, zamowienieData) => {
     const imie = zamowienieData.Imie;
     const nazwisko = zamowienieData.Nazwisko;
     const email = zamowienieData.Email;
@@ -47,8 +47,8 @@ exports.updateProdukt = (idZamowienie, zamowienieData) => {
     return Zamowienie.update(zamowienieData, {where: {IdZamowienie  : idZamowienie }});
 }
 
-exports.deletePracownik = (idZamowienie) => {
-    return Produkt.destroy({
+exports.deleteZamowienie = (idZamowienie) => {
+    return Zamowienie.destroy({
         where: { IdZamowienie : idZamowienie }
     });
 

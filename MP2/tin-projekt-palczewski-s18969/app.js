@@ -18,7 +18,13 @@ sequelizeInit()
 var app = express();
 
 const produktApiRouter = require('./routes/api/ProduktApiRoute');
+const zamowieniaApiRouter = require('./routes/api/ZamowienieApiRoute');
+const zamowieniaProduktyApiRouter = require('./routes/api/ZamowienieProduktyApiRoute');
+
 app.use('/api/produkt', produktApiRouter);
+app.use('/api/zamowienie', zamowieniaApiRouter);
+app.use('/api/zamowienieProdukt', zamowieniaProduktyApiRouter);
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
