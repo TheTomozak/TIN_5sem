@@ -15,7 +15,7 @@ module.exports = () => {
     let allProdukty, allZamowienia;
 
     return sequelize
-        .sync({ force: true })
+        .sync({ force: false })
         .then(() => {
             return Produkt.findAll();
         })
