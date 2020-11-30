@@ -6,10 +6,10 @@ const ZamowienieProdukt = require('../../model/sequelize/ZamowienieProdukt');
 
 module.exports = () => {
     Produkt.hasMany(ZamowienieProdukt, { as: 'zamowieniaProdukty', foreignKey: { name: 'Produkt_IdProdukt', allowNull: false }, constraints: true, onDelete: 'CASCADE' });
-    ZamowienieProdukt.belongsTo(Produkt, { as: 'produkty', foreignKey: { name: 'IdProdukt', allowNull: true } });
+    ZamowienieProdukt.belongsTo(Produkt, { as: 'produkty', foreignKey: { name: 'Produkt_IdProdukt', allowNull: false } });
 
     Zamowienie.hasMany(ZamowienieProdukt, { as: 'zamowieniaProdukty', foreignKey: { name: 'Zamowienie_IdZamowienie', allowNull: false }, constraints: true, onDelete: 'CASCADE' });
-    ZamowienieProdukt.belongsTo(Zamowienie, { as: 'zamowienia', foreignKey: { name: 'IdZamowienie', allowNull: true } });
+    ZamowienieProdukt.belongsTo(Zamowienie, { as: 'zamowienia', foreignKey: { name: 'Zamowienie_IdZamowienie', allowNull: false } });
 
 
     let allProdukty, allZamowienia;
