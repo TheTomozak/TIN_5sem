@@ -21,9 +21,7 @@ const produktApiRouter = require('./routes/api/ProduktApiRoute');
 const zamowieniaApiRouter = require('./routes/api/ZamowienieApiRoute');
 const zamowieniaProduktyApiRouter = require('./routes/api/ZamowienieProduktyApiRoute');
 
-app.use('/api/produkt', produktApiRouter);
-app.use('/api/zamowienie', zamowieniaApiRouter);
-app.use('/api/zamowienieProdukt', zamowieniaProduktyApiRouter);
+
 
 
 // view engine setup
@@ -35,7 +33,13 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+////////////////////////////////////////////////////////////
+//Tam wyżej jest parsowanie body, wszytskie nasz app.use muszą być pod tym!!
+////////////////////////////////////////////////////////////
 
+app.use('/api/produkt', produktApiRouter);
+app.use('/api/zamowienie', zamowieniaApiRouter);
+app.use('/api/zamowienieProdukt', zamowieniaProduktyApiRouter);
 app.use('/', indexRouter);
 app.use('/Zamowienia', zamowieniaRouter);
 app.use('/Produkty', produktyControler);
