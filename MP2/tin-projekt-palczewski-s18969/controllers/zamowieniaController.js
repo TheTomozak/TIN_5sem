@@ -1,12 +1,12 @@
 exports.showZamowieniaList = (req, res, next) => {
-    res.render('Pages/Zamówienia/ListaZamówień.ejs', {navLocation: 'Zamowienie'});
+    res.render('Pages/Zamówienia/ListaZamówień.ejs', {navLocation: 'zamowienie'});
 }
 
 
 exports.showAddZamowieniaForm = (req, res, next) => {
-    res.render('Pages/Zamówienia/FormularzNowegoZamówienia.ejs', {navLocation: 'Zamowienie'});
+    res.render('Pages/Zamówienia/FormularzNowegoZamówienia.ejs', {navLocation: 'zamowienie'});
 }
 
 exports.showZamowieniaDetails = (req, res, next) => {
-    res.render('Pages/Zamówienia/SzczegółyZamówień.ejs', {navLocation: 'Zamowienie'});
+    res.render('Pages/Zamówienia/SzczegółyZamówień.ejs', {navLocation: 'zamowienie'});
 }

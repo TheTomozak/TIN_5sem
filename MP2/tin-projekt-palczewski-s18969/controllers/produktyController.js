@@ -20,7 +20,7 @@ exports.showAddProduktForm = (req, res, next) => {
         formMode: 'createNew',
         btnLabel: 'Dodaj produkt',
         formAction: '/Produkt/add',
-        navLocation: 'produktLists'
+        navLocation: 'produktList'
     });
 }
 
