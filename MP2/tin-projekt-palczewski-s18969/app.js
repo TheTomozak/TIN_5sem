@@ -40,10 +40,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/api/produkt', produktApiRouter);
 app.use('/api/zamowienie', zamowieniaApiRouter);
 app.use('/api/zamowienieProdukt', zamowieniaProduktyApiRouter);
+
 app.use('/', indexRouter);
-app.use('/Zamowienia', zamowieniaRouter);
-app.use('/Produkty', produktyControler);
-app.use('/PozycjaZamowien', pozycjaZamowienControler);
+app.use('/zamowienia', zamowieniaRouter);
+app.use('/produkty', produktyControler);
+app.use('/pozycjaZamowien', pozycjaZamowienControler);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
