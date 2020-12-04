@@ -8,12 +8,35 @@
                     <tr>
                         <th scope="col">Nazwa</th>
                         <th scope="col">Typ produktu</th>
-                        <th scope="col"> Cena</th>
+                        <th scope="col">Ilość</th>
+                        <th scope="col">Cena</th>
+                        <th scope="col">Kolor</th>
                         <th scope="col">Akcje</th>
                     </tr>
                 </thead>
 
+
                 <tbody>
+                    <% for (let produktList of produktLists) { %>
+                        <tr>
+                            <td><%= produktList.Nazwa %></td>
+                            <td><%= produktList.TypProduktu %></td>
+                            <td><%= produktList.Gwarancja %></td>
+                            <td><%= produktList.Cena %></td>
+                            <td><%= produktList.Kolor %></td>
+                            <td>
+                                <ul class="list-actions">
+                                    <li><a href="/employees/details/<%=produktList._id%>" class="list-actions-button-details">Szczegóły</a></li>
+                                    <li><a href="/employees/edit/<%=produktList._id%>" class="list-actions-button-edit">Edytuj</a></li>
+                                    <li><a href="/employees/delete/<%=produktList._id%>" class="list-actions-button-delete">Usuń</a></li>
+                                </ul>
+                            </td>
+                        </tr>
+                    <% } %>
+                    </tbody>
+
+
+                <!-- <tbody>
                     <tr>
                         <td data-label="Nazwa">Play Station 5</td>
                         <td data-label="Typ produktu">Konsola</td>
@@ -71,7 +94,7 @@
                         </td>
                     </tr>
 
-                </tbody>
+                </tbody> -->
             </table>
         </div>
     </main>

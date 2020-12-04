@@ -1,5 +1,15 @@
+const ProduktRepository = require('../repository/sequelize/ProduktRepository');
+
+
 exports.showProduktiaList = (req, res, next) => {
-    res.render('Pages/Produkt/ListaProduktow.ejs', {navLocation: 'Produkt'});
+  
+    ProduktRepository.getProdukt()
+    .then( produktLists => {
+        res.render('Pages/Produkt/ListaProduktow', {
+            produktLists: produktLists,
+           navLocation: 'produktList' 
+        });
+    })
 }
 
 
