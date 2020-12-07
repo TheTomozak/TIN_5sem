@@ -13,67 +13,23 @@
                 </tr>
             </thead>
 
+
             <tbody>
-                <tr>
-                    <td data-label="Imie">Jan</td>
-                    <td data-label="Nazwisko">Kowalski</td>
-                    <td data-label="Kwota">2299 zł</td>
-                    <td data-label="Akcje">
-                        <ul class="list-actions">
-                            <li>
-                                <a class="list-actions-button-details" href="/Zamowienia/details/:empId">Szczegóły</a>
-                            </li>
-                            <li>
-                                <a class="list-actions-button-edit" href="">Edytuj</a>
-                            </li>
-                            <li>
-                                <a class="list-actions-button-delete" href="">Usuń</a>
-                            </li>
-                        </ul>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td scope="row" data-label="Imie">Adam</td>
-                    <td data-label="Nazwisko">Nowak</td>
-                    <td data-label="Kwota">1499 zł</td>
-                    <td data-label="Akcje">
-                        <ul class="list-actions">
-                            <li>
-                                <a class="list-actions-button-details" href="">Szczegóły</a>
-                            </li>
-                            <li>
-                                <a class="list-actions-button-edit" href="">Edytuj</a>
-                            </li>
-                            <li>
-                                <a class="list-actions-button-delete" href="">Usuń</a>
-                            </li>
-                        </ul>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td scope="row" data-label="Imie">Grzegorz</td>
-                    <td data-label="Nazwisko">Brzęczyszczykiewicz</td>
-                    <td data-label="Kwota">199  zł</td>
-                    <td data-label="Akcje">
-                        <ul class="list-actions">
-                            <li>
-                                <a class="list-actions-button-details" href="">Szczegóły</a>
-                            </li>
-                            <li>
-                                <a class="list-actions-button-edit" href="">Edytuj</a>
-                            </li>
-                            <li>
-                                <a class="list-actions-button-delete" href="">Usuń</a>
-                            </li>
-                        </ul>
-                    </td>
-                </tr>
-
-                
-
-            </tbody>
+                <% for (let zamowienie of zamowienieList) { %>
+                    <tr>
+                        <td><%= zamowienie.Imie %></td>
+                        <td><%= zamowienie.Nazwisko %></td>
+                        <td><%= zamowienie.Kwota %></td>
+                        <td>
+                            <ul class="list-actions">
+                                <li><a href="/zamowienia/details/<%=zamowienie.IdZamowienie %>" class="list-actions-button-details">Szczegóły</a></li>
+                                <li><a href="/zamowienia/edit/<%=zamowienie.IdZamowienie %>" class="list-actions-button-edit">Edytuj</a></li>
+                                <li><a href="/zamowienia/delete/<%=zamowienie.IdZamowienie %>" class="list-actions-button-delete">Usuń</a></li>
+                            </ul>
+                        </td>
+                    </tr>
+                <% } %>
+                </tbody>
         </table>
         </div>
     </main>

@@ -18,7 +18,7 @@ exports.showAddProduktForm = (req, res, next) => {
         produkt: {},
         pageTitle: 'Nowy produkt',
         formMode: 'createNew',
-        btnLabel: 'Dodaj produkt',
+        btnLabel: 'Dodaj',
         formAction: '/Produkt/add',
         navLocation: 'produkt'
     });
@@ -32,7 +32,7 @@ exports.showEditProduktForm = (req, res, next) => {
                 produkt: produkt,
                 formMode: 'edit',
                 pageTitle: 'Edycja produktu',
-                btnLabel: 'Edytuj produkt',
+                btnLabel: 'Edytuj',
                 formAction: '/Produkt/edit',
                 navLocation: 'produkt'
             });

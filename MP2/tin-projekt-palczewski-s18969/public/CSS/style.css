@@ -242,7 +242,7 @@ main h2 {
 .list-actions-button-details,
 .list-actions-button-edit,
 .list-actions-button-delete,
-.button-add {
+.button-add{
     border: none;
     border-radius: 5px;
     color: white;

@@ -39,9 +39,12 @@
         <div class="section-buttons">
             <a href="/produkty/edit/<%=produkt.IdProdukt%>" class="form-button-edit-detail">Edytuj</a>
         </div>
-        <% } %>
+        <% }else { %>
+            <input class="form-button-submit" type="submit" value="<%=btnLabel%>" />
+            <span id="errorsSummary" class="errors-text"></span>
+            <% } %>
       
-       
+      
 
     </form>
 
@@ -65,7 +68,7 @@
                         <td><%= produkt.Nazwa %></td>
                         <td><%= p.Rabat %></td>
                         <td><%= p.Ilosc %></td>
-                        <td><a href=""><%= p.zamowienia.Imie %> <%= p.zamowienia.Nazwisko %></a></td>
+                        <td><a href="/zamowienia/details/<%= p.zamowienia.IdZamowienie %> "><%= p.zamowienia.Imie %> <%= p.zamowienia.Nazwisko %></a></td>
 
                     </tr>
                     <% } %>
@@ -74,15 +77,14 @@
             <% } %>
 
 
-    <div class="form-buttons">
-        <p id="errorsSummary" class="errors-text"></p>
-        <% if (formMode != 'showDetails') { %>
-        <input class="form-button-submit" type="submit" value="<%=btnLabel%>" />
-        <a class="form-button-cancel" href="/produkty">Anuluj</a>
-        <% } else { %>
-        <a class="form-button-cancel" href="/produkty">Powrót</a>
-        <% } %>
-    </div>
+            <div class="form-buttons">
+        
+                <% if (formMode != 'showDetails') { %>
+                <a class="form-button-cancel" href="/produkty">Anuluj</a>
+                <% } else { %>
+                <a class="form-button-cancel" href="/produkty">Powrót</a>
+                <% } %>
+            </div>
 
 </main>
 
