@@ -14,70 +14,23 @@
 
                 </tr>
             </thead>
-
             <tbody>
-                <tr>
-                    <td data-label="Imie">Jan</td>
-                    <td data-label="Nazwisko">Kowalski</td>
-                    <td data-label="Ilość">1</td>
-                    <td data-label="Nazwa produktu">Play Station 5</td>
-                    <td data-label="Akcje">
-                        <ul class="list-actions">
-                            <li>
-                                <a class="list-actions-button-details" href="/PozycjaZamowien/details/:empId">Szczegóły</a>
-                            </li>
-                            <li>
-                                <a class="list-actions-button-edit" href="">Edytuj</a>
-                            </li>
-                            <li>
-                                <a class="list-actions-button-delete" href="">Usuń</a>
-                            </li>
-                        </ul>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td scope="row" data-label="Imie">Adam</td>
-                    <td data-label="Nazwisko">Nowak</td>
-                    <td data-label="Ilość">1</td>
-                    <td data-label="Typ produktu">Nintendo Switch	</td>
-                    <td data-label="Akcje">
-                        <ul class="list-actions">
-                            <li>
-                                <a class="list-actions-button-details" href="">Szczegóły</a>
-                            </li>
-                            <li>
-                                <a class="list-actions-button-edit" href="">Edytuj</a>
-                            </li>
-                            <li>
-                                <a class="list-actions-button-delete" href="">Usuń</a>
-                            </li>
-                        </ul>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td scope="row" data-label="Imie">Grzegorz</td>
-                    <td data-label="Nazwisko">Brzęczyszczykiewicz</td>
-                    <td data-label="Ilość">1</td>
-                    <td data-label="Typ produktu">Corsair K55 RGB</td>
-                    <td data-label="Akcje">
-                        <ul class="list-actions">
-                            <li>
-                                <a class="list-actions-button-details" href="">Szczegóły</a>
-                            </li>
-                            <li>
-                                <a class="list-actions-button-edit" href="">Edytuj</a>
-                            </li>
-                            <li>
-                                <a class="list-actions-button-delete" href="">Usuń</a>
-                            </li>
-                        </ul>
-                    </td>
-                </tr>
-
-
-            </tbody>
+                <% for (let pozycjaZamowien of pozycjaZamowienList) { %>
+                    <tr>
+                        <td><%= pozycjaZamowien.zamowienia.Imie %></td>
+                        <td><%= pozycjaZamowien.zamowienia.Nazwisko %></td>
+                        <td><%= pozycjaZamowien.Ilosc %></td>
+                        <td><%= pozycjaZamowien.produkty.Nazwa %></td>
+                        <td>
+                            <ul class="list-actions">
+                                <li><a href="/pozycjaZamowien/details/<%=pozycjaZamowien.IdZamowienieProdukt%>" class="list-actions-button-details">Szczegóły</a></li>
+                                <li><a href="/pozycjaZamowien/edit/<%=pozycjaZamowien.IdZamowienieProdukt%>" class="list-actions-button-edit">Edytuj</a></li>
+                                <li><a href="/pozycjaZamowien/delete/<%=pozycjaZamowien.IdZamowienieProdukt%>" class="list-actions-button-delete">Usuń</a></li>
+                            </ul>
+                        </td>
+                    </tr>
+                <% } %>
+                </tbody>
         </table>
         </div>
     </main>

@@ -1,40 +1,49 @@
 <%- include('../../fragments/header.ejs') %>
 
-    <main>
-        <h2>Nowa pozycja zamówienia</h2>
-        <form class="form" action="DodajNowąPozycjęZamówień" novalidate onsubmit="return validateForm()">
-                <label for="Zamówienie">Kupiec:<sup>*</sup></label>
-                <select name="Zamówienie" id="Zamowienie">
-                    <option value="">--- Wybierz klienta ---</option>
-                    <option value="IdKlient1">Jan Kowalski</option>
-                    <option value="IdKlient2">Adam Nowak</option>
-                    <option value="IdKlient3">Grzegorz Brzęczyszczykiewicz</option>
-                </select>
-                <span id="errorZamowienie" class="errors-text"></span>
+<main>
+    <script type="application/javascript" src="/JS/walidacjaPozycjiZamowien.js"></script>
+    <h2><%= pageTitle %></h2>
+    <form class="form" method="post" action="<%=formAction%>" novalidate onsubmit="return validateForm();">
 
-                <label for="Produkt">Nazwa produktu:<sup>*</sup></label>
-                <select name="Produkt" id="Produkt">
-                    <option value="">--- Wybierz produkt ---</option>
-                    <option value="IdProdukt1">Play Station 5</option>
-                    <option value="IdProdukt2">Nintendo Switch</option>
-                    <option value="IdProdukt3">Corsair K55 RGB</option>
-                </select>
-                <span id="errorProdukt" class="errors-text"></span>
+        <label for="Zamówienie">Kupiec:<sup>*</sup></label>
+        <select name="Zamówienie" id="Zamowienie">
+            <option value="">--- Wybierz klienta ---</option>
+            <% for (let pozZam of pozycjaZamowien) { %>
+                <option value="pozZam.zamowienie.IdZamowienie">Adam Nowak</option>
+            <% } %>
 
-                <label for="Rabat">Rabat(%):</label>
-                <input type="number" name="Rabat" id="Rabat" />
-                <span id="errorRabat" class="errors-text"></span>
+            <option value="IdKlient2">Adam Nowak</option>
+            <option value="IdKlient3">Grzegorz Brzęczyszczykiewicz</option>
+        </select>
+        <span id="errorZamowienie" class="errors-text"></span>
 
-                <label for="Ilość">Ilość:<sup>*</sup></label>
-                <input type="number" name="Ilość" id="Ilosc" />
-                <span id="errorIlosc" class="errors-text"></span>
 
-            <div class="form-buttons">
-                <p id="errorsSummary" class="errors-text"></p>
-                <input class="form-button-submit" type="submit" value="Dodaj" />
-                <a href="/PozycjaZamowien" class="form-button-cancel">Anuluj</a>
-            </div>
-        </form>
-    </main>
 
-    <%- include('../../fragments/footer.ejs') %>
+
+
+        <label for="Produkt">Nazwa produktu:<sup>*</sup></label>
+        <select name="Produkt" id="Produkt">
+            <option value="">--- Wybierz produkt ---</option>
+            <option value="IdProdukt1">Play Station 5</option>
+            <option value="IdProdukt2">Nintendo Switch</option>
+            <option value="IdProdukt3">Corsair K55 RGB</option>
+        </select>
+        <span id="errorProdukt" class="errors-text"></span>
+
+        <label for="Rabat">Rabat(%):</label>
+        <input type="number" name="Rabat" id="Rabat" />
+        <span id="errorRabat" class="errors-text"></span>
+
+        <label for="Ilość">Ilość:<sup>*</sup></label>
+        <input type="number" name="Ilość" id="Ilosc" />
+        <span id="errorIlosc" class="errors-text"></span>
+
+        <div class="form-buttons">
+            <p id="errorsSummary" class="errors-text"></p>
+            <input class="form-button-submit" type="submit" value="Dodaj" />
+            <a href="/PozycjaZamowien" class="form-button-cancel">Anuluj</a>
+        </div>
+    </form>
+</main>
+
+<%- include('../../fragments/footer.ejs') %>
