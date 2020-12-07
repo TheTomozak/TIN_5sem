@@ -71,34 +71,18 @@ function validateForm() {
 
     //////////////////////////////////////////////////////////////////////
     //Gwarancja
-
-    let nowDate = new Date(),
-        month = '' + (nowDate.getMonth() + 1),
-        day = '' + nowDate.getDate(),
-        year = nowDate.getFullYear();
-
-    if (month.length < 2)
-        month = '0' + month;
-    if (day.length < 2)
-        day = '0' + day;
-    const nowString = [year, month, day].join('-');
-
-
+    //Cena
 
     if (!checkRequired(gwarancja.value)) {
         valid = false;
         gwarancja.classList.add("error-input");
         errorGwarancja.innerText = "Pole jest wymagane";
+    } else if (!hasNumber(gwarancja.value)) {
+        valid = false;
+        gwarancja.classList.add("error-input");
+        errorGwarancja.innerText = "Gwarancja musi być liczbą";
     }
-    else if (!checkDate(gwarancja.value)) {
-        valid = false;
-        gwarancja.classList.add("error-input");
-        errorGwarancja.innerText = "Pole powinno zawierać datę w formacie yyyy-MM-dd (np. 2000-01-01)";
-    } else if (!checkDateIfAfter(gwarancja.value, nowString)) {
-        valid = false;
-        gwarancja.classList.add("error-input");
-        errorGwarancja.innerText = "Data nie może być z przeszłości";
-    } 
+
 
     if (!valid) {
         errorsSummary.innerText = "Formularz zawiera błędy";

@@ -8,97 +8,33 @@
                     <tr>
                         <th scope="col">Nazwa</th>
                         <th scope="col">Typ produktu</th>
-                        <th scope="col">Ilość</th>
                         <th scope="col">Cena</th>
-                        <th scope="col">Kolor</th>
                         <th scope="col">Akcje</th>
                     </tr>
                 </thead>
 
 
                 <tbody>
-                    <% for (let produktList of produktLists) { %>
+                    <% for (let produkt of produktList) { %>
                         <tr>
-                            <td><%= produktList.Nazwa %></td>
-                            <td><%= produktList.TypProduktu %></td>
-                            <td><%= produktList.Gwarancja %></td>
-                            <td><%= produktList.Cena %></td>
-                            <td><%= produktList.Kolor %></td>
+                            <td><%= produkt.Nazwa %></td>
+                            <td><%= produkt.TypProduktu %></td>
+                            <td><%= produkt.Cena %></td>
                             <td>
                                 <ul class="list-actions">
-                                    <li><a href="/produkty/details/<%=produktList.IdProdukt%>" class="list-actions-button-details">Szczegóły</a></li>
-                                    <li><a href="/produkty/edit/<%=produktList.IdProdukt%>" class="list-actions-button-edit">Edytuj</a></li>
-                                    <li><a href="/produkty/delete/<%=produktList.IdProdukt%>" class="list-actions-button-delete">Usuń</a></li>
+                                    <li><a href="/produkty/details/<%=produkt.IdProdukt%>" class="list-actions-button-details">Szczegóły</a></li>
+                                    <li><a href="/produkty/edit/<%=produkt.IdProdukt%>" class="list-actions-button-edit">Edytuj</a></li>
+                                    <li><a href="/produkty/delete/<%=produkt.IdProdukt%>" class="list-actions-button-delete">Usuń</a></li>
                                 </ul>
                             </td>
                         </tr>
                     <% } %>
                     </tbody>
 
-
-                <!-- <tbody>
-                    <tr>
-                        <td data-label="Nazwa">Play Station 5</td>
-                        <td data-label="Typ produktu">Konsola</td>
-                        <td data-label="Cena">2299 zł</td>
-                        <td data-label="Akcje">
-                            <ul class="list-actions">
-                                <li>
-                                    <a class="list-actions-button-details" href="/Produkty/details/:empId">Szczegóły</a>
-                                </li>
-                                <li>
-                                    <a class="list-actions-button-edit" href="">Edytuj</a>
-                                </li>
-                                <li>
-                                    <a class="list-actions-button-delete" href="">Usuń</a>
-                                </li>
-                            </ul>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td scope="row" data-label="Nazwa">Nintendo Switch</td>
-                        <td data-label="Typ produktu">Konsola</td>
-                        <td data-label="Cena">1499 zł</td>
-                        <td data-label="Akcje">
-                            <ul class="list-actions">
-                                <li>
-                                    <a class="list-actions-button-details" href="">Szczegóły</a>
-                                </li>
-                                <li>
-                                    <a class="list-actions-button-edit" href="">Edytuj</a>
-                                </li>
-                                <li>
-                                    <a class="list-actions-button-delete" href="">Usuń</a>
-                                </li>
-                            </ul>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td scope="row" data-label="Nazwa">Corsair K55 RGB</td>
-                        <td data-label="Typ produktu">Klawatura</td>
-                        <td data-label="Cena">199 zł</td>
-                        <td data-label="Akcje">
-                            <ul class="list-actions">
-                                <li>
-                                    <a class="list-actions-button-details" href="">Szczegóły</a>
-                                </li>
-                                <li>
-                                    <a class="list-actions-button-edit" href="">Edytuj</a>
-                                </li>
-                                <li>
-                                    <a class="list-actions-button-delete" href="">Usuń</a>
-                                </li>
-                            </ul>
-                        </td>
-                    </tr>
-
-                </tbody> -->
             </table>
         </div>
     </main>
 
-    <p><a class="button-add" href="/Produkty/add">Dodaj nową pozycję zamówień</a></p>
+    <p><a class="button-add" href="/produkty/add">Dodaj nową pozycję zamówień</a></p>
 
     <%- include('../../fragments/footer.ejs') %>
