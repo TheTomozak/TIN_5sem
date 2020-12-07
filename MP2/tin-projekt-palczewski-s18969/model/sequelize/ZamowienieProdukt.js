@@ -10,6 +10,7 @@ const ZamowienieProdukt = sequelize.define('ZamowienieProdukt', {
     },
     Rabat: {
         type: Sequelize.INTEGER,
+        defaultValue: 0,
         allowNull: true
     },
     Ilosc: {

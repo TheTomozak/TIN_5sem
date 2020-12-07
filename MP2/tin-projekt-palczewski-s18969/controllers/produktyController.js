@@ -29,7 +29,7 @@ exports.showEditProduktForm = (req, res, next) => {
     ProduktRepository.getProduktById(idProduktu)
         .then(produkt => {
             res.render('Pages/Produkt/FormularzNowegoProduktu', {
-                emp: produkt,
+                produkt: produkt,
                 formMode: 'edit',
                 pageTitle: 'Edycja produktu',
                 btnLabel: 'Edytuj produkt',

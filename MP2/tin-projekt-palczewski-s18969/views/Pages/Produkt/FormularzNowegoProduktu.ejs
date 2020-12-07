@@ -40,21 +40,50 @@
             <a href="/produkty/edit/<%=produkt.IdProdukt%>" class="form-button-edit-detail">Edytuj</a>
         </div>
         <% } %>
-
-
-
-
-        <div class="form-buttons">
-            <p id="errorsSummary" class="errors-text"></p>
-            <% if (formMode != 'showDetails') { %>
-            <input class="form-button-submit" type="submit" value="<%=btnLabel%>" />
-            <a class="form-button-cancel" href="/produkty">Anuluj</a>
-            <% } else { %>
-            <a class="form-button-cancel" href="/produkty">Powrót</a>
-            <% } %>
-        </div>
+      
+       
 
     </form>
+
+        <% if (formMode == 'showDetails' || formMode == 'edit') { %>
+            <h2>
+                Szczegóły pozycji zamówień
+            </h2>
+            <table class="table-list">
+                <thead>
+                    <tr>
+                        <th>Produkt</th>
+                        <th>Rabat</th>
+                        <th>Ilosc</th>
+                        <th>Klient</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% for (let p of produkt.zamowieniaProdukty) { %>
+                    <tr>
+    
+                        <td><%= produkt.Nazwa %></td>
+                        <td><%= p.Rabat %></td>
+                        <td><%= p.Ilosc %></td>
+                        <td><a href=""><%= p.zamowienia.Imie %> <%= p.zamowienia.Nazwisko %></a></td>
+
+                    </tr>
+                    <% } %>
+                </tbody>
+            </table>
+            <% } %>
+
+
+    <div class="form-buttons">
+        <p id="errorsSummary" class="errors-text"></p>
+        <% if (formMode != 'showDetails') { %>
+        <input class="form-button-submit" type="submit" value="<%=btnLabel%>" />
+        <a class="form-button-cancel" href="/produkty">Anuluj</a>
+        <% } else { %>
+        <a class="form-button-cancel" href="/produkty">Powrót</a>
+        <% } %>
+    </div>
+
 </main>
 
 <%- include('../../fragments/footer.ejs') %>

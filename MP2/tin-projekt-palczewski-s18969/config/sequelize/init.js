@@ -64,13 +64,13 @@ module.exports = () => {
         .then(zamPro => {
             if (!zamPro || zamPro.length == 0) {
                 return ZamowienieProdukt.bulkCreate([
-                    { Rabat: null, Zamowienie_IdZamowienie: allZamowienia[0].IdZamowienie, Produkt_IdProdukt: allProdukty[0].IdProdukt, Ilosc: 1 },
-                    { Rabat: 0, Zamowienie_IdZamowienie: allZamowienia[1].IdZamowienie, Produkt_IdProdukt: allProdukty[1].IdProdukt, Ilosc: 1 },
-                    { Rabat: 0, Zamowienie_IdZamowienie: allZamowienia[2].IdZamowienie, Produkt_IdProdukt: allProdukty[2].IdProdukt, Ilosc: 2 },
-                    { Rabat: 0, Zamowienie_IdZamowienie: allZamowienia[3].IdZamowienie, Produkt_IdProdukt: allProdukty[5].IdProdukt, Ilosc: 2 },
-                    { Rabat: 0, Zamowienie_IdZamowienie: allZamowienia[4].IdZamowienie, Produkt_IdProdukt: allProdukty[3].IdProdukt, Ilosc: 1 }
+                    { Zamowienie_IdZamowienie: allZamowienia[0].IdZamowienie, Produkt_IdProdukt: allProdukty[0].IdProdukt, Ilosc: 1 },
+                    { Zamowienie_IdZamowienie: allZamowienia[1].IdZamowienie, Produkt_IdProdukt: allProdukty[1].IdProdukt, Ilosc: 1 },
+                    { Zamowienie_IdZamowienie: allZamowienia[2].IdZamowienie, Produkt_IdProdukt: allProdukty[2].IdProdukt, Ilosc: 2 },
+                    { Zamowienie_IdZamowienie: allZamowienia[3].IdZamowienie, Produkt_IdProdukt: allProdukty[5].IdProdukt, Ilosc: 2 },
+                    { Zamowienie_IdZamowienie: allZamowienia[4].IdZamowienie, Produkt_IdProdukt: allProdukty[3].IdProdukt, Ilosc: 1 }
                 ]);
-            }else{
+            } else {
                 return zamPro;
             }
         });
