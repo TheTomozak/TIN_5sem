@@ -1,4 +1,5 @@
 const PozycjaZamowienRepository = require('../repository/sequelize/ZamowienieProduktyRepository');
+const ZamowieniaRepository = require('../repository/sequelize/ZamowieniaRepository');
 
 
 
@@ -13,16 +14,40 @@ exports.showPozycjaZamowieniaList = (req, res, next) => {
         })
 }
 
+// exports.showPozycjaZamowieniaForm = (req, res, next) => {
+//     res.render('Pages/PozycjaZamówień/FormularzNowejPozycjiZamówień', {
+//         pozycjaZamowien: {},
+//         pageTitle: 'Nowa pozycja zamówień',
+//         formMode: 'createNew',
+//         btnLabel: 'Dodaj',
+//         formAction: '/pozycjaZamowien/add',
+//         navLocation: 'pozycjaZamowien'
+//     });
+// }
+
+
 exports.showPozycjaZamowieniaForm = (req, res, next) => {
-    res.render('Pages/PozycjaZamówień/FormularzNowejPozycjiZamówień', {
-        pozycjaZamowien: {},
-        pageTitle: 'Nowa pozycja zamówień',
-        formMode: 'createNew',
-        btnLabel: 'Dodaj',
-        formAction: '/pozycjaZamowien/add',
-        navLocation: 'pozycjaZamowien'
-    });
+    let allZamowienia, allpozycjaZamowien;
+    ZamowieniaRepository.getZamowienia()
+        .then(zamowienie => {
+            allZamowienia = zamowienie;
+            return PozycjaZamowienRepository.getZamowienieProdukt();
+        })
+        .then(pozycjaZamowien => {
+            allpozycjaZamowien = pozycjaZamowien;
+            res.render('Pages/PozycjaZamówień/FormularzNowejPozycjiZamówień', {
+                pozycjaZamowien: {},
+                formMode: 'createNew',
+                allZamowienia: allZamowienia,
+                allpozycjaZamowien: allpozycjaZamowien,
+                pageTitle: 'Nowa pozycja zamówień',
+                btnLabel: 'Dodaj',
+                formAction: '/pozycjaZamowien/add',
+                navLocation: 'pozycjaZamowien'
+            });
+        });
 }
+
 
 exports.showEditPozycjaZamowieniaForm = (req, res, next) => {
     const idPozycjaZamowien = req.params.idPozycjaZamowien;
