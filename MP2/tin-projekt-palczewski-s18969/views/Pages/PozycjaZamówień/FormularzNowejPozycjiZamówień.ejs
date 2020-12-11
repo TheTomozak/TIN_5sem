@@ -16,7 +16,10 @@
             <% if (formMode == 'showDetails') { %>
             <option selected value="pozycjaZamowien.Zamowienie_IdZamowienie "
                 label="<%= pozycjaZamowien.zamowienia.Imie + ' ' + pozycjaZamowien.zamowienia.Nazwisko %>"></option>
-            <% } else { %>
+            <% } else if(formMode == 'edit'){ %>
+                <option selected value="pozycjaZamowien.Zamowienie_IdZamowienie "
+                label="<%= pozycjaZamowien.zamowienia.Imie + ' ' + pozycjaZamowien.zamowienia.Nazwisko %>"></option>
+                <% }else { %>
             <% for (let i=0; i<allZamowienia.length; i++) { let zamowienie = allZamowienia[i]; %>
             <option value="<%= zamowienie.IdZamowienie %>" label="<%= zamowienie.Imie + ' ' + zamowienie.Nazwisko %>"
                 <%= (pozycjaZamowien.IdZamowienieProdukt && zamowienie.IdZamowienie.toString() == pozycjaZamowien.zamowienia.IdZamowienie.toString()) ? 'selected' : ''%>>
@@ -36,7 +39,10 @@
             <% if (formMode == 'showDetails') { %>
             <option selected value="pozycjaZamowien.Produkt_IdProdukt "
                 label="<%= pozycjaZamowien.produkty.Nazwa %>"></option>
-            <% } else { %>
+            <% } else if(formMode == 'edit'){ %>
+                <option selected value="pozycjaZamowien.Produkt_IdProdukt "
+                label="<%= pozycjaZamowien.produkty.Nazwa %>"></option>
+                <% }else { %>
             <% for (let i=0; i<allProdukty.length; i++) { let produkt = allProdukty[i]; %>
             <option value="<%= produkt.IdProdukt %>" label="<%= produkt.Nazwa %>"
                 <%= (pozycjaZamowien.IdZamowienieProdukt && zamowienie.IdZamowienie.toString() == pozycjaZamowien.zamowienia.IdZamowienie.toString()) ? 'selected' : ''%>>
@@ -85,7 +91,7 @@
 
 
 
-        <% if (formMode == 'showDetails') { %>
+        <% if (formMode == 'showDetails'){ %>
         <div class="section-buttons">
             <a href="/pozycjaZamowien/edit/<%=pozycjaZamowien.IdZamowienieProdukt%>"
                 class="form-button-edit-detail">Edytuj</a>
