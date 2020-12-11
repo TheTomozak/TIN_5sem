@@ -15,23 +15,18 @@ exports.showPozycjaZamowieniaList = (req, res, next) => {
         })
 }
 
-// exports.showPozycjaZamowieniaForm = (req, res, next) => {
-//     res.render('Pages/PozycjaZamówień/FormularzNowejPozycjiZamówień', {
-//         pozycjaZamowien: {},
-//         pageTitle: 'Nowa pozycja zamówień',
-//         formMode: 'createNew',
-//         btnLabel: 'Dodaj',
-//         formAction: '/pozycjaZamowien/add',
-//         navLocation: 'pozycjaZamowien'
-//     });
-// }
-
 
 exports.showPozycjaZamowieniaForm = (req, res, next) => {
-    let allZamowienia, allpozycjaZamowien;
+    let allZamowienia, allpozycjaZamowien, allProdukty;
     ZamowieniaRepository.getZamowienia()
         .then(zamowienie => {
             allZamowienia = zamowienie;
+        
+        })
+
+        ProduktRepository.getProdukt()
+        .then(produkty => {
+            allProdukty = produkty;
             return PozycjaZamowienRepository.getZamowienieProdukt();
         })
         .then(pozycjaZamowien => {
@@ -41,6 +36,7 @@ exports.showPozycjaZamowieniaForm = (req, res, next) => {
                 formMode: 'createNew',
                 allZamowienia: allZamowienia,
                 allpozycjaZamowien: allpozycjaZamowien,
+                allProdukty: allProdukty,
                 pageTitle: 'Nowa pozycja zamówień',
                 btnLabel: 'Dodaj',
                 formAction: '/pozycjaZamowien/add',
@@ -74,7 +70,7 @@ exports.showEditPozycjaZamowieniaForm = (req, res, next) => {
 };
 
 exports.showPozycjaZamowieniaDetails = (req, res, next) => {
-    
+
     const idPozycjaZamowien = req.params.idPozycjaZamowien;
     let allZamowienia, allpozycjaZamowien;
     ZamowieniaRepository.getZamowienieById(idPozycjaZamowien)
@@ -95,6 +91,33 @@ exports.showPozycjaZamowieniaDetails = (req, res, next) => {
             });
         });
 }
+
+
+
+exports.addPozycjaZamowienia = (req, res, next) => {
+    const pozycjaZamowieniaData = { ...req.body };
+    PozycjaZamowienRepository.createZamowienieProdukt(pozycjaZamowieniaData)
+        .then(result => {
+            res.redirect('/pozycjaZamowien');
+        });
+};
+
+exports.updatePozycjaZamowienia = (req, res, next) => {
+    const idPozycjaZamowien = req.body.IdZamowienieProdukt;
+    const pozycjaZamowieniaData = { ...req.body };
+    PozycjaZamowienRepository.updateZamowienieProdukt(idPozycjaZamowien, pozycjaZamowieniaData)
+        .then(result => {
+            res.redirect('/pozycjaZamowien');
+        });
+};
+
+exports.deletePozycjaZamowienia = (req, res, next) => {
+    const idPozycjaZamowien = req.params.idPozycjaZamowien;
+    PozycjaZamowienRepository.deleteZamowienieProdukt(idPozycjaZamowien)
+        .then(() => {
+            res.redirect('/pozycjaZamowien');
+        });
+};
 
 
 
