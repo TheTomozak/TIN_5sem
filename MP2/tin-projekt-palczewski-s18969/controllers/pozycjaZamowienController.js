@@ -52,11 +52,19 @@ exports.showPozycjaZamowieniaForm = (req, res, next) => {
 
 exports.showEditPozycjaZamowieniaForm = (req, res, next) => {
     const idPozycjaZamowien = req.params.idPozycjaZamowien;
-    PozycjaZamowienRepository.getZamowienieProduktById(idPozycjaZamowien)
+    let allZamowienia, allpozycjaZamowien;
+    ZamowieniaRepository.getZamowienia()
+        .then(zamowienie => {
+            allZamowienia = zamowienie;
+            return PozycjaZamowienRepository.getZamowienieProdukt();
+        })
         .then(pozycjaZamowien => {
+            allpozycjaZamowien = pozycjaZamowien;
             res.render('Pages/PozycjaZamówień/FormularzNowejPozycjiZamówień', {
                 pozycjaZamowien: pozycjaZamowien,
                 formMode: 'edit',
+                allZamowienia: allZamowienia,
+                allpozycjaZamowien: allpozycjaZamowien,
                 pageTitle: 'Edycja pozycji zamówień',
                 btnLabel: 'Edytuj',
                 formAction: '/pozycjaZamowien/edit',
