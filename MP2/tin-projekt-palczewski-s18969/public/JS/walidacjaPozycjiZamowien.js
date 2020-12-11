@@ -1,29 +1,29 @@
 function validateForm() {
 
-    const zamowienie = document.getElementById('Zamowienie');
+    const kupiec = document.getElementById('Kupiec');
     const produkt = document.getElementById('Produkt');
     const rabat = document.getElementById('Rabat');
     const ilosc = document.getElementById('Ilosc');
 
 
 
-    const errorZamowienie = document.getElementById('errorZamowienie');
+    const errorKupiec = document.getElementById('errorKupiec');
     const errorProdukt = document.getElementById('errorProdukt');
     const errorRabat = document.getElementById('errorRabat');
     const errorIlosc = document.getElementById('errorIlosc');
 
     console.log("Cos");
 
-    resetErrors([zamowienie, produkt, rabat, ilosc], [errorZamowienie, errorProdukt, errorRabat, errorIlosc], errorsSummary);
+    resetErrors([kupiec, produkt, rabat, ilosc], [errorKupiec, errorProdukt, errorRabat, errorIlosc], errorsSummary);
 
     let valid = true;
     //////////////////////////////////////////////////////////////////////
-    //Zamowienie
+    //kupiec
 
-    if (!checkRequired(zamowienie.value)) {
+    if (!checkRequired(kupiec.value)) {
         valid = false;
-        zamowienie.classList.add("error-input");
-        errorZamowienie.innerText = "Pole jest wymagane";
+        kupiec.classList.add("error-input");
+        errorKupiec.innerText = "Pole jest wymagane";
     }
     //////////////////////////////////////////////////////////////////////
     //Produkt

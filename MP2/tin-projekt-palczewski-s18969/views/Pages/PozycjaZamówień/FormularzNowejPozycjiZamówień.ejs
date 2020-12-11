@@ -9,8 +9,8 @@
         <input type="hidden" name="IdZamowienieProdukt " value="<%= pozycjaZamowien.IdZamowienieProdukt  %>">
 
 
-        <label for="Zamowienie">Kupiec:<sup>*</sup></label>
-        <select id="Zamowienie" name="IdZamowienie" required <%= (formMode == 'showDetails') ? 'disabled' : ''%>>
+        <label for="Kupiec">Kupiec:<sup>*</sup></label>
+        <select id="Kupiec" name="Kupiec" required <%= (formMode == 'showDetails') ? 'disabled' : ''%>>
             <option value="" selected>--- Wybierz kupca ---</option>    
 
             <% if (formMode == 'showDetails') { %>
@@ -23,7 +23,7 @@
                         <% } %>
                 <% } %>
         </select>
-        <span id="errorZamowienie" class="errors-text"></span>
+        <span id="errorKupiec" class="errors-text"></span>
 
 
         <label for="Produkt">Nazwa produktu:<sup>*</sup></label>
@@ -39,9 +39,6 @@
                         </option>
                         <% } %>
                 <% } %>
-
-
-           
         </select>
         <span id="errorProdukt" class="errors-text"></span>
 
