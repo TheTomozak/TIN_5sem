@@ -19,7 +19,7 @@ exports.showZamowieniaForm = (req, res, next) => {
         pageTitle: 'Nowe zamowienie',
         formMode: 'createNew',
         btnLabel: 'Dodaj',
-        formAction: '/zamowienie/add',
+        formAction: '/zamowienia/add',
         navLocation: 'zamowienie'
     });
 }
@@ -33,7 +33,7 @@ exports.showEditZamowieniaForm = (req, res, next) => {
                 formMode: 'edit',
                 pageTitle: 'Edycja zamowienia',
                 btnLabel: 'Edytuj',
-                formAction: '/zamowienie/edit',
+                formAction: '/zamowienia/edit',
                 navLocation: 'zamowienie'
             });
         });
@@ -52,6 +52,33 @@ exports.showZamowieniaDetails = (req, res, next) => {
             });
         });
 }
+
+
+
+exports.addZamowienia = (req, res, next) => {
+    const zamowienieData = { ...req.body };
+    ZamowieniaRepository.createZamowienie(zamowienieData)
+        .then(result => {
+            res.redirect('/zamowienia');
+        });
+};
+
+exports.updateZamowienia = (req, res, next) => {
+    const idZamowienie = req.body.IdZamowienie ;
+    const zamowienieData = { ...req.body };
+    ZamowieniaRepository.updateZamowienie(idZamowienie, zamowienieData)
+        .then(result => {
+            res.redirect('/zamowienia');
+        });
+};
+
+exports.deleteZamowienia = (req, res, next) => {
+    const idZamowienie = req.params.idZamowienie;
+    ZamowieniaRepository.deleteZamowienie(idZamowienie)
+        .then(() => {
+            res.redirect('/zamowienia');
+        });
+};
 
 
 
