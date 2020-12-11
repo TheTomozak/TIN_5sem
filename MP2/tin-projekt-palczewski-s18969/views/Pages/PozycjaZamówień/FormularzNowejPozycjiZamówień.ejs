@@ -3,7 +3,7 @@
 <main>
     <script type="application/javascript" src="/JS/walidacjaPozycjiZamowien.js"></script>
     <h2><%= pageTitle %></h2>
-    <form class="form" method="post" action="<%=formAction%>" novalidate onsubmit="return validateForm();" >
+    <form class="form" method="post" action="<%=formAction%>" novalidate onsubmit="return validateForm();">
 
 
         <input type="hidden" name="IdZamowienieProdukt " value="<%= pozycjaZamowien.IdZamowienieProdukt  %>">
@@ -11,17 +11,19 @@
 
         <label for="Kupiec">Kupiec:<sup>*</sup></label>
         <select id="Kupiec" name="Kupiec" required <%= (formMode == 'showDetails') ? 'disabled' : ''%>>
-            <option value="" selected>--- Wybierz kupca ---</option>    
+            <option value="" selected>--- Wybierz kupca ---</option>
 
             <% if (formMode == 'showDetails') { %>
-                <option selected value="pozycjaZamowien.IdZamowienieProdukt" label="<%= pozycjaZamowien.zamowienia.Imie + ' ' + pozycjaZamowien.zamowienia.Nazwisko %>"></option>    
-                <% } else { %>
-                    <% for (let i=0; i<allZamowienia.length; i++) { let zamowienie = allZamowienia[i]; %>
-                        <option value="<%= zamowienie.IdZamowienie %>" label="<%= zamowienie.Imie + ' ' + zamowienie.Nazwisko %>"
-                            <%= (pozycjaZamowien.IdZamowienieProdukt && zamowienie.IdZamowienie.toString() == pozycjaZamowien.zamowienie.IdZamowienie.toString()) ? 'selected' : ''%>></option>
-                        </option>
-                        <% } %>
-                <% } %>
+            <option selected value="pozycjaZamowien.IdZamowienieProdukt"
+                label="<%= pozycjaZamowien.zamowienia.Imie + ' ' + pozycjaZamowien.zamowienia.Nazwisko %>"></option>
+            <% } else { %>
+            <% for (let i=0; i<allZamowienia.length; i++) { let zamowienie = allZamowienia[i]; %>
+            <option value="<%= zamowienie.IdZamowienie %>" label="<%= zamowienie.Imie + ' ' + zamowienie.Nazwisko %>"
+                <%= (pozycjaZamowien.IdZamowienieProdukt && zamowienie.IdZamowienie.toString() == pozycjaZamowien.zamowienie.IdZamowienie.toString()) ? 'selected' : ''%>>
+            </option>
+            </option>
+            <% } %>
+            <% } %>
         </select>
         <span id="errorKupiec" class="errors-text"></span>
 
@@ -31,40 +33,67 @@
             <option value="">--- Wybierz produkt ---</option>
 
             <% if (formMode == 'showDetails') { %>
-                <option selected value="pozycjaZamowien.IdZamowienieProdukt" label="<%= pozycjaZamowien.produkty.Nazwa  %>"></option>    
-                <% } else { %>
-                    <% for (let i=0; i<allpozycjaZamowien.length; i++) { let produkt = allpozycjaZamowien[i]; %>
-                        <option value="<%= produkt.produkty.IdProduktu %>" label="<%= produkt.produkty.Nazwa %>"
-                            <%= (pozycjaZamowien.IdZamowienieProdukt && produkt.produkty.IdProduktu.toString() == produkt.produkty.IdProduktu.toString()) ? 'selected' : ''%>></option>
-                        </option>
-                        <% } %>
-                <% } %>
+            <option selected value="pozycjaZamowien.IdZamowienieProdukt" label="<%= pozycjaZamowien.produkty.Nazwa  %>">
+            </option>
+            <% } else { %>
+            <% for (let i=0; i<allpozycjaZamowien.length; i++) { let produkt = allpozycjaZamowien[i]; %>
+            <option value="<%= produkt.produkty.IdProduktu %>" label="<%= produkt.produkty.Nazwa %>"
+                <%= (pozycjaZamowien.IdZamowienieProdukt && produkt.produkty.IdProduktu.toString() == produkt.produkty.IdProduktu.toString()) ? 'selected' : ''%>>
+            </option>
+            </option>
+            <% } %>
+            <% } %>
         </select>
         <span id="errorProdukt" class="errors-text"></span>
 
         <label for="Rabat">Rabat(%):</label>
-        <input  type="number" name="Rabat" id="Rabat" placeholder="np. 2" value="<%= pozycjaZamowien.Rabat %>"
-        <%= (formMode == 'showDetails') ? 'disabled' : '' %> />
+        <input type="number" name="Rabat" id="Rabat" placeholder="np. 2" value="<%= pozycjaZamowien.Rabat %>"
+            <%= (formMode == 'showDetails') ? 'disabled' : '' %> />
         <span id="errorRabat" class="errors-text"></span>
 
         <label for="Ilosc">Ilość:<sup>*</sup></label>
         <input type="number" name="Ilość" id="Ilosc" placeholder="np. 5" value="<%= pozycjaZamowien.Ilosc %>"
-        <%= (formMode == 'showDetails') ? 'disabled' : '' %> />
+            <%= (formMode == 'showDetails') ? 'disabled' : '' %> />
         <span id="errorIlosc" class="errors-text"></span>
 
+
         <% if (formMode == 'showDetails') { %>
-            <div class="section-buttons">
-                <a href="/pozycjaZamowien/edit/<%=pozycjaZamowien.IdZamowienieProdukt%>" class="form-button-edit-detail">Edytuj</a>
-            </div>
-            <% }else { %>
-                <input class="form-button-submit" type="submit" value="<%=btnLabel%>" />
-                <span id="errorsSummary" class="errors-text"></span>
-                <% } %>
+
+        <label for="Email">Email kupca:<sup>*</sup></label>
+        <input type="text" name="Email" id="Email" value="<%= pozycjaZamowien.zamowienia.Email %>"
+            <%= (formMode == 'showDetails') ? 'disabled' : '' %> />
+        <span></span>
+
+        <label for="NumerTel">Numer telefonu:</label>
+        <input class="NumerTelNotRequaired" type="tel" name="NumerTel" id="NumerTel"
+            value="<%= pozycjaZamowien.zamowienia.NumerTelefonu %>"
+            <%= (formMode == 'showDetails') ? 'disabled' : '' %> />
+        <span></span>
+
+
+        <label for="Kwota">Kwota(zł):<sup>*</sup></label>
+        <input type="number" name="Kwota" id="Kwota" value="<%= pozycjaZamowien.zamowienia.Kwota %>"
+            <%= (formMode == 'showDetails') ? 'disabled' : '' %> />
+        <span></span>
+
+        <% } %>
+
+
+
+        <% if (formMode == 'showDetails') { %>
+        <div class="section-buttons">
+            <a href="/pozycjaZamowien/edit/<%=pozycjaZamowien.IdZamowienieProdukt%>"
+                class="form-button-edit-detail">Edytuj</a>
+        </div>
+        <% }else { %>
+        <input class="form-button-submit" type="submit" value="<%=btnLabel%>" />
+        <span id="errorsSummary" class="errors-text"></span>
+        <% } %>
 
     </form>
 
     <div class="form-buttons">
-        
+
         <% if (formMode != 'showDetails') { %>
         <a class="form-button-cancel" href="/pozycjaZamowien">Anuluj</a>
         <% } else { %>
