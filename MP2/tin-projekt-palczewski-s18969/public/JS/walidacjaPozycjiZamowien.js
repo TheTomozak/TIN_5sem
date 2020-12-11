@@ -12,6 +12,7 @@ function validateForm() {
     const errorRabat = document.getElementById('errorRabat');
     const errorIlosc = document.getElementById('errorIlosc');
 
+    console.log("Cos");
 
     resetErrors([zamowienie, produkt, rabat, ilosc], [errorZamowienie, errorProdukt, errorRabat, errorIlosc], errorsSummary);
 

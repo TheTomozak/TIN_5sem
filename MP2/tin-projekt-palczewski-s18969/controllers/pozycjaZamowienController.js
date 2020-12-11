@@ -1,5 +1,6 @@
 const PozycjaZamowienRepository = require('../repository/sequelize/ZamowienieProduktyRepository');
 const ZamowieniaRepository = require('../repository/sequelize/ZamowieniaRepository');
+const ProduktRepository = require('../repository/sequelize/ProduktRepository');
 
 
 
@@ -65,12 +66,21 @@ exports.showEditPozycjaZamowieniaForm = (req, res, next) => {
 };
 
 exports.showPozycjaZamowieniaDetails = (req, res, next) => {
+    
     const idPozycjaZamowien = req.params.idPozycjaZamowien;
-    PozycjaZamowienRepository.getZamowienieProduktById(idPozycjaZamowien)
+    let allZamowienia, allpozycjaZamowien;
+    ZamowieniaRepository.getZamowienieById(idPozycjaZamowien)
+        .then(zamowienie => {
+            allZamowienia = zamowienie;
+            return PozycjaZamowienRepository.getZamowienieProduktById(idPozycjaZamowien);
+        })
         .then(pozycjaZamowien => {
+            allpozycjaZamowien = pozycjaZamowien;
             res.render('Pages/PozycjaZamówień/FormularzNowejPozycjiZamówień', {
                 pozycjaZamowien: pozycjaZamowien,
                 formMode: 'showDetails',
+                allZamowienia: allZamowienia,
+                allpozycjaZamowien: allpozycjaZamowien,
                 pageTitle: 'Szczegóły pozycji zamówień',
                 formAction: '',
                 navLocation: 'pozycjaZamowien'
