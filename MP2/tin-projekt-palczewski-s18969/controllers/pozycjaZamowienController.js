@@ -49,10 +49,16 @@ exports.showPozycjaZamowieniaForm = (req, res, next) => {
 exports.showEditPozycjaZamowieniaForm = (req, res, next) => {
     const idPozycjaZamowien = req.params.idPozycjaZamowien;
     let allZamowienia, allpozycjaZamowien;
-    ZamowieniaRepository.getZamowienia()
+    ZamowieniaRepository.getZamowienieById(idPozycjaZamowien)
         .then(zamowienie => {
             allZamowienia = zamowienie;
-            return PozycjaZamowienRepository.getZamowienieProdukt();
+        
+        })
+
+        ProduktRepository.getProduktById(idPozycjaZamowien)
+        .then(produkty => {
+            allProdukty = produkty;
+            return PozycjaZamowienRepository.getZamowienieProduktById(idPozycjaZamowien);
         })
         .then(pozycjaZamowien => {
             allpozycjaZamowien = pozycjaZamowien;
@@ -61,6 +67,7 @@ exports.showEditPozycjaZamowieniaForm = (req, res, next) => {
                 formMode: 'edit',
                 allZamowienia: allZamowienia,
                 allpozycjaZamowien: allpozycjaZamowien,
+                allProdukty: allProdukty,
                 pageTitle: 'Edycja pozycji zamówień',
                 btnLabel: 'Edytuj',
                 formAction: '/pozycjaZamowien/edit',
