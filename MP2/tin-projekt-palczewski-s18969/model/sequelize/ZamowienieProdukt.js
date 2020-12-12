@@ -11,19 +11,48 @@ const ZamowienieProdukt = sequelize.define('ZamowienieProdukt', {
     Rabat: {
         type: Sequelize.INTEGER,
         defaultValue: 0,
-        allowNull: true
+        allowNull: true,
+        validate: {
+            len: {
+                msg: "Pole powinno być liczbą"
+            },
+        }
     },
     Ilosc: {
         type: Sequelize.INTEGER,
-        allowNull: false
+        allowNull: false,
+        validate: {
+            notEmpty: {
+                msg: "Pole jest wymagane"
+            },
+            len: {
+                msg: "Pole powinno być liczbą"
+            },
+        }
     },
     Zamowienie_IdZamowienie: {
         type: Sequelize.INTEGER,
-        allowNull: false
+        allowNull: false,
+        validate: {
+            notEmpty: {
+                msg: "Pole jest wymagane"
+            },
+            len: {
+                msg: "Pole powinno być liczbą"
+            },
+        }
     },
     Produkt_IdProdukt: {
         type: Sequelize.INTEGER,
-        allowNull: false
+        allowNull: false,
+        validate: {
+            notEmpty: {
+                msg: "Pole jest wymagane"
+            },
+            len: {
+                msg: "Pole powinno być liczbą"
+            },
+        }
     }
 
 });
