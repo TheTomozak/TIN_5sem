@@ -101,6 +101,10 @@ exports.showPozycjaZamowieniaDetails = (req, res, next) => {
 
 
 
+
+// 
+//
+
 exports.addPozycjaZamowienia = (req, res, next) => {
     const pozycjaZamowieniaData = { ...req.body };
     PozycjaZamowienRepository.createZamowienieProdukt(pozycjaZamowieniaData)

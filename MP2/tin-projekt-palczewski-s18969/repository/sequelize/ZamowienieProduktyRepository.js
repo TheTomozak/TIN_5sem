@@ -38,10 +38,10 @@ exports.createZamowienieProdukt = (data) => {
     console.log(JSON.stringify(data));
 
     return ZamowienieProdukt.create({
-        zamowienie_IdZamowienie: data.Zamowienie_IdZamowienie,
-        produkt_IdProdukt: data.Produkt_IdProdukt,
-        rabat: data.Rabat,
-        ilosc: data.Ilosc
+        Zamowienie_IdZamowienie: data.Zamowienie_IdZamowienie,
+        Produkt_IdProdukt: data.Produkt_IdProdukt,
+        Rabat: data.Rabat,
+        Ilosc: data.Ilosc
 
     });
 };

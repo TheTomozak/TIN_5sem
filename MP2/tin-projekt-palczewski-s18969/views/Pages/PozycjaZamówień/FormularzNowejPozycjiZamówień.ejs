@@ -6,8 +6,8 @@
     <form class="form" method="post" action="<%=formAction%>" novalidate onsubmit="return validateForm();">
 
 
-        <input type="hidden" name="IdZamowienieProdukt " value="<%= pozycjaZamowien.IdZamowienieProdukt  %>">
 
+        <input type="hidden" name="IdZamowienieProdukt" value="<%= pozycjaZamowien.IdZamowienieProdukt  %>">
 
         <label for="Kupiec">Kupiec:<sup>*</sup></label>
         <select id="Kupiec" name="Kupiec" required <%= (formMode == 'showDetails') ? 'disabled' : ''%>>
@@ -21,9 +21,7 @@
                 label="<%= pozycjaZamowien.zamowienia.Imie + ' ' + pozycjaZamowien.zamowienia.Nazwisko %>"></option>
                 <% }else { %>
             <% for (let i=0; i<allZamowienia.length; i++) { let zamowienie = allZamowienia[i]; %>
-            <option value="<%= zamowienie.IdZamowienie %>" label="<%= zamowienie.Imie + ' ' + zamowienie.Nazwisko %>"
-                <%= (pozycjaZamowien.IdZamowienieProdukt && zamowienie.IdZamowienie.toString() == pozycjaZamowien.zamowienia.IdZamowienie.toString()) ? 'selected' : ''%>>
-            </option>
+            <option value="<%= zamowienie.IdZamowienie %>" label="<%= zamowienie.Imie + ' ' + zamowienie.Nazwisko %>"></option>
             </option>
             <% } %>
             <% } %>
@@ -44,9 +42,7 @@
                 label="<%= pozycjaZamowien.produkty.Nazwa %>"></option>
                 <% }else { %>
             <% for (let i=0; i<allProdukty.length; i++) { let produkt = allProdukty[i]; %>
-            <option value="<%= produkt.IdProdukt %>" label="<%= produkt.Nazwa %>"
-                <%= (pozycjaZamowien.IdZamowienieProdukt && zamowienie.IdZamowienie.toString() == pozycjaZamowien.zamowienia.IdZamowienie.toString()) ? 'selected' : ''%>>
-            </option>
+            <option value="<%= produkt.IdProdukt %>" label="<%= produkt.Nazwa %>"></option>
             </option>
             <% } %>
             <% } %>
@@ -63,7 +59,7 @@
         <span id="errorRabat" class="errors-text"></span>
 
         <label for="Ilosc">Ilość:<sup>*</sup></label>
-        <input type="number" name="Ilość" id="Ilosc" placeholder="np. 5" value="<%= pozycjaZamowien.Ilosc %>"
+        <input type="number" name="Ilosc" id="Ilosc" placeholder="np. 5" value="<%= pozycjaZamowien.Ilosc %>"
             <%= (formMode == 'showDetails') ? 'disabled' : '' %> />
         <span id="errorIlosc" class="errors-text"></span>
 
