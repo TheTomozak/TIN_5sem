@@ -46,7 +46,7 @@ exports.showZamowieniaDetails = (req, res, next) => {
             res.render('Pages/Zamówienia/FormularzNowegoZamówienia', {
                 zamowienie: zamowienie,
                 formMode: 'showDetails',
-                pageTitle: 'Szczegóły produktu',
+                pageTitle: 'Szczegóły zamowienia',
                 formAction: '',
                 navLocation: 'zamowienie'
             });
