@@ -10,14 +10,14 @@
         <input type="hidden" name="IdZamowienieProdukt" value="<%= pozycjaZamowien.IdZamowienieProdukt  %>">
 
         <label for="Kupiec">Kupiec:<sup>*</sup></label>
-        <select id="Kupiec" name="Kupiec" required <%= (formMode == 'showDetails') ? 'disabled' : ''%>>
+        <select id="Kupiec" name="Zamowienie_IdZamowienie" required <%= (formMode == 'showDetails') ? 'disabled' : ''%>>
             <option value="" selected>--- Wybierz kupca ---</option>
 
             <% if (formMode == 'showDetails') { %>
-            <option selected value="pozycjaZamowien.Zamowienie_IdZamowienie "
+            <option selected value="<%= pozycjaZamowien.Zamowienie_IdZamowienie %>"
                 label="<%= pozycjaZamowien.zamowienia.Imie + ' ' + pozycjaZamowien.zamowienia.Nazwisko %>"></option>
             <% } else if(formMode == 'edit'){ %>
-                <option selected value="pozycjaZamowien.Zamowienie_IdZamowienie "
+                <option selected value="<%= pozycjaZamowien.Zamowienie_IdZamowienie %>"
                 label="<%= pozycjaZamowien.zamowienia.Imie + ' ' + pozycjaZamowien.zamowienia.Nazwisko %>"></option>
                 <% }else { %>
             <% for (let i=0; i<allZamowienia.length; i++) { let zamowienie = allZamowienia[i]; %>
@@ -31,14 +31,14 @@
 
 
         <label for="Produkt">Produkt:<sup>*</sup></label>
-        <select id="Produkt" name="Produkt" required <%= (formMode == 'showDetails') ? 'disabled' : ''%>>
+        <select id="Produkt" name="Produkt_IdProdukt" required <%= (formMode == 'showDetails') ? 'disabled' : ''%>>
             <option value="" selected>--- Wybierz produkt ---</option>
 
             <% if (formMode == 'showDetails') { %>
-            <option selected value="pozycjaZamowien.Produkt_IdProdukt "
+            <option selected value="<%= pozycjaZamowien.Produkt_IdProdukt  %>"
                 label="<%= pozycjaZamowien.produkty.Nazwa %>"></option>
             <% } else if(formMode == 'edit'){ %>
-                <option selected value="pozycjaZamowien.Produkt_IdProdukt "
+                <option selected value="<%= pozycjaZamowien.Produkt_IdProdukt %>"
                 label="<%= pozycjaZamowien.produkty.Nazwa %>"></option>
                 <% }else { %>
             <% for (let i=0; i<allProdukty.length; i++) { let produkt = allProdukty[i]; %>

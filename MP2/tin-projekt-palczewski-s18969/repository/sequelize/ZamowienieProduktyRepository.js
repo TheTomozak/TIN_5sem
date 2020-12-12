@@ -47,6 +47,10 @@ exports.createZamowienieProdukt = (data) => {
 };
 
 exports.updateZamowienieProdukt = (ZamowienieProduktId, data) => {
+
+    console.log(JSON.stringify(data));
+
+
     return ZamowienieProdukt.update(data, {where: {IdZamowienieProdukt : ZamowienieProduktId }});
 }
 
