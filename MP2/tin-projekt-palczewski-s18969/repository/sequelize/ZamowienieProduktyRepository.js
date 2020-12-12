@@ -40,17 +40,13 @@ exports.createZamowienieProdukt = (data) => {
     return ZamowienieProdukt.create({
         Zamowienie_IdZamowienie: data.Zamowienie_IdZamowienie,
         Produkt_IdProdukt: data.Produkt_IdProdukt,
-        Rabat: data.Rabat,
+        Rabat: data.Rabat || 0,
         Ilosc: data.Ilosc
 
     });
 };
 
 exports.updateZamowienieProdukt = (ZamowienieProduktId, data) => {
-
-    console.log(JSON.stringify(data));
-
-
     return ZamowienieProdukt.update(data, {where: {IdZamowienieProdukt : ZamowienieProduktId }});
 }
 
