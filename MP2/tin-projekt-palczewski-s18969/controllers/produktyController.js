@@ -86,6 +86,17 @@ exports.updateProdukt = (req, res, next) => {
     ProduktRepository.updateProdukt(idProduktu, produkData)
         .then(result => {
             res.redirect('/produkty');
+        })
+        .catch(err => {
+            res.render('Pages/Produkt/FormularzNowegoProduktu', {
+                produkt: produkData,
+                pageTitle: 'Dodawanie produktu',
+                formMode: 'createNew',
+                btnLabel: 'Dodaj',
+                formAction: '/produkty/add',
+                navLocation: 'produkt',
+                validationErrors: err.errors
+            });
         });
 };
 
