@@ -3,37 +3,57 @@
 <main>
     <script type="application/javascript" src="/JS/walidacjaProduktu.js"></script>
     <h2><%= pageTitle %></h2>
-    <form class="form" method="post" action="<%=formAction%>" novalidate onsubmit="return validateForm();">
+    <form class="form" method="post" action="<%=formAction%>" novalidate >
 
-
+<!-- onsubmit="return validateForm();" -->
         <input type="hidden" name="IdProdukt" id="IdProdukt" value="<%= produkt.IdProdukt %>">
-
+        
 
         <label for="Nazwa">Nazwa:<sup>*</sup></label>
         <input type="text" name="Nazwa" id="Nazwa" placeholder="2-60 znaków" value="<%= produkt.Nazwa %>"
             <%= (formMode == 'showDetails') ? 'disabled' : '' %> />
-        <span id="errorNazwa" class="errors-text"></span>
+        <span id="errorNazwa" class="errors-text">
+                <% if (validationErrors.find(e => e.path.includes('Nazwa'))) { %>
+                    <%= validationErrors.find(e => e.path.includes('Nazwa')).message %>
+                <% } %>
+        </span>
 
 
         <label for="TypProduktu">Typ produktu:<sup>*</sup></label>
         <input type="text" name="TypProduktu" id="TypProduktu" placeholder="2-40 znaków"
             value="<%= produkt.TypProduktu %>" <%= (formMode == 'showDetails') ? 'disabled' : '' %> />
-        <span id="errorTypProduktu" class="errors-text"></span>
+        <span id="errorTypProduktu" class="errors-text">
+            <% if (validationErrors.find(e => e.path.includes('TypProduktu'))) { %>
+                <%= validationErrors.find(e => e.path.includes('TypProduktu')).message %>
+            <% } %>
+        </span>
 
         <label for="Gwarancja">Gwarancja na okres(lata):<sup>*</sup></label>
         <input type="number" name="Gwarancja" id="Gwarancja" placeholder="np. 2" value="<%= produkt.Gwarancja %>"
             <%= (formMode == 'showDetails') ? 'disabled' : '' %> />
-        <span id="errorGwarancja" class="errors-text"></span>
+        <span id="errorGwarancja" class="errors-text">
+            <% if (validationErrors.find(e => e.path.includes('Gwarancja'))) { %>
+                <%= validationErrors.find(e => e.path.includes('Gwarancja')).message %>
+            <% } %>
+        </span>
 
         <label for="Cena">Cena(zł):<sup>*</sup></label>
         <input type="number" name="Cena" id="Cena" placeholder="np. 65" value="<%= produkt.Cena %>"
             <%= (formMode == 'showDetails') ? 'disabled' : '' %> />
-        <span id="errorCena" class="errors-text"></span>
+        <span id="errorCena" class="errors-text">
+            <% if (validationErrors.find(e => e.path.includes('Cena'))) { %>
+                <%= validationErrors.find(e => e.path.includes('Cena')).message %>
+            <% } %>
+        </span>
 
         <label for="Kolor">Kolor:</label>
         <input type="text" name="Kolor" id="Kolor" placeholder="np. czerwony" value="<%= produkt.Kolor %>"
             <%= (formMode == 'showDetails') ? 'disabled' : '' %> />
-        <span id="errorKolor" class="errors-text"></span>
+        <span id="errorKolor" class="errors-text">
+            <% if (validationErrors.find(e => e.path.includes('Kolor'))) { %>
+                <%= validationErrors.find(e => e.path.includes('Kolor')).message %>
+            <% } %>
+        </span>
 
         <% if (formMode == 'showDetails') { %>
         <div class="section-buttons">

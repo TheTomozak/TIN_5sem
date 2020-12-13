@@ -20,7 +20,9 @@ exports.showAddProduktForm = (req, res, next) => {
         formMode: 'createNew',
         btnLabel: 'Dodaj',
         formAction: '/produkty/add',
-        navLocation: 'produkt'
+        navLocation: 'produkt',
+        validationErrors: []
+
     });
 }
 
@@ -34,7 +36,8 @@ exports.showEditProduktForm = (req, res, next) => {
                 pageTitle: 'Edycja produktu',
                 btnLabel: 'Edytuj',
                 formAction: '/produkty/edit',
-                navLocation: 'produkt'
+                navLocation: 'produkt',
+                validationErrors: []
             });
         });
 };
@@ -48,7 +51,8 @@ exports.showProduktDetails = (req, res, next) => {
                 formMode: 'showDetails',
                 pageTitle: 'Szczegóły produktu',
                 formAction: '',
-                navLocation: 'produkt'
+                navLocation: 'produkt',
+                validationErrors: []
             });
         });
 }
@@ -61,6 +65,17 @@ exports.addProdukt = (req, res, next) => {
     ProduktRepository.createProdukt(produkData)
         .then(result => {
             res.redirect('/produkty');
+        })
+        .catch(err => {
+            res.render('Pages/Produkt/FormularzNowegoProduktu', {
+                produkt: produkData,
+                pageTitle: 'Dodawanie produktu',
+                formMode: 'createNew',
+                btnLabel: 'Dodaj',
+                formAction: '/produkty/add',
+                navLocation: 'produkt',
+                validationErrors: err.errors
+            });
         });
 
 };

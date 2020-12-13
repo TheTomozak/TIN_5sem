@@ -64,8 +64,9 @@ const Produkt = sequelize.define('Produkt', {
         validate: {
             len: {
                 args: [2,60],
-                msg: "Pole powinno zawierać od 2 do 60 znaków"
+                msg: "Pole jest opcjonalne - jeśli chcesz wpisać kolor powinnien zawierać się od 2 do 60 znaków"
             },
+
         }
     }
 });
