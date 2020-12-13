@@ -20,7 +20,8 @@ exports.showZamowieniaForm = (req, res, next) => {
         formMode: 'createNew',
         btnLabel: 'Dodaj',
         formAction: '/zamowienia/add',
-        navLocation: 'zamowienie'
+        navLocation: 'zamowienie',
+        validationErrors:[]
     });
 }
 
@@ -34,7 +35,8 @@ exports.showEditZamowieniaForm = (req, res, next) => {
                 pageTitle: 'Edycja zamowienia',
                 btnLabel: 'Edytuj',
                 formAction: '/zamowienia/edit',
-                navLocation: 'zamowienie'
+                navLocation: 'zamowienie',
+                validationErrors:[]
             });
         });
 };
@@ -48,7 +50,8 @@ exports.showZamowieniaDetails = (req, res, next) => {
                 formMode: 'showDetails',
                 pageTitle: 'Szczegóły zamowienia',
                 formAction: '',
-                navLocation: 'zamowienie'
+                navLocation: 'zamowienie',
+                validationErrors:[]
             });
         });
 }
@@ -60,15 +63,41 @@ exports.addZamowienia = (req, res, next) => {
     ZamowieniaRepository.createZamowienie(zamowienieData)
         .then(result => {
             res.redirect('/zamowienia');
+        })
+        .catch(err => {
+            res.render('Pages/Zamówienia/FormularzNowegoZamówienia', {
+                zamowienie: zamowienieData,
+                pageTitle: 'Nowe zamowienie',
+                formMode: 'createNew',
+                btnLabel: 'Dodaj',
+                formAction: '/zamowienia/add',
+                navLocation: 'zamowienie',
+                validationErrors: err.errors
+            });
         });
+        
+
+
+
 };
 
 exports.updateZamowienia = (req, res, next) => {
-    const idZamowienie = req.body.IdZamowienie ;
+    const idZamowienie = req.body.IdZamowienie;
     const zamowienieData = { ...req.body };
     ZamowieniaRepository.updateZamowienie(idZamowienie, zamowienieData)
         .then(result => {
             res.redirect('/zamowienia');
+        })
+        .catch(err => {
+            res.render('Pages/Zamówienia/FormularzNowegoZamówienia', {
+                zamowienie: zamowienieData,
+                pageTitle: 'Nowe zamowienie',
+                formMode: 'createNew',
+                btnLabel: 'Dodaj',
+                formAction: '/zamowienia/add',
+                navLocation: 'zamowienie',
+                validationErrors: err.errors
+            });
         });
 };
 

@@ -95,7 +95,7 @@ const Zamowienie = sequelize.define('Zamowienie', {
             },
             len: {
                 msg: "Pole powinno być numerem telefonu"
-            },
+            }
             
         }
     }
