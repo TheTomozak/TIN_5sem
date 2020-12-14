@@ -3,19 +3,19 @@
 <main>
     <script type="application/javascript" src="/JS/walidacjaProduktu.js"></script>
     <h2><%= pageTitle %></h2>
-    <form class="form" method="post" action="<%=formAction%>" novalidate >
+    <form class="form" method="post" action="<%=formAction%>" novalidate>
 
-<!-- onsubmit="return validateForm();" -->
+        <!-- onsubmit="return validateForm();" -->
         <input type="hidden" name="IdProdukt" id="IdProdukt" value="<%= produkt.IdProdukt %>">
-        
+
 
         <label for="Nazwa">Nazwa:<sup>*</sup></label>
         <input type="text" name="Nazwa" id="Nazwa" placeholder="2-60 znaków" value="<%= produkt.Nazwa %>"
             <%= (formMode == 'showDetails') ? 'disabled' : '' %> />
         <span id="errorNazwa" class="errors-text">
-                <% if (validationErrors.find(e => e.path.includes('Nazwa'))) { %>
-                    <%= validationErrors.find(e => e.path.includes('Nazwa')).message %>
-                <% } %>
+            <% if (validationErrors.find(e => e.path.includes('Nazwa'))) { %>
+            <%= validationErrors.find(e => e.path.includes('Nazwa')).message %>
+            <% } %>
         </span>
 
 
@@ -24,7 +24,7 @@
             value="<%= produkt.TypProduktu %>" <%= (formMode == 'showDetails') ? 'disabled' : '' %> />
         <span id="errorTypProduktu" class="errors-text">
             <% if (validationErrors.find(e => e.path.includes('TypProduktu'))) { %>
-                <%= validationErrors.find(e => e.path.includes('TypProduktu')).message %>
+            <%= validationErrors.find(e => e.path.includes('TypProduktu')).message %>
             <% } %>
         </span>
 
@@ -33,7 +33,7 @@
             <%= (formMode == 'showDetails') ? 'disabled' : '' %> />
         <span id="errorGwarancja" class="errors-text">
             <% if (validationErrors.find(e => e.path.includes('Gwarancja'))) { %>
-                <%= validationErrors.find(e => e.path.includes('Gwarancja')).message %>
+            <%= validationErrors.find(e => e.path.includes('Gwarancja')).message %>
             <% } %>
         </span>
 
@@ -42,7 +42,7 @@
             <%= (formMode == 'showDetails') ? 'disabled' : '' %> />
         <span id="errorCena" class="errors-text">
             <% if (validationErrors.find(e => e.path.includes('Cena'))) { %>
-                <%= validationErrors.find(e => e.path.includes('Cena')).message %>
+            <%= validationErrors.find(e => e.path.includes('Cena')).message %>
             <% } %>
         </span>
 
@@ -51,7 +51,7 @@
             <%= (formMode == 'showDetails') ? 'disabled' : '' %> />
         <span id="errorKolor" class="errors-text">
             <% if (validationErrors.find(e => e.path.includes('Kolor'))) { %>
-                <%= validationErrors.find(e => e.path.includes('Kolor')).message %>
+            <%= validationErrors.find(e => e.path.includes('Kolor')).message %>
             <% } %>
         </span>
 
@@ -60,51 +60,52 @@
             <a href="/produkty/edit/<%=produkt.IdProdukt%>" class="form-button-edit-detail">Edytuj</a>
         </div>
         <% }else { %>
-            <input class="form-button-submit" type="submit" value="<%=btnLabel%>" />
-            <span id="errorsSummary" class="errors-text"></span>
-            <% } %>
-      
-      
+        <input class="form-button-submit" type="submit" value="<%=btnLabel%>" />
+        <span id="errorsSummary" class="errors-text"></span>
+        <% } %>
+
+
 
     </form>
 
-        <% if (formMode == 'showDetails' || formMode == 'edit') { %>
-            <h2>
-                Szczegóły pozycji zamówień
-            </h2>
-            <table class="table-list">
-                <thead>
-                    <tr>
-                        <th>Produkt</th>
-                        <th>Rabat</th>
-                        <th>Ilosc</th>
-                        <th>Klient</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <% for (let p of produkt.zamowieniaProdukty) { %>
-                    <tr>
-    
-                        <td><%= produkt.Nazwa %></td>
-                        <td><%= p.Rabat %></td>
-                        <td><%= p.Ilosc %></td>
-                        <td><a href="/zamowienia/details/<%= p.zamowienia.IdZamowienie %> "><%= p.zamowienia.Imie %> <%= p.zamowienia.Nazwisko %></a></td>
+    <% if (formMode == 'showDetails' || formMode == 'edit') { %>
+    <h2>
+        Szczegóły pozycji zamówień
+    </h2>
+    <table class="table-list">
+        <thead>
+            <tr>
+                <th>Produkt</th>
+                <th>Rabat</th>
+                <th>Ilosc</th>
+                <th>Klient</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% for (let p of produkt.zamowieniaProdukty) { %>
+            <tr>
 
-                    </tr>
-                    <% } %>
-                </tbody>
-            </table>
+                <td><%= produkt.Nazwa %></td>
+                <td><%= p.Rabat %></td>
+                <td><%= p.Ilosc %></td>
+                <td><a href="/zamowienia/details/<%= p.zamowienia.IdZamowienie %> "><%= p.zamowienia.Imie %>
+                        <%= p.zamowienia.Nazwisko %></a></td>
+
+            </tr>
             <% } %>
+        </tbody>
+    </table>
+    <% } %>
 
 
-            <div class="form-buttons">
-        
-                <% if (formMode != 'showDetails') { %>
-                <a class="form-button-cancel" href="/produkty">Anuluj</a>
-                <% } else { %>
-                <a class="form-button-cancel" href="/produkty">Powrót</a>
-                <% } %>
-            </div>
+    <div class="form-buttons">
+
+        <% if (formMode != 'showDetails') { %>
+        <a class="form-button-cancel" href="/produkty">Anuluj</a>
+        <% } else { %>
+        <a class="form-button-cancel" href="/produkty">Powrót</a>
+        <% } %>
+    </div>
 
 </main>
 

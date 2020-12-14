@@ -242,7 +242,7 @@ main h2 {
 .list-actions-button-details,
 .list-actions-button-edit,
 .list-actions-button-delete,
-.button-add{
+.button-add {
     border: none;
     border-radius: 5px;
     color: white;
@@ -502,32 +502,32 @@ body {
         padding: 0;
         position: absolute;
         width: 1px;
-      }
-      
-      table tr {
+    }
+
+    table tr {
         border-bottom: 3px solid #ddd;
         display: block;
         margin-bottom: .625em;
-      }
-      
-      table td {
+    }
+
+    table td {
         border-bottom: 1px solid #ddd;
         display: grid;
         font-size: .8em;
         text-align: left;
-      }
-      
-      table td::before {
-      
+    }
+
+    table td::before {
+
         content: attr(data-label);
         float: left;
         font-weight: bold;
         text-transform: uppercase;
-      }
-      
-      table td:last-child {
+    }
+
+    table td:last-child {
         border-bottom: 0;
-      }
+    }
 }
 
 @media all and (max-width: 600px) {
@@ -576,32 +576,32 @@ body {
         padding: 0;
         position: absolute;
         width: 1px;
-      }
-      
-      table tr {
+    }
+
+    table tr {
         border-bottom: 3px solid #ddd;
         display: block;
         margin-bottom: .625em;
-      }
-      
-      table td {
+    }
+
+    table td {
         border-bottom: 1px solid #ddd;
         display: grid;
         font-size: .8em;
         text-align: left;
-      }
-      
-      table td::before {
-      
+    }
+
+    table td::before {
+
         content: attr(data-label);
         float: left;
         font-weight: bold;
         text-transform: uppercase;
-      }
-      
-      table td:last-child {
+    }
+
+    table td:last-child {
         border-bottom: 0;
-      }
+    }
 
 
 }
@@ -634,4 +634,3 @@ body {
 /* .lista{
     overflow-x: auto;
 } */
-

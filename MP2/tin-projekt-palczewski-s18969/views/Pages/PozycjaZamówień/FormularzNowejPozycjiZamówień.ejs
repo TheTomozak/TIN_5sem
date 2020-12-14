@@ -3,7 +3,7 @@
 <main>
     <script type="application/javascript" src="/JS/walidacjaPozycjiZamowien.js"></script>
     <h2><%= pageTitle %></h2>
-    <form class="form" method="post" action="<%=formAction%>" novalidate >
+    <form class="form" method="post" action="<%=formAction%>" novalidate>
 
         <!-- onsubmit="return validateForm();" -->
 
@@ -18,18 +18,19 @@
             <option selected value="<%= pozycjaZamowien.Zamowienie_IdZamowienie %>"
                 label="<%= pozycjaZamowien.zamowienia.Imie + ' ' + pozycjaZamowien.zamowienia.Nazwisko %>"></option>
             <% } else if(formMode == 'edit'){ %>
-                <option selected value="<%= pozycjaZamowien.Zamowienie_IdZamowienie %>"
+            <option selected value="<%= pozycjaZamowien.Zamowienie_IdZamowienie %>"
                 label="<%= pozycjaZamowien.zamowienia.Imie + ' ' + pozycjaZamowien.zamowienia.Nazwisko %>"></option>
-                <% }else { %>
+            <% }else { %>
             <% for (let i=0; i<allZamowienia.length; i++) { let zamowienie = allZamowienia[i]; %>
-            <option value="<%= zamowienie.IdZamowienie %>" label="<%= zamowienie.Imie + ' ' + zamowienie.Nazwisko %>"></option>
+            <option value="<%= zamowienie.IdZamowienie %>" label="<%= zamowienie.Imie + ' ' + zamowienie.Nazwisko %>">
+            </option>
             </option>
             <% } %>
             <% } %>
         </select>
         <span id="errorKupiec" class="errors-text">
             <% if (validationErrors.find(e => e.path.includes('Zamowienie_IdZamowienie'))) { %>
-                <%= validationErrors.find(e => e.path.includes('Zamowienie_IdZamowienie')).message %>
+            <%= validationErrors.find(e => e.path.includes('Zamowienie_IdZamowienie')).message %>
             <% } %>
         </span>
 
@@ -43,9 +44,9 @@
             <option selected value="<%= pozycjaZamowien.Produkt_IdProdukt  %>"
                 label="<%= pozycjaZamowien.produkty.Nazwa %>"></option>
             <% } else if(formMode == 'edit'){ %>
-                <option selected value="<%= pozycjaZamowien.Produkt_IdProdukt %>"
+            <option selected value="<%= pozycjaZamowien.Produkt_IdProdukt %>"
                 label="<%= pozycjaZamowien.produkty.Nazwa %>"></option>
-                <% }else { %>
+            <% }else { %>
             <% for (let i=0; i<allProdukty.length; i++) { let produkt = allProdukty[i]; %>
             <option value="<%= produkt.IdProdukt %>" label="<%= produkt.Nazwa %>"></option>
             </option>
@@ -54,19 +55,19 @@
         </select>
         <span id="errorProdukt" class="errors-text">
             <% if (validationErrors.find(e => e.path.includes('Produkt_IdProdukt'))) { %>
-                <%= validationErrors.find(e => e.path.includes('Produkt_IdProdukt')).message %>
+            <%= validationErrors.find(e => e.path.includes('Produkt_IdProdukt')).message %>
             <% } %>
         </span>
 
-       
-    
+
+
 
         <label for="Rabat">Rabat(%):</label>
         <input type="number" name="Rabat" id="Rabat" placeholder="np. 2" value="<%= pozycjaZamowien.Rabat %>"
             <%= (formMode == 'showDetails') ? 'disabled' : '' %> />
         <span id="errorRabat" class="errors-text">
             <% if (validationErrors.find(e => e.path.includes('Rabat'))) { %>
-                <%= validationErrors.find(e => e.path.includes('Rabat')).message %>
+            <%= validationErrors.find(e => e.path.includes('Rabat')).message %>
             <% } %>
         </span>
 
@@ -75,7 +76,7 @@
             <%= (formMode == 'showDetails') ? 'disabled' : '' %> />
         <span id="errorIlosc" class="errors-text">
             <% if (validationErrors.find(e => e.path.includes('Ilosc'))) { %>
-                <%= validationErrors.find(e => e.path.includes('Ilosc')).message %>
+            <%= validationErrors.find(e => e.path.includes('Ilosc')).message %>
             <% } %>
         </span>
 

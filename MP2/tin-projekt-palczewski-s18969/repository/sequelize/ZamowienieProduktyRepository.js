@@ -47,7 +47,7 @@ exports.createZamowienieProdukt = (data) => {
 };
 
 exports.updateZamowienieProdukt = (ZamowienieProduktId, data) => {
-    return ZamowienieProdukt.update(data, {where: {IdZamowienieProdukt : ZamowienieProduktId }});
+    return ZamowienieProdukt.update(data, { where: { IdZamowienieProdukt: ZamowienieProduktId } });
 }
 
 exports.deleteZamowienieProdukt = (ZamowienieProduktId) => {
@@ -57,7 +57,7 @@ exports.deleteZamowienieProdukt = (ZamowienieProduktId) => {
 }
 
 exports.deleteManyZamowienieProdukts = (ZamowienieProduktIds) => {
-    return ZamowienieProdukt.find({ IdZamowienieProdukt: { [Sequelize.Op.in]: ZamowienieProduktIds }})
+    return ZamowienieProdukt.find({ IdZamowienieProdukt: { [Sequelize.Op.in]: ZamowienieProduktIds } })
 }
 
 

@@ -87,4 +87,4 @@ function checkDateIfAfter(value, compareTo) {
 
 function hasNumber(myString) {
     return /\d/.test(myString);
-  }
+}

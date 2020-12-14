@@ -6,7 +6,7 @@ exports.getZamowienia = (req, res, next) => {
             res.status(200).json(prod);
         })
         .catch(err => {
-           console.log(err);
+            console.log(err);
         });
 };
 
@@ -14,9 +14,9 @@ exports.getZamowienieById = (req, res, next) => {
     const zamowienieId = req.params.zamowienieId;
     ZamowieniaRepository.getZamowienieById(zamowienieId)
         .then(prod => {
-            if(!prod) {
+            if (!prod) {
                 res.status(404).json({
-                    message: 'Zamowienie z id: '+zamowienieId+' nie zostało znalezione'
+                    message: 'Zamowienie z id: ' + zamowienieId + ' nie zostało znalezione'
                 })
             } else {
                 res.status(200).json(prod);
@@ -27,7 +27,7 @@ exports.getZamowienieById = (req, res, next) => {
 exports.createZamowienie = (req, res, next) => {
     ZamowieniaRepository.createZamowienie(req.body)
         .then(newObj => {
-           res.status(201).json(newObj);
+            res.status(201).json(newObj);
         })
         .catch(err => {
             if (!err.statusCode) {
@@ -41,7 +41,7 @@ exports.updateZamowienie = (req, res, next) => {
     const zamowienieId = req.params.zamowienieId;
     ZamowieniaRepository.updateZamowienie(zamowienieId, req.body)
         .then(result => {
-           res.status(200).json({message: 'Zamowienie zaktualizowane!', prod: result});
+            res.status(200).json({ message: 'Zamowienie zaktualizowane!', prod: result });
         })
         .catch(err => {
             if (!err.statusCode) {

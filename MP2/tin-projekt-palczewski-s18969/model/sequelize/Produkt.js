@@ -16,7 +16,7 @@ const Produkt = sequelize.define('Produkt', {
                 msg: "Pole jest wymagane"
             },
             len: {
-                args: [2,60],
+                args: [2, 60],
                 msg: "Pole powinno zawierać od 2 do 60 znaków"
             },
         }
@@ -29,7 +29,7 @@ const Produkt = sequelize.define('Produkt', {
                 msg: "Pole jest wymagane"
             },
             len: {
-                args: [2,40],
+                args: [2, 40],
                 msg: "Pole powinno zawierać od 2 do 40 znaków"
             },
         }
@@ -46,8 +46,8 @@ const Produkt = sequelize.define('Produkt', {
             },
         }
     },
-    Cena:{
-        type: Sequelize.DECIMAL(10,2),
+    Cena: {
+        type: Sequelize.DECIMAL(10, 2),
         allowNull: false,
         validate: {
             notEmpty: {
@@ -58,12 +58,12 @@ const Produkt = sequelize.define('Produkt', {
             },
         }
     },
-    Kolor:{
+    Kolor: {
         type: Sequelize.STRING,
         allowNull: true,
         validate: {
             len: {
-                args: [2,60],
+                args: [2, 60],
                 msg: "Pole jest opcjonalne - jeśli chcesz wpisać kolor powinnien zawierać się od 2 do 60 znaków"
             },
 

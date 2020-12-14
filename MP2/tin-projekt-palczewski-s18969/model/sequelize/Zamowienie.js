@@ -52,7 +52,7 @@ const Zamowienie = sequelize.define('Zamowienie', {
                 msg: "Pole jest wymagane"
             },
             len: {
-                args: [2,40],
+                args: [2, 40],
                 msg: "Pole powinno zawierać od 2 do 40 znaków"
             },
         }
@@ -65,7 +65,7 @@ const Zamowienie = sequelize.define('Zamowienie', {
                 msg: "Pole jest wymagane"
             },
             len: {
-                args: [2,60],
+                args: [2, 60],
                 msg: "Pole powinno zawierać od 2 do 60 znaków"
             },
         }
@@ -78,7 +78,7 @@ const Zamowienie = sequelize.define('Zamowienie', {
                 msg: "Pole jest wymagane"
             },
             len: {
-                args: [5,60],
+                args: [5, 60],
                 msg: "Pole powinno zawierać od 5 do 60 znaków"
             },
             isEmail: {
@@ -96,7 +96,7 @@ const Zamowienie = sequelize.define('Zamowienie', {
             len: {
                 msg: "Pole powinno być numerem telefonu"
             }
-            
+
         }
     }
 });

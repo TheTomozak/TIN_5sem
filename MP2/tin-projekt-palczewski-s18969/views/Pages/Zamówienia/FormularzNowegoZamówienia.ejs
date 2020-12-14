@@ -3,7 +3,7 @@
 <main>
     <script type="application/javascript" src="/JS/walidacjaZamowienia.js"></script>
     <h2><%= pageTitle %></h2>
-    <form class="form" method="post" action="<%=formAction%>" novalidate >
+    <form class="form" method="post" action="<%=formAction%>" novalidate>
 
         <!-- onsubmit="return validateForm();" -->
 
@@ -14,7 +14,7 @@
             <%= (formMode == 'showDetails') ? 'disabled' : '' %> />
         <span id="errorImie" class="errors-text">
             <% if (validationErrors.find(e => e.path.includes('Imie'))) { %>
-                <%= validationErrors.find(e => e.path.includes('Imie')).message %>
+            <%= validationErrors.find(e => e.path.includes('Imie')).message %>
             <% } %>
         </span>
 
@@ -23,7 +23,7 @@
             <%= (formMode == 'showDetails') ? 'disabled' : '' %> />
         <span id="errorNazwisko" class="errors-text">
             <% if (validationErrors.find(e => e.path.includes('Nazwisko'))) { %>
-                <%= validationErrors.find(e => e.path.includes('Nazwisko')).message %>
+            <%= validationErrors.find(e => e.path.includes('Nazwisko')).message %>
             <% } %>
         </span>
 
@@ -32,7 +32,7 @@
             <%= (formMode == 'showDetails') ? 'disabled' : '' %> />
         <span id="errorKwota" class="errors-text">
             <% if (validationErrors.find(e => e.path.includes('Kwota'))) { %>
-                <%= validationErrors.find(e => e.path.includes('Kwota')).message %>
+            <%= validationErrors.find(e => e.path.includes('Kwota')).message %>
             <% } %>
         </span>
 
@@ -41,7 +41,7 @@
             <%= (formMode == 'showDetails') ? 'disabled' : '' %> />
         <span id="errorEmail" class="errors-text">
             <% if (validationErrors.find(e => e.path.includes('Email'))) { %>
-                <%= validationErrors.find(e => e.path.includes('Email')).message %>
+            <%= validationErrors.find(e => e.path.includes('Email')).message %>
             <% } %>
         </span>
 
@@ -50,7 +50,7 @@
             value="<%= zamowienie.NumerTelefonu %>" <%= (formMode == 'showDetails') ? 'disabled' : '' %> />
         <span id="errorNumerNumerTel" class="errors-text">
             <% if (validationErrors.find(e => e.path.includes('NumerTel'))) { %>
-                <%= validationErrors.find(e => e.path.includes('NumerTel')).message %>
+            <%= validationErrors.find(e => e.path.includes('NumerTel')).message %>
             <% } %>
         </span>
 
@@ -59,7 +59,7 @@
             <%= (formMode == 'showDetails') ? 'disabled' : '' %> />
         <span id="errorDataPrzyjecia" class="errors-text">
             <% if (validationErrors.find(e => e.path.includes('DataPrzyjecia'))) { %>
-                <%= validationErrors.find(e => e.path.includes('DataPrzyjecia')).message %>
+            <%= validationErrors.find(e => e.path.includes('DataPrzyjecia')).message %>
             <% } %>
         </span>
 
@@ -68,18 +68,18 @@
             <%= (formMode == 'showDetails') ? 'disabled' : '' %> />
         <span id="errorDataRealizacji" class="errors-text">
             <% if (validationErrors.find(e => e.path.includes('DataRealizacji'))) { %>
-                <%= validationErrors.find(e => e.path.includes('DataRealizacji')).message %>
+            <%= validationErrors.find(e => e.path.includes('DataRealizacji')).message %>
             <% } %>
         </span>
 
         <% if (formMode == 'showDetails') { %>
-            <div class="section-buttons">
-                <a href="/zamowienia/edit/<%=zamowienie.IdZamowienie%>" class="form-button-edit-detail">Edytuj</a>
-            </div>
-            <% }else { %>
-            <input class="form-button-submit" type="submit" value="<%=btnLabel%>" />
-            <span id="errorsSummary" class="errors-text"></span>
-            <% } %>
+        <div class="section-buttons">
+            <a href="/zamowienia/edit/<%=zamowienie.IdZamowienie%>" class="form-button-edit-detail">Edytuj</a>
+        </div>
+        <% }else { %>
+        <input class="form-button-submit" type="submit" value="<%=btnLabel%>" />
+        <span id="errorsSummary" class="errors-text"></span>
+        <% } %>
 
     </form>
 

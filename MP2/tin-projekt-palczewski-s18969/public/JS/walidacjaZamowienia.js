@@ -83,14 +83,14 @@ function validateForm() {
     //////////////////////////////////////////////////////////////////////
     //NumerTelefonu
 
-    if(numerTel.value.length != 0){
+    if (numerTel.value.length != 0) {
         if (!checkTextLengthRange(numerTel.value, 9, 12)) {
             valid = false;
             numerTel.classList.add("error-input");
             errorNumerNumerTel.innerText = "Pole powinno zawierać od 9 do 12 znaków";
         }
     }
-    
+
     //////////////////////////////////////////////////////////////////////
     //DataPrzyjecia
 

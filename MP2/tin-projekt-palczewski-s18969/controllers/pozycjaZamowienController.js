@@ -74,38 +74,6 @@ exports.showEditPozycjaZamowieniaForm = (req, res, next) => {
 
 };
 
-// exports.showEditPozycjaZamowieniaForm = (req, res, next) => {
-//     const idPozycjaZamowien = req.params.idPozycjaZamowien;
-//     let allZamowienia, allpozycjaZamowien;
-//     ZamowieniaRepository.getZamowienieById(idPozycjaZamowien)
-//         .then(zamowienie => {
-//             allZamowienia = zamowienie;
-
-//         })
-
-//     ProduktRepository.getProduktById(idPozycjaZamowien)
-//         .then(produkty => {
-//             allProdukty = produkty;
-//             return PozycjaZamowienRepository.getZamowienieProduktById(idPozycjaZamowien);
-//         })
-//         .then(pozycjaZamowien => {
-//             allpozycjaZamowien = pozycjaZamowien;
-//             res.render('Pages/PozycjaZamówień/FormularzNowejPozycjiZamówień', {
-//                 pozycjaZamowien: pozycjaZamowien,
-//                 formMode: 'edit',
-//                 allZamowienia: allZamowienia,
-//                 allpozycjaZamowien: allpozycjaZamowien,
-//                 allProdukty: allProdukty,
-//                 pageTitle: 'Edycja pozycji zamówień',
-//                 btnLabel: 'Edytuj',
-//                 formAction: '/pozycjaZamowien/edit',
-//                 navLocation: 'pozycjaZamowien',
-//                 validationErrors: []
-
-//             });
-//         });
-// };
-
 exports.showPozycjaZamowieniaDetails = (req, res, next) => {
 
     const idPozycjaZamowien = req.params.idPozycjaZamowien;
@@ -129,12 +97,6 @@ exports.showPozycjaZamowieniaDetails = (req, res, next) => {
             });
         });
 }
-
-
-
-
-// 
-//
 
 
 exports.addPozycjaZamowienia = (req, res, next) => {
@@ -170,8 +132,6 @@ exports.addPozycjaZamowienia = (req, res, next) => {
         });
 
 };
-
-
 
 
 exports.updatePozycjaZamowienia = (req, res, next) => {

@@ -1,8 +1,8 @@
 <%- include('../../fragments/header.ejs') %>
 
-    <main>
-        <h2>Lista zamówień</h2>
-        <div class="lista" >
+<main>
+    <h2>Lista zamówień</h2>
+    <div class="lista">
         <table class="table-list">
             <thead>
                 <tr>
@@ -16,25 +16,28 @@
 
             <tbody>
                 <% for (let zamowienie of zamowienieList) { %>
-                    <tr>
-                        <td><%= zamowienie.Imie %></td>
-                        <td><%= zamowienie.Nazwisko %></td>
-                        <td><%= zamowienie.Kwota %></td>
-                        <td>
-                            <ul class="list-actions">
-                                <li><a href="/zamowienia/details/<%=zamowienie.IdZamowienie %>" class="list-actions-button-details">Szczegóły</a></li>
-                                <li><a href="/zamowienia/edit/<%=zamowienie.IdZamowienie %>" class="list-actions-button-edit">Edytuj</a></li>
-                                <li><a href="/zamowienia/delete/<%=zamowienie.IdZamowienie %>" class="list-actions-button-delete">Usuń</a></li>
-                            </ul>
-                        </td>
-                    </tr>
+                <tr>
+                    <td><%= zamowienie.Imie %></td>
+                    <td><%= zamowienie.Nazwisko %></td>
+                    <td><%= zamowienie.Kwota %></td>
+                    <td>
+                        <ul class="list-actions">
+                            <li><a href="/zamowienia/details/<%=zamowienie.IdZamowienie %>"
+                                    class="list-actions-button-details">Szczegóły</a></li>
+                            <li><a href="/zamowienia/edit/<%=zamowienie.IdZamowienie %>"
+                                    class="list-actions-button-edit">Edytuj</a></li>
+                            <li><a href="/zamowienia/delete/<%=zamowienie.IdZamowienie %>"
+                                    class="list-actions-button-delete">Usuń</a></li>
+                        </ul>
+                    </td>
+                </tr>
                 <% } %>
-                </tbody>
+            </tbody>
         </table>
-        </div>
-    </main>
+    </div>
+</main>
 
-    <p><a class="button-add" href="/zamowienia/add">Dodaj nową pozycję zamówień</a></p>
+<p><a class="button-add" href="/zamowienia/add">Dodaj nową pozycję zamówień</a></p>
 
 
-    <%- include('../../fragments/footer.ejs') %>
+<%- include('../../fragments/footer.ejs') %>

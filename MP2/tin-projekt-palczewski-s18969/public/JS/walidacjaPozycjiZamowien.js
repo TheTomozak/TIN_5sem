@@ -32,7 +32,7 @@ function validateForm() {
         valid = false;
         produkt.classList.add("error-input");
         errorProdukt.innerText = "Pole jest wymagane";
-    } 
+    }
 
     //////////////////////////////////////////////////////////////////////
     //Rabat
@@ -56,7 +56,7 @@ function validateForm() {
         ilosc.classList.add("error-input");
         errorIlosc.innerText = "Cena musi być liczbą";
     }
-   
+
 
     if (!valid) {
         errorsSummary.innerText = "Formularz zawiera błędy";

@@ -21,7 +21,7 @@ exports.showZamowieniaForm = (req, res, next) => {
         btnLabel: 'Dodaj',
         formAction: '/zamowienia/add',
         navLocation: 'zamowienie',
-        validationErrors:[]
+        validationErrors: []
     });
 }
 
@@ -36,7 +36,7 @@ exports.showEditZamowieniaForm = (req, res, next) => {
                 btnLabel: 'Edytuj',
                 formAction: '/zamowienia/edit',
                 navLocation: 'zamowienie',
-                validationErrors:[]
+                validationErrors: []
             });
         });
 };
@@ -51,7 +51,7 @@ exports.showZamowieniaDetails = (req, res, next) => {
                 pageTitle: 'Szczegóły zamowienia',
                 formAction: '',
                 navLocation: 'zamowienie',
-                validationErrors:[]
+                validationErrors: []
             });
         });
 }
@@ -75,7 +75,7 @@ exports.addZamowienia = (req, res, next) => {
                 validationErrors: err.errors
             });
         });
-        
+
 
 
 

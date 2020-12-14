@@ -37,9 +37,9 @@ exports.updateProdukt = (idProduktu, produktData) => {
     const nazwa = produktData.Nazwa;
     const typProduktu = produktData.TypProduktu;
     const gwarancja = produktData.Gwarancjal
-    const cena = produktData.Cena; 
+    const cena = produktData.Cena;
     const kolor = produktData.Kolor;
-    return Produkt.update(produktData, {where: {IdProdukt : idProduktu }});
+    return Produkt.update(produktData, { where: { IdProdukt: idProduktu } });
 }
 
 exports.deleteProdukt = (idProduktu) => {

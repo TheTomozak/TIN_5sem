@@ -81,7 +81,7 @@ exports.addProdukt = (req, res, next) => {
 };
 
 exports.updateProdukt = (req, res, next) => {
-    const idProduktu = req.body.IdProdukt ;
+    const idProduktu = req.body.IdProdukt;
     const produkData = { ...req.body };
     ProduktRepository.updateProdukt(idProduktu, produkData)
         .then(result => {

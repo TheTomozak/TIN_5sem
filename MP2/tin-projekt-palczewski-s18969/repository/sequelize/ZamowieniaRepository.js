@@ -44,12 +44,12 @@ exports.updateZamowienie = (idZamowienie, zamowienieData) => {
     const dataPrzyjecia = zamowienieData.DataPrzyjecia;
     const dataRealizacji = zamowienieData.DataRealizacji;
 
-    return Zamowienie.update(zamowienieData, {where: {IdZamowienie  : idZamowienie }});
+    return Zamowienie.update(zamowienieData, { where: { IdZamowienie: idZamowienie } });
 }
 
 exports.deleteZamowienie = (idZamowienie) => {
     return Zamowienie.destroy({
-        where: { IdZamowienie : idZamowienie }
+        where: { IdZamowienie: idZamowienie }
     });
 
 }; 
