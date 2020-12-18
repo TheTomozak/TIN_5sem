@@ -1,6 +1,9 @@
 const Sequelize = require('sequelize');
 const sequelize = require('../../config/sequelize/sequelize');
 
+var sequelizeTransforms = require('sequelize-transforms');
+sequelizeTransforms(sequelize);
+
 const Produkt = sequelize.define('Produkt', {
     IdProdukt: {
         type: Sequelize.INTEGER,
@@ -11,6 +14,8 @@ const Produkt = sequelize.define('Produkt', {
     Nazwa: {
         type: Sequelize.STRING,
         allowNull: false,
+        unique: true,
+        trim: true,
         validate: {
             notEmpty: {
                 msg: "Pole jest wymagane"
@@ -18,7 +23,7 @@ const Produkt = sequelize.define('Produkt', {
             len: {
                 args: [2, 60],
                 msg: "Pole powinno zawierać od 2 do 60 znaków"
-            },
+            }
         }
     },
     TypProduktu: {
@@ -60,14 +65,7 @@ const Produkt = sequelize.define('Produkt', {
     },
     Kolor: {
         type: Sequelize.STRING,
-        allowNull: true,
-        validate: {
-            len: {
-                args: [2, 60],
-                msg: "Pole jest opcjonalne - jeśli chcesz wpisać kolor powinnien zawierać się od 2 do 60 znaków"
-            },
-
-        }
+        allowNull: true
     }
 });
 

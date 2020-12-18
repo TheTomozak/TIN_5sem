@@ -1,6 +1,9 @@
 const Sequelize = require('sequelize');
 const sequelize = require('../../config/sequelize/sequelize');
 
+var sequelizeTransforms = require('sequelize-transforms');
+sequelizeTransforms(sequelize);
+
 const Zamowienie = sequelize.define('Zamowienie', {
     IdZamowienie: {
         type: Sequelize.INTEGER,
@@ -73,6 +76,7 @@ const Zamowienie = sequelize.define('Zamowienie', {
     Email: {
         type: Sequelize.STRING,
         allowNull: false,
+        lowercase: true,
         validate: {
             notEmpty: {
                 msg: "Pole jest wymagane"

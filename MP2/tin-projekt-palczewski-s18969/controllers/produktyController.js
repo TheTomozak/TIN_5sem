@@ -67,6 +67,11 @@ exports.addProdukt = (req, res, next) => {
             res.redirect('/produkty');
         })
         .catch(err => {
+            err.errors.forEach(e => {
+                if(e.path.includes('Nazwa') && e.type == 'unique violation') {
+                    e.message = "Podana nazwa produktu już istnieje";
+                }
+             });
             res.render('Pages/Produkt/FormularzNowegoProduktu', {
                 produkt: produkData,
                 pageTitle: 'Dodawanie produktu',

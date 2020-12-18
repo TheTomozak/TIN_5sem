@@ -1,6 +1,9 @@
 const Sequelize = require('sequelize');
 const sequelize = require('../../config/sequelize/sequelize');
 
+var sequelizeTransforms = require('sequelize-transforms');
+sequelizeTransforms(sequelize);
+
 const ZamowienieProdukt = sequelize.define('ZamowienieProdukt', {
     IdZamowienieProdukt: {
         type: Sequelize.INTEGER,
