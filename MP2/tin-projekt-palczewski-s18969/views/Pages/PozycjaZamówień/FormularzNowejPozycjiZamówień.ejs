@@ -3,7 +3,7 @@
 <main>
     <script type="application/javascript" src="/JS/walidacjaPozycjiZamowien.js"></script>
     <h2><%= pageTitle %></h2>
-    <form class="form" method="post" action="<%=formAction%>" novalidate onsubmit="return validateForm();" >
+    <form class="form" method="post" action="<%=formAction%>" novalidate onsubmit="return validateForm();">
 
         <!-- onsubmit="return validateForm();" -->
 
@@ -105,13 +105,15 @@
 
 
         <% if (formMode == 'showDetails'){ %>
-        <div class="section-buttons">
+        <div class="form-buttons">
             <a href="/pozycjaZamowien/edit/<%=pozycjaZamowien.IdZamowienieProdukt%>"
                 class="form-button-edit-detail">Edytuj</a>
         </div>
         <% }else { %>
-        <input class="form-button-submit" type="submit" value="<%=btnLabel%>" />
-        <span id="errorsSummary" class="errors-text"></span>
+        <div class="form-buttons">
+            <input class="form-button-submit" type="submit" value="<%=btnLabel%>" />
+            <span id="errorsSummary" class="errors-text"></span>
+        </div>
         <% } %>
 
     </form>

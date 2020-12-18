@@ -73,12 +73,14 @@
         </span>
 
         <% if (formMode == 'showDetails') { %>
-        <div class="section-buttons">
+        <div class="form-buttons">
             <a href="/zamowienia/edit/<%=zamowienie.IdZamowienie%>" class="form-button-edit-detail">Edytuj</a>
         </div>
         <% }else { %>
-        <input class="form-button-submit" type="submit" value="<%=btnLabel%>" />
-        <span id="errorsSummary" class="errors-text"></span>
+        <div class="form-buttons">
+            <input class="form-button-submit" type="submit" value="<%=btnLabel%>" />
+            <span id="errorsSummary" class="errors-text"></span>
+        </div>
         <% } %>
 
     </form>

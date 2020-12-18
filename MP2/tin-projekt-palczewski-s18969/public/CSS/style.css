@@ -286,8 +286,8 @@ textarea {
 
 .form {
     display: grid;
-    grid-template-columns: 150px 300px 1fr;
-    row-gap: 1rem;
+    grid-template-columns: 150px 600px 1fr;
+    row-gap: 1.5rem;
 }
 
 .form span {
@@ -308,7 +308,7 @@ textarea {
 }
 
 .form label {
-    display: block;
+    /* display: block; */
     margin-bottom: 0.5em;
 }
 
@@ -392,14 +392,15 @@ sup {
 .form-button-cancel,
 .form-button-edit,
 .form-button-cancel-detail,
-.form-button-edit-detail {
+.form-button-edit-detail{
     width: 100%;
 }
 
 .form-button-cancel,
 .form-button-edit,
 .form-button-cancel-detail,
-.form-button-edit-detail {
+.form-button-edit-detail,
+.form-button-submit {
     box-sizing: border-box;
     display: block;
 }
