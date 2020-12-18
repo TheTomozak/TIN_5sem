@@ -46,7 +46,7 @@
         </span>
 
         <label for="NumerTel">Numer telefonu:</label>
-        <input class="NumerTelNotRequaired" type="tel" name="NumerTel" id="NumerTel" placeholder="np. 666777888"
+        <input class="NumerTelNotRequaired" type="number" name="NumerTel" id="NumerTel" placeholder="np. 666777888"
             value="<%= zamowienie.NumerTelefonu %>" <%= (formMode == 'showDetails') ? 'disabled' : '' %> />
         <span id="errorNumerNumerTel" class="errors-text">
             <% if (validationErrors.find(e => e.path.includes('NumerTel'))) { %>

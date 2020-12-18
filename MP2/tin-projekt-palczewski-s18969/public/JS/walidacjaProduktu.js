@@ -80,7 +80,6 @@ function validateForm() {
 
     //////////////////////////////////////////////////////////////////////
     //Gwarancja
-    //Cena
 
     if (!checkRequired(gwarancja.value)) {
         valid = false;

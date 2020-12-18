@@ -59,10 +59,19 @@ function validateForm() {
         valid = false;
         kwota.classList.add("error-input");
         errorKwota.innerText = "Pole jest wymagane";
+        console.log(kwota.value);
     } else if (!hasNumber(kwota.value)) {
         valid = false;
-        imie.classList.add("error-input");
+        kwota.classList.add("error-input");
         errorKwota.innerText = "Kwota musi być liczbą";
+    } else if (Math.sign(kwota.value) == -1) {
+        valid = false;
+        kwota.classList.add("error-input");
+        errorKwota.innerText = "Kwota musi być liczbą DODATNIĄ";
+    } else if (Math.sign(kwota.value) == 0) {
+        valid = false;
+        kwota.classList.add("error-input");
+        errorKwota.innerText = "Kwota nie może równać się 0";
     }
     //////////////////////////////////////////////////////////////////////
     //Email
@@ -88,6 +97,10 @@ function validateForm() {
             valid = false;
             numerTel.classList.add("error-input");
             errorNumerNumerTel.innerText = "Pole powinno zawierać od 9 do 12 znaków";
+        } else if(numerTel.value.includes('+') ||numerTel.value.includes('-')){
+            valid = false;
+            numerTel.classList.add("error-input");
+            errorNumerNumerTel.innerText = "Pole nie może zawierać znaków '+' oraz '-' ";
         }
     }
 
