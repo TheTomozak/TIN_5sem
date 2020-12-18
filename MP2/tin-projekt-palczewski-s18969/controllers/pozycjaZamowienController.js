@@ -52,8 +52,10 @@ exports.showEditPozycjaZamowieniaForm = (req, res, next) => {
     let produktGetAll = ProduktRepository.getProduktById(idPozycjaZamowien);
     let pozycjaZamowienGetAll = PozycjaZamowienRepository.getZamowienieProduktById(idPozycjaZamowien);
 
-    Promise.all([zamowienieGetAll, produktGetAll, pozycjaZamowienGetAll]).then(results => {
-        const [zam, prod, pozZam] = results;
+    let produktGetAllProduktyList = ProduktRepository.getProdukt();
+
+    Promise.all([zamowienieGetAll, produktGetAll, pozycjaZamowienGetAll,produktGetAllProduktyList ]).then(results => {
+        const [zam, prod, pozZam, prodAll] = results;
         res.render('Pages/PozycjaZamówień/FormularzNowejPozycjiZamówień', {
             pozycjaZamowien: pozZam,
             formMode: 'edit',
@@ -64,7 +66,8 @@ exports.showEditPozycjaZamowieniaForm = (req, res, next) => {
             validationErrors: [],
             allZamowienia: zam,
             allProdukty: prod,
-            allpozycjaZamowien: pozZam
+            allpozycjaZamowien: pozZam,
+            produktyAllLista: prodAll
         });
 
 

@@ -11,7 +11,8 @@
         <input type="hidden" name="IdZamowienieProdukt" value="<%= pozycjaZamowien.IdZamowienieProdukt  %>">
 
         <label for="Kupiec">Kupiec:<sup>*</sup></label>
-        <select id="Kupiec" name="Zamowienie_IdZamowienie" required <%= (formMode == 'showDetails') ? 'disabled' : ''%>>
+        <select id="Kupiec" name="Zamowienie_IdZamowienie" required
+            <%= (formMode == 'showDetails' || formMode == 'edit' ) ? 'disabled' : ''%>>
             <option value="" selected>--- Wybierz kupca ---</option>
 
             <% if (formMode == 'showDetails') { %>
@@ -46,6 +47,13 @@
             <% } else if(formMode == 'edit'){ %>
             <option selected value="<%= pozycjaZamowien.Produkt_IdProdukt %>"
                 label="<%= pozycjaZamowien.produkty.Nazwa %>"></option>
+            <% for (let i=0; i<produktyAllLista.length; i++) { let produkt = produktyAllLista[i]; %>
+            <% if(pozycjaZamowien.produkty.Nazwa != produkt.Nazwa ){ %>
+            <option value="<%= produkt.IdProdukt %>" label="<%= produkt.Nazwa %>"></option>
+            </option>
+            <%} %>
+            <% } %>
+            
             <% }else { %>
             <% for (let i=0; i<allProdukty.length; i++) { let produkt = allProdukty[i]; %>
             <option value="<%= produkt.IdProdukt %>" label="<%= produkt.Nazwa %>"></option>
