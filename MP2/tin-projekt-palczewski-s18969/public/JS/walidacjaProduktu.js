@@ -49,10 +49,19 @@ function validateForm() {
         valid = false;
         cena.classList.add("error-input");
         errorCena.innerText = "Pole jest wymagane";
+        console.log(cena.value);
     } else if (!hasNumber(cena.value)) {
         valid = false;
         cena.classList.add("error-input");
         errorCena.innerText = "Cena musi być liczbą";
+    } else if (Math.sign(cena.value) === -1) {
+        valid = false;
+        cena.classList.add("error-input");
+        errorCena.innerText = "Cena musi być liczbą DODATNIĄ";
+    } else if (Math.sign(cena.value) === 0) {
+        valid = false;
+        cena.classList.add("error-input");
+        errorCena.innerText = "Cena nie może równać się 0";
     }
     //////////////////////////////////////////////////////////////////////
     //Kolor
@@ -81,6 +90,14 @@ function validateForm() {
         valid = false;
         gwarancja.classList.add("error-input");
         errorGwarancja.innerText = "Gwarancja musi być liczbą";
+    }else if (Math.sign(gwarancja.value) === -1) {
+        valid = false;
+        cena.classList.add("error-input");
+        errorGwarancja.innerText = "Gwarancja musi być liczbą DODATNIĄ";
+    } else if (gwarancja.value !=100 && gwarancja.value > 12  ) {
+        valid = false;
+        cena.classList.add("error-input");
+        errorGwarancja.innerText = "Gwarancja nie może być większa niż 12 lat, jeśli chcesz dać gwarancję wieczystą to wpisz 100";
     }
 
 
@@ -89,6 +106,7 @@ function validateForm() {
     }
 
     return valid;
+
 
 
 
