@@ -43,8 +43,13 @@ const Zamowienie = sequelize.define('Zamowienie', {
                 msg: "Pole jest wymagane"
             },
             len: {
+                
                 msg: "Pole powinno być liczbą"
             },
+            min: {
+                args: 1,
+                msg: "Koszt przesyłki musi być liczbą DODATNIĄ (zerem też nie może być)"
+            }
         }
     },
     Imie: {
@@ -102,7 +107,8 @@ const Zamowienie = sequelize.define('Zamowienie', {
             }
 
         }
-    }
+    },
+    
 });
 
 module.exports = Zamowienie;

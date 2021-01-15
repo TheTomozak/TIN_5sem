@@ -3,7 +3,7 @@
 <main>
     <script type="application/javascript" src="/JS/walidacjaZamowienia.js"></script>
     <h2><%= pageTitle %></h2>
-    <form class="form" method="post" action="<%=formAction%>" novalidate onsubmit="return validateForm();">
+    <form class="form" method="post" action="<%=formAction%>" novalidate>
 
         <!-- onsubmit="return validateForm();" -->
 
@@ -27,7 +27,7 @@
             <% } %>
         </span>
 
-        <label for="Kwota">Kwota(zł):<sup>*</sup></label>
+        <label for="Kwota">Koszt przesyłki:<sup>*</sup></label>
         <input type="number" name="Kwota" id="Kwota" placeholder="np. 666" value="<%= zamowienie.Kwota %>"
             <%= (formMode == 'showDetails') ? 'disabled' : '' %> />
         <span id="errorKwota" class="errors-text">

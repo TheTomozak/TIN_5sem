@@ -1,0 +1,391 @@
+{
+	"info": {
+		"_postman_id": "71aea29e-53a9-4387-89ab-8f4f4f66fd47",
+		"name": "S18969_TIN_MP2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Produkt",
+			"item": [
+				{
+					"name": "Lista produktów",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/produkt/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"produkt",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Szczegóły produktu",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/produkt/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"produkt",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Dodaj nowy produkt",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \r\n        \"Nazwa\": \"Latarka\",\r\n        \"TypProduktu\": \"Oświetlenie\",\r\n        \"Gwarancja\": 3,\r\n        \"Cena\": \"85\",\r\n        \"Kolor\": \"Czarny\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/produkt/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"produkt",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edytuj produkt",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"Nazwa\": \"Play Station 900 TurboJet\",\r\n        \"Gwarancja\": 4\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/produkt/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"produkt",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Usun produkt",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/produkt/5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"produkt",
+								"5"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Zamówienie",
+			"item": [
+				{
+					"name": "Lista zamówien",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/zamowienie",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"zamowienie"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Szczegóły zamówienia",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/zamowienie/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"zamowienie",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Dodaj nowe zamówienie",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"DataPrzyjecia\": \"2018-07-06\",\r\n        \"DataRealizacji\": \"2018-07-13\",\r\n        \"Kwota\": \"650.00\",\r\n        \"Imie\": \"Jack\",\r\n        \"Nazwisko\": \"Daniels\",\r\n        \"Email\": \"jackdaniels@gmail.com\",\r\n        \"NumerTelefonu\": 123444356\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/zamowienie/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"zamowienie",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edytuj zamówienie",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n      \r\n        \"Imie\": \"Jarzębina\",\r\n        \"Email\": \"jarzębinaSuwak@gmail.com\"\r\n       \r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/zamowienie/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"zamowienie",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Usun zamówienie",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/zamowienie/5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"zamowienie",
+								"5"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Pozycja zamówień",
+			"item": [
+				{
+					"name": "Lista pozycji zamówien",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/zamowienieProdukt",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"zamowienieProdukt"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Szczegóły pozycji zamówienia",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/zamowienieProdukt/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"zamowienieProdukt",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Dodaj nowa pozycje zamówien",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"Ilosc\": 4,\r\n        \"Zamowienie_IdZamowienie\": 3,\r\n        \"Produkt_IdProdukt\": 2\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/zamowienieProdukt/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"zamowienieProdukt",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edytuj pozycje zamówien",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {   \r\n        \"Rabat\": 6\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/zamowienieProdukt/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"zamowienieProdukt",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Usun pozycje zamówienia",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/zamowienieProdukt/6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"zamowienieProdukt",
+								"6"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

@@ -19,6 +19,10 @@ const ZamowienieProdukt = sequelize.define('ZamowienieProdukt', {
             len: {
                 msg: "Pole powinno być liczbą"
             },
+            min: {
+                args: 0,
+                msg: "Rabat musi być liczbą DODATNIĄ"
+            }
         }
     },
     Ilosc: {
@@ -31,6 +35,10 @@ const ZamowienieProdukt = sequelize.define('ZamowienieProdukt', {
             len: {
                 msg: "Pole powinno być liczbą"
             },
+            min: {
+                args: 1,
+                msg: "Koszt przesyłki musi być liczbą DODATNIĄ (zerem też nie może być)"
+            }
         }
     },
     Zamowienie_IdZamowienie: {

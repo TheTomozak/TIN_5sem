@@ -49,6 +49,10 @@ const Produkt = sequelize.define('Produkt', {
             len: {
                 msg: "Pole powinno być liczbą"
             },
+            min: {
+                args: 1,
+                msg: "Gwarancja musi być liczbą DODATNIĄ (zerem też nie może być)"
+            }
         }
     },
     Cena: {
@@ -61,6 +65,10 @@ const Produkt = sequelize.define('Produkt', {
             len: {
                 msg: "Pole powinno być liczbą"
             },
+            min: {
+                args: 1,
+                msg: "Cena musi być liczbą DODATNIĄ (zerem też nie może być)"
+            }
         }
     },
     Kolor: {

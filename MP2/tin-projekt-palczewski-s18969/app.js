@@ -37,6 +37,12 @@ app.use(express.static(path.join(__dirname, 'public')));
 //Tam wyżej jest parsowanie body, wszytskie nasz app.use muszą być pod tym!!
 ////////////////////////////////////////////////////////////
 
+const session = require('express-session');
+app.use(session({
+    secret: 'my_secret_password',
+    resave: false
+}));
+
 app.use('/api/produkt', produktApiRouter);
 app.use('/api/zamowienie', zamowieniaApiRouter);
 app.use('/api/zamowienieProdukt', zamowieniaProduktyApiRouter);
@@ -45,6 +51,8 @@ app.use('/', indexRouter);
 app.use('/zamowienia', zamowieniaRouter);
 app.use('/produkty', produktyControler);
 app.use('/pozycjaZamowien', pozycjaZamowienControler);
+
+
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
