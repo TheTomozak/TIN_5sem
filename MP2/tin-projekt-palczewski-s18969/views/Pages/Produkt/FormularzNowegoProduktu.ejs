@@ -56,9 +56,11 @@
         </span>
 
         <% if (formMode == 'showDetails') { %>
-        <div class="form-buttons">
-            <a href="/produkty/edit/<%=produkt.IdProdukt%>" class="form-button-edit-detail">Edytuj</a>
-        </div>
+            <% if(loggedUser) { %>
+                <div class="form-buttons">
+                    <a href="/produkty/edit/<%=produkt.IdProdukt%>" class="form-button-edit-detail">Edytuj</a>
+                </div>
+                <% } %>
         <% }else { %>
 
         <div class="form-buttons">
@@ -67,12 +69,12 @@
         </div>
 
         <% } %>
-
+        
 
 
     </form>
 
-    <% if (formMode == 'showDetails' || formMode == 'edit') { %>
+    <% if ((formMode == 'showDetails' || formMode == 'edit') && loggedUser) { %>
     <h2>
         Szczegóły pozycji zamówień
     </h2>
