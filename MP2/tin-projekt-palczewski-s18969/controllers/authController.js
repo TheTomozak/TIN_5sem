@@ -1,4 +1,5 @@
 const ZamowieniaRepository = require('../repository/sequelize/ZamowieniaRepository');
+const authUtil = require('../util/authUtils');
 
 exports.login = (req, res, next) => {
     const Email = req.body.Email;
@@ -10,7 +11,7 @@ exports.login = (req, res, next) => {
                     navLocation: '',
                     loginError: "Nieprawidłowy adres email lub hasło"
                 })
-            } else if(zamowienie.password === password) {
+            } else if(authUtil.comparePasswords(password, zamowienie.password) === true)  {
                 req.session.loggedUser = zamowienie;
                 res.redirect('/');
             } else {

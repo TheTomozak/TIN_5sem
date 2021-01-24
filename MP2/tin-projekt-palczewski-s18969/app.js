@@ -21,6 +21,7 @@ const produktApiRouter = require('./routes/api/ProduktApiRoute');
 const zamowieniaApiRouter = require('./routes/api/ZamowienieApiRoute');
 const zamowieniaProduktyApiRouter = require('./routes/api/ZamowienieProduktyApiRoute');
 
+const authUtils = require('./util/authUtils');
 
 
 
@@ -61,6 +62,9 @@ app.use('/zamowienia', zamowieniaRouter);
 app.use('/produkty', produktyControler);
 app.use('/pozycjaZamowien', pozycjaZamowienControler);
 
+app.use('/zamowienia', authUtils.permitAuthenticatedUser, zamowieniaRouter);
+app.use('/produkty', authUtils.permitAuthenticatedUser, produktyControler);
+app.use('/pozycjaZamowien', authUtils.permitAuthenticatedUser, pozycjaZamowienControler);
 
 
 // catch 404 and forward to error handler

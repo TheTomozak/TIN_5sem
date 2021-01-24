@@ -4,6 +4,13 @@ const Produkt = require('../../model/sequelize/Produkt');
 const Zamowienie = require('../../model/sequelize/Zamowienie');
 const ZamowienieProdukt = require('../../model/sequelize/ZamowienieProdukt');
 
+const authUtil = require('../../util/authUtils');
+const passHashJan = authUtil.hashPassword('JanKowalski');
+const passHashKarolina = authUtil.hashPassword('KarolinaSuwak');
+const passHashLukasz = authUtil.hashPassword('LukaszWietnamski');
+const passHashMikolaj = authUtil.hashPassword('MikolajKopernik');
+const passHashWojtek = authUtil.hashPassword('WojtekMorelka');
+
 module.exports = () => {
     Produkt.hasMany(ZamowienieProdukt, { as: 'zamowieniaProdukty', foreignKey: { name: 'Produkt_IdProdukt', allowNull: false }, constraints: true, onDelete: 'CASCADE' });
     ZamowienieProdukt.belongsTo(Produkt, { as: 'produkty', foreignKey: { name: 'Produkt_IdProdukt', allowNull: false } });
@@ -43,11 +50,11 @@ module.exports = () => {
         .then(zamowienia => {
             if (!zamowienia || zamowienia.length == 0) {
                 return Zamowienie.bulkCreate([
-                    { DataPrzyjecia: '2019-07-13', DataRealizacji: '2019-07-26', Kwota: '2299', Imie: 'Jan', Nazwisko: 'Kowalski', Email: 'janKowalski@gmail.com', NumerTelefonu: '666999666', password: 'JanKowalski' },
-                    { DataPrzyjecia: '2019-03-01', DataRealizacji: '2019-04-04', Kwota: '1499', Imie: 'Karolina', Nazwisko: 'Suwak', Email: 'karolinaSuwak@gmail.com', NumerTelefonu: '696969699', password: 'KarolinaSuwak' },
-                    { DataPrzyjecia: '2020-09-23', DataRealizacji: '2020-09-27', Kwota: '398', Imie: 'Łukasz', Nazwisko: 'Wietnamski', Email: 'lukaszWietnamski@gmail.com', NumerTelefonu: '123456789', password: 'LukaszWietnamski' },
-                    { DataPrzyjecia: '2020-10-23', DataRealizacji: '2020-10-28', Kwota: '159', Imie: 'Mikołaj', Nazwisko: 'Kopernik', Email: 'mikolajKopernik@gmail.com', NumerTelefonu: '268102473', password: 'MikolajKopernik' },
-                    { DataPrzyjecia: '2020-11-01', DataRealizacji: '2020-11-20', Kwota: '5199', Imie: 'Wojtek', Nazwisko: 'Morelka', Email: 'wojtekMorelka@gmail.com', NumerTelefonu: '726289018', password: 'WojtekMorelka' }
+                    { DataPrzyjecia: '2019-07-13', DataRealizacji: '2019-07-26', Kwota: '2299', Imie: 'Jan', Nazwisko: 'Kowalski', Email: 'janKowalski@gmail.com', NumerTelefonu: '666999666', password: passHashJan },
+                    { DataPrzyjecia: '2019-03-01', DataRealizacji: '2019-04-04', Kwota: '1499', Imie: 'Karolina', Nazwisko: 'Suwak', Email: 'karolinaSuwak@gmail.com', NumerTelefonu: '696969699', password: passHashKarolina },
+                    { DataPrzyjecia: '2020-09-23', DataRealizacji: '2020-09-27', Kwota: '398', Imie: 'Łukasz', Nazwisko: 'Wietnamski', Email: 'lukaszWietnamski@gmail.com', NumerTelefonu: '123456789', password: passHashLukasz },
+                    { DataPrzyjecia: '2020-10-23', DataRealizacji: '2020-10-28', Kwota: '159', Imie: 'Mikołaj', Nazwisko: 'Kopernik', Email: 'mikolajKopernik@gmail.com', NumerTelefonu: '268102473', password: passHashMikolaj },
+                    { DataPrzyjecia: '2020-11-01', DataRealizacji: '2020-11-20', Kwota: '5199', Imie: 'Wojtek', Nazwisko: 'Morelka', Email: 'wojtekMorelka@gmail.com', NumerTelefonu: '726289018', password: passHashWojtek }
                 ])
                     .then(() => {
                         return Zamowienie.findAll();

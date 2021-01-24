@@ -48,8 +48,14 @@
         <ul>
             <li><a href="/" class="<%= navLocation == 'main' ? 'active' : ''%>">Strona główna</a></li>
             <li><a href="/produkty" class="<%= navLocation == 'produkt' ? 'active' : ''%>">Produkty</a></li>
+            <% if(loggedUser) { %>
             <li><a href="/zamowienia" class="<%= navLocation == 'zamowienie' ? 'active' : ''%>">Zamówienia</a></li>
-            <li><a href="/pozycjaZamowien" class="<%= navLocation == 'pozycjaZamowien' ? 'active' : ''%>">Pozycja
+            <% } %>
+            <% if(loggedUser) { %>
+                <li><a href="/pozycjaZamowien" class="<%= navLocation == 'pozycjaZamowien' ? 'active' : ''%>">Pozycja
                     zamówień</a></li>
+                <% } %>
         </ul>
     </nav>
+
+   
