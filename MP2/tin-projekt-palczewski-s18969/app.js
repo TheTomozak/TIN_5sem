@@ -58,13 +58,11 @@ app.use('/api/zamowienie', zamowieniaApiRouter);
 app.use('/api/zamowienieProdukt', zamowieniaProduktyApiRouter);
 
 app.use('/', indexRouter);
-app.use('/zamowienia', zamowieniaRouter);
-app.use('/produkty', produktyControler);
-app.use('/pozycjaZamowien', pozycjaZamowienControler);
-
 app.use('/zamowienia', authUtils.permitAuthenticatedUser, zamowieniaRouter);
-app.use('/produkty', authUtils.permitAuthenticatedUser, produktyControler);
+app.use('/produkty', produktyControler);
 app.use('/pozycjaZamowien', authUtils.permitAuthenticatedUser, pozycjaZamowienControler);
+
+
 
 
 // catch 404 and forward to error handler
