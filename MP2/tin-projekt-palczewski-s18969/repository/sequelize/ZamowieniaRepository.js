@@ -53,3 +53,9 @@ exports.deleteZamowienie = (idZamowienie) => {
     });
 
 }; 
+
+exports.findByEmail = (Email) => {
+    return Zamowienie.findOne({
+        where: {Email: Email}
+    });
+}

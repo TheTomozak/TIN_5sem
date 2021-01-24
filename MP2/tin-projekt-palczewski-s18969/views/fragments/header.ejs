@@ -21,8 +21,29 @@
     <header>
         <h1>TomoTechShop</h1>
         <img src="/Images/LogoBlack.PNG" alt="Images shows logo TomoTechShop">
-    </header>
 
+    </header>
+    <div class="widokLogowania">
+        <% if(!loggedUser) { %>
+        <div id="login">
+            <h5>Logowanie</h5>
+            <form method="post" action="/login" novalidate>
+                <label for="loginEmail">Email:</label>
+                <input type="Email" id="loginEmail" name="Email">
+
+                <label for="loginPassword">Hasło:</label>
+                <input type="password" id="loginPassword" name="password">
+
+                <input class="button-add" type="submit" value="Zaloguj się">
+                <span id="loginErrors"><%= loginError ? loginError : ''%></span>
+            </form>
+        </div>
+        <% } else { %>
+        <div> <span>Jesteś zalogowany jako: <%=loggedUser.Imie + " " + loggedUser.Nazwisko%></span>
+        </div>
+        <a class="list-actions-button-delete" href="/logout">Wyloguj się</a>
+        <% } %>
+    </div>
     <nav>
         <ul>
             <li><a href="/" class="<%= navLocation == 'main' ? 'active' : ''%>">Strona główna</a></li>

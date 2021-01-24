@@ -43,6 +43,15 @@ app.use(session({
     resave: false
 }));
 
+app.use((req, res, next) => {
+  const loggedUser = req.session.loggedUser;
+  res.locals.loggedUser = loggedUser;
+  if(!res.locals.loginError) {
+      res.locals.loginError = undefined;
+  }
+  next();
+});
+
 app.use('/api/produkt', produktApiRouter);
 app.use('/api/zamowienie', zamowieniaApiRouter);
 app.use('/api/zamowienieProdukt', zamowieniaProduktyApiRouter);

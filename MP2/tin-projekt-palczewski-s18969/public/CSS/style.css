@@ -392,7 +392,7 @@ sup {
 .form-button-cancel,
 .form-button-edit,
 .form-button-cancel-detail,
-.form-button-edit-detail{
+.form-button-edit-detail {
     width: 100%;
 }
 
@@ -635,3 +635,22 @@ body {
 /* .lista{
     overflow-x: auto;
 } */
+
+
+.widokLogowania {
+    width: 50%;
+    margin: 0 auto;
+    border: 1px solid #000;
+    border-radius: 5px;
+
+}
+
+.widokLogowania h5 {
+    text-align: center;
+    margin: 5px auto;
+}
+
+.widokLogowania {
+    text-align: center;
+    margin: 5px auto;
+}

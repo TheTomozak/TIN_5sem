@@ -108,6 +108,10 @@ const Zamowienie = sequelize.define('Zamowienie', {
 
         }
     },
+    password: {
+        type: Sequelize.STRING,
+         allowNull: false
+     }
     
 });
 
