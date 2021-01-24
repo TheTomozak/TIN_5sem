@@ -110,8 +110,18 @@ const Zamowienie = sequelize.define('Zamowienie', {
     },
     password: {
         type: Sequelize.STRING,
-         allowNull: false
+         allowNull: false,
+         validate: {
+            notEmpty: {
+                msg: "Pole jest wymagane"
+            },
+            len: {
+                args: [6, 60 ],
+                msg: "Pole powinno zawierać od 2 do 60 znaków"
+            },
+        }
      }
+     
     
 });
 

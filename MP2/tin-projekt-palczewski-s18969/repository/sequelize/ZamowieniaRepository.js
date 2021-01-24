@@ -5,6 +5,9 @@ const Produkt = require("../../model/sequelize/Produkt");
 const Zamowienie = require("../../model/sequelize/Zamowienie");
 const ZamowienieProdukt = require("../../model/sequelize/ZamowienieProdukt");
 
+const authUtil = require('../../util/authUtils');
+
+
 exports.getZamowienia = () => {
     return Zamowienie.findAll();
 };
@@ -28,6 +31,7 @@ exports.createZamowienie = (newZamowienie) => {
         Imie: newZamowienie.Imie,
         Nazwisko: newZamowienie.Nazwisko,
         Email: newZamowienie.Email,
+        password: authUtil.hashPassword(newZamowienie.password),
         NumerTelefonu: newZamowienie.NumerTelefonu,
         Kwota: newZamowienie.Kwota,
         DataPrzyjecia: newZamowienie.DataPrzyjecia,

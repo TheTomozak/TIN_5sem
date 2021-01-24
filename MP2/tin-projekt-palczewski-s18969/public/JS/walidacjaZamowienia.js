@@ -4,6 +4,7 @@ function validateForm() {
     const nazwisko = document.getElementById('Nazwisko');
     const kwota = document.getElementById('Kwota');
     const email = document.getElementById('Email');
+    const password = document.getElementById('password');
     const numerTel = document.getElementById('NumerTel');
     const dataPrzyjecia = document.getElementById('DataPrzyjecia');
     const dataRealizacji = document.getElementById('DataRealizacji');
@@ -13,11 +14,12 @@ function validateForm() {
     const errorNazwisko = document.getElementById('errorNazwisko');
     const errorKwota = document.getElementById('errorKwota');
     const errorEmail = document.getElementById('errorEmail');
+    const errorPassword = document.getElementById('errorPassword');
     const errorNumerNumerTel = document.getElementById('errorNumerNumerTel');
     const errorDataPrzyjecia = document.getElementById('errorDataPrzyjecia');
     const errorDataRealizacji = document.getElementById('errorDataRealizacji');
 
-    resetErrors([imie, nazwisko, kwota, email, numerTel, dataPrzyjecia, dataRealizacji], [errorImie, errorNazwisko, errorKwota, errorEmail, errorNumerNumerTel, errorDataPrzyjecia, errorDataRealizacji], errorsSummary);
+    resetErrors([imie, nazwisko, kwota, email, password, numerTel, dataPrzyjecia, dataRealizacji], [errorImie, errorNazwisko, errorKwota, errorEmail, errorPassword, errorNumerNumerTel, errorDataPrzyjecia, errorDataRealizacji], errorsSummary);
 
     let valid = true;
     //////////////////////////////////////////////////////////////////////
@@ -53,6 +55,19 @@ function validateForm() {
         errorNazwisko.innerText = "Nazwisko nie może zawierać liczb";
     }
     //////////////////////////////////////////////////////////////////////
+    //Haslo
+    if (!checkRequired(password.value)) {
+        valid = false;
+        password.classList.add("error-input");
+        errorPassword.innerText = "Pole jest wymagane";
+    } else if (!checkTextLengthRange(password.value, 2, 60)) {
+        valid = false;
+        password.classList.add("error-input");
+        errorPassword.innerText = "Pole powinno zawierać od 2 do 60 znaków";
+    } 
+
+    //////////////////////////////////////////////////////////////////////
+
     //Kwota
 
     if (!checkRequired(kwota.value)) {
@@ -97,7 +112,7 @@ function validateForm() {
             valid = false;
             numerTel.classList.add("error-input");
             errorNumerNumerTel.innerText = "Pole powinno zawierać od 9 do 12 znaków";
-        } else if(numerTel.value.includes('+') ||numerTel.value.includes('-')){
+        } else if (numerTel.value.includes('+') || numerTel.value.includes('-')) {
             valid = false;
             numerTel.classList.add("error-input");
             errorNumerNumerTel.innerText = "Pole nie może zawierać znaków '+' oraz '-' ";

@@ -3,7 +3,7 @@
 <main>
     <script type="application/javascript" src="/JS/walidacjaZamowienia.js"></script>
     <h2><%= pageTitle %></h2>
-    <form class="form" method="post" action="<%=formAction%>" novalidate>
+    <form class="form" method="post" action="<%=formAction%>" novalidate onsubmit="return validateForm();" >
 
         <!-- onsubmit="return validateForm();" -->
 
@@ -44,6 +44,19 @@
             <%= validationErrors.find(e => e.path.includes('Email')).message %>
             <% } %>
         </span>
+
+        <% if(formMode == 'createNew') { %>
+        <label for="password">Haslo:<sup>*</sup></label>
+        <input type="text" name="password" id="password" placeholder="2-60 znaków" value="<%= zamowienie.password %>"
+            <%= (formMode == 'showDetails') ? 'disabled' : '' %> />
+        <span id="errorPassword" class="errors-text">
+            <% if (validationErrors.find(e => e.path.includes('password'))) { %>
+            <%= validationErrors.find(e => e.path.includes('password')).message %>
+            <% } %>
+        </span>
+        <% } %>
+
+
 
         <label for="NumerTel">Numer telefonu:</label>
         <input class="NumerTelNotRequaired" type="number" name="NumerTel" id="NumerTel" placeholder="np. 666777888"
